@@ -40,7 +40,7 @@
     color: #6A6B70;
 }
 .categories {
-    width: 75%;
+    width: 78%;
     font-size: 20px;
 }
 .categories ul {
@@ -49,7 +49,7 @@
 }
 li.category {
     padding: 0;
-    margin: 20px 0;
+    margin: 75px 0;
     cursor: pointer;
     transition: color 0.2s ease;
 }
