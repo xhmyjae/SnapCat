@@ -35,16 +35,6 @@
             <div class="content-post">
                 <p class="pseudo">Bebou</p>
                 <p class="content">Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-                    Haha trop nul kheir la loose, du coup margot ce verre ?
-
                 </p>
             </div>
         </div>
