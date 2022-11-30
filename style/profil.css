@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.profil-panel{
+    font-family: 'Playfair Display', serif;
+    left : 20vw;
+    width : 80vw;
+    height : 100vh;
+    position : fixed;
+    border-left: solid 1px #6A6B70;
+    border-right: solid 1px #6A6B70;
+    overflow-y: scroll;
+}
+.top-profil{
+    height: 40vh;
+    /*border-bottom: solid 1px #6A6B70;*/
+}
+.banner{
+    height: 20vh;
+    max-height: 20vh;
+    border-bottom: solid 1px #6A6B70;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profil-picture{
+    width: 70vw;
+    margin: -7.5vh 0 0 2vw;
+    border: solid 5px #1C1C21;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-weight: bold;
+    font-size: 20px;
+}
+.profil-picture .bio{
+    width: 45vw;
+    height: 10vh;
+    max-width: 45vw;
+    margin: 0 0 0 2vw;
+    font-size: 15px;
+}
+
+.profil-picture img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: solid 5px #1C1C21;
+}
+
+.friends{
+    width: 50px;
+    font-size: 20px;
+    margin: -1vh 0 0 5.5vw;
+}
+.friends:hover{
+    color: #D62976;
+    cursor: pointer;
+}
+.publications{
+    margin: 17vh 0 1vh 1vw;
+    max-width: 80vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;}
+.publications .container-post{
+    margin: 2vh 0 0 0;
+    height: 300px;
+    width: 300px;
+    border: #FFFFFF solid 1px;
+}
+.publications .container-post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.publications .container-post:hover{
+    border: #D62976 solid 1px;
+    cursor: pointer;
+}
