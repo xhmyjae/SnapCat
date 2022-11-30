@@ -21,8 +21,8 @@ class FriendRepository {
         $this->databaseConnection = (new DatabaseConnection())->getConnection();
     }
 
-    public function getFriends(): array {
-        return $this->databaseConnection->query('SELECT * FROM friends ORDER BY id DESC')->fetchAll(PDO::FETCH_CLASS, Friend::class);
+    public function getFriends(int $user_id1): array {
+        return $this->databaseConnection->query('SELECT * FROM friends WHERE user_id1 = :user_id1 ORDER BY id DESC')->fetchAll(PDO::FETCH_CLASS, Friend::class);
     }
 
     public function addFriend(int $id, string $user_id1, string $user_id2, bool $accepted): void {
