@@ -42,6 +42,6 @@
         </div>
     </div>
 </div>
-<script defer src="../../Javascript/login.js"></script>
+<script defer src="../../scripts/login.js"></script>
 </body>
 </html>
