@@ -24,7 +24,7 @@
             <h2 class="form_title title">Se connecter</h2>
             <input class="form__input" type="text" placeholder="Adresse e-mail">
             <input class="form__input" type="password" placeholder="Mot de passe"><a class="form__link">Mot de passe oublié ?</a>
-            <button class="form__button button submit">SIGN IN</button>
+            <button class="form__button button submit">Se connecter</button>
         </form>
     </div>
     <div class="switch" id="switch-cnt">
@@ -33,12 +33,12 @@
         <div class="switch__container" id="switch-c1">
             <h2 class="switch__title title">Re.</h2>
             <p class="switch__description description"> Pour rester avec nous, veuillez vous connecter avec votre compte personnel</p>
-            <button class="switch__button button switch-btn">SIGN IN</button>
+            <button class="switch__button button switch-btn">Se connecter</button>
         </div>
         <div class="switch__container is-hidden" id="switch-c2">
             <h2 class="switch__title title">Hola !</h2>
             <p class="switch__description description">Entrez vos données personnelles et commencez votre voyage avec nous</p>
-            <button class="switch__button button switch-btn">SIGN UP</button>
+            <button class="switch__button button switch-btn">S'inscrire</button>
         </div>
     </div>
 </div>

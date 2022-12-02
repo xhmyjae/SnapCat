@@ -1,6 +1,9 @@
 <?php
 
 require_once('src/controllers/homepage.php');
+require_once('src/controllers/friend_panel.php');
+require_once('src/controllers/post.php');
+require_once('src/controllers/right_panel.php');
 
 use App\Controllers\Homepage\Homepage;
 use Application\Model\Post\PostRepository;

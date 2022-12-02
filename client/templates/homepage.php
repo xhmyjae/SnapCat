@@ -9,7 +9,7 @@
   <title>Accueil | Snapagram</title>
 </head>
 <body>
-    <p class="error"><?php global $error;
+     <p class="error"><?php global $error;
         echo $error; ?></p>
     <div class="list">
         <?php
@@ -26,5 +26,6 @@
         <?php
         }
         ?>
+    </div>
 </body>
 </html>

@@ -13,4 +13,5 @@ class Homepage {
 
         require('templates/homepage.php');
     }
+
 }
