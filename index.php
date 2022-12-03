@@ -3,9 +3,11 @@
 require_once('src/controllers/homepage.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
+require_once('src/controllers/create_post.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
+use App\Controllers\post\Create\Create_Post;
 use App\Controllers\User\Create\CreateUser;
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -14,6 +16,10 @@ $uri = $uri[1];
 
 try {
     switch ($uri) {
+        case 'create_post':
+            $createPost = new Create_Post();
+            $createPost->execute($_POST);
+            break;
         case 'homepage':
             $homepage = new Homepage();
             $homepage->execute();
@@ -26,6 +32,7 @@ try {
             $signup = new CreateUser();
             $signup->execute($_POST);
             break;
+
         default:
             throw new Exception('Page not found');
     }
