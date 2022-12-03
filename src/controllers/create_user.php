@@ -13,15 +13,12 @@ class CreateUser {
         if (!isset($input['name'], $input['mail'], $input['password']))
             throw new RuntimeException('Invalid input');
 
-        $result = $this->database->("SELECT * FROM users WHERE name = :name OR mail = :mail");
-        if ($result->num_rows == 0) {
-            // create user
-                    (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
-
+        $result = (new UserRepository())->checkUserAvailability($input['name'], $input['mail']);
+        if ($result) {
+            (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
             require_once('client/templates/homepage.php');
         } else {
-            // user already exists
+            throw new RuntimeException('User already exists');
         }
-
     }
 }

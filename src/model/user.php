@@ -34,4 +34,14 @@ class UserRepository
 
         require_once('client/templates/homepage.php');
     }
+
+    public function checkUserAvailability(string $name, string $mail): bool {
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE (name = :name OR mail = :mail)");
+        $result->execute(compact('name', 'mail'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            return true;
+        }
+        return false;
+    }
 }
