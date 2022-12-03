@@ -2,18 +2,16 @@
 
 require_once('src/controllers/homepage.php');
 require_once('src/controllers/login.php');
+require_once('src/controllers/create_user.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
-
-<<<<<<< HEAD
-=======
+use App\Controllers\User\Create\CreateUser;
 
 $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
 $uri = $uri[1];
 
->>>>>>> 34f62b128c148fc14a87badb814dc9da1e3c99fc
 try {
     switch ($uri) {
         case 'homepage':
@@ -23,6 +21,12 @@ try {
         case '':
             $login = new Login();
             $login->execute();
+            break;
+        case 'signup':
+            $signup = new CreateUser();
+            if (!isset($_POST['name'], $_POST['mail'], $_POST['password'])) throw new RuntimeException('Invalid input');
+
+            $signup->execute($_POST['name'], $_POST['mail'], $_POST['password']);
             break;
         default:
             throw new Exception('Page not found');

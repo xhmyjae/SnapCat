@@ -1,13 +1,14 @@
 <?php
 
-namespace Application\Model\User;
+namespace App\Model\User;
 
 require_once('src/lib/DatabaseConnection.php');
 
-use Application\Lib\Database\DatabaseConnection;
+use App\Lib\Database\DatabaseConnection;
 use PDO;
 
-class User {
+class User
+{
     public int $id;
     public string $name;
     public string $mail;
@@ -17,35 +18,27 @@ class User {
     public ?string $description;
 }
 
-class UserRepository {
+class UserRepository
+{
     public PDO $databaseConnection;
 
     public function __construct() {
         $this->databaseConnection = (new DatabaseConnection())->getConnection();
     }
 
-    public function getUser(string $id): User|false {
-        $statement = $this->databaseConnection->prepare('SELECT * FROM users WHERE id = :id');
-        $statement->execute(compact('id'));
-        return $statement->fetchObject(User::class);
+    public function createUser(string $name, string $mail, string $password): void {
+        $avatar = "avatar image";
+        $creation_date = date('d-m-y h:i:s');
+        // checks if user already exist
+        $result = $this->query("SELECT * FROM users WHERE name = :name OR mail = :mail");
+        if ($result->num_rows == 0) {
+            // create user
+            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password, creation_date) VALUES (:name, :mail, :avatar, :password, :creation_date)');
+            $statement->execute(compact('name', 'mail', 'password'));
+
+            header("templates/login");
+        } else {
+            // user already exists
+        }
     }
-
-    public function getUsers(): array {
-        return $this->databaseConnection->query('SELECT * FROM users ORDER BY id DESC')->fetchAll(PDO::FETCH_CLASS, User::class);
-    }
-
-    public function addUser(int $id, string $name, string $mail, string $avatar, string $password, string $creation_date, ?string $description): void {
-        $statement = $this->databaseConnection->prepare('INSERT INTO users (id, name, mail, avatar, password, creation_date, description) VALUES (:id, :name, :mail, :avatar, :password, :creation_date, :description)');
-        $statement->execute(compact('id', 'name', 'mail', 'avatar', 'password', 'creation_date', 'description'));
-    }
-
-    public function deleteUser(int $id): void {
-        $statement = $this->databaseConnection->prepare('DELETE FROM users WHERE id = :id');
-        $statement->execute(compact('id'));
-    }
-
-    public function loginUser(string $ids, string $password) {
-
-    }
-
 }
