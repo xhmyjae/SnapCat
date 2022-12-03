@@ -13,6 +13,5 @@ class CreateUser {
         if (!isset($input['name'], $input['mail'], $input['password']))
             throw new RuntimeException('Invalid input');
         (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
-        throw new RuntimeException('User not created');
     }
 }

@@ -1,6 +1,3 @@
-<link rel="stylesheet" type="text/css" href="../../style/main.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/post.css"/>
-
 <div class="post-panel">
     <div class="post-header">
         <p> Accueil </p>
