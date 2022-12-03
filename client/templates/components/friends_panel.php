@@ -10,26 +10,26 @@
         <div class="Switch_button" data-switch="comments">Requetes</div>
         <div class="Switch_button" data-switch="messages">Demandes</div>
     </div>
-    <div class="Friend-list">
-        <div class="friend" data-friend="1">
-            <div class="friend_avatar">
-                <img src="client/templates/img/antaBinome.png" alt="avatar">
-            </div>
-            <div class="Friend_name">
-                <p>Best binome</p>
-            </div>
-        </div>
-        <div class="friend" data-friend="1">
-            <div class="friend_avatar">
-                <img src="client/templates/img/antaBinome.png" alt="avatar">
-            </div>
-            <div class="Friend_name">
-                <p>Best binome</p>
-            </div>
-            <div class="Accept_button">
-                <i class="fas fa-check"></i>
-                <i class="fas fa-xmark"></i>
-        </div>
+<!--    <div class="Friend-list">-->
+<!--        <div class="friend" data-friend="1">-->
+<!--            <div class="friend_avatar">-->
+<!--                <img src="client/templates/img/antaBinome.png" alt="avatar">-->
+<!--            </div>-->
+<!--            <div class="Friend_name">-->
+<!--                <p>Best binome</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="friend" data-friend="1">-->
+<!--            <div class="friend_avatar">-->
+<!--                <img src="client/templates/img/antaBinome.png" alt="avatar">-->
+<!--            </div>-->
+<!--            <div class="Friend_name">-->
+<!--                <p>Best binome</p>-->
+<!--            </div>-->
+<!--            <div class="Accept_button">-->
+<!--                <i class="fas fa-check"></i>-->
+<!--                <i class="fas fa-xmark"></i>-->
+<!--        </div>-->
     </div>
 
 </div>
