@@ -7,7 +7,7 @@ let aContainer = document.querySelector("#a-container");
 let bContainer = document.querySelector("#b-container");
 let allButtons = document.querySelectorAll(".submit");
 
-let getButtons = (e) => e.preventDefault()
+let getButtons = (e) => {}
 
 let changeForm = (e) => {
 
