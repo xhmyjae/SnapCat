@@ -9,7 +9,7 @@ $styles = ['login.css'];
         <div class="container a-container" id="a-container">
 
             <!--        register-->
-            <form class="form" id="a-form" method="POST" action="/index.php?signup">
+            <form class="form" id="a-form" method="POST" action="/signup">
                 <h2 class="form_title title">S'inscrire</h2>
                 <input class="form__input" type="text" placeholder="Pseudo" autofocus name="name" required maxlength="20" minlength="3">
                 <input class="form__input" type="email" placeholder="Email" name="mail" required maxlength="255">
