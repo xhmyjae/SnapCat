@@ -10,6 +10,7 @@
             <link rel="stylesheet" type="text/css" href="../client/style/<?= $style ?>"/>
         <?php } ?>
     <?php } ?>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
 </head>
 <body>
