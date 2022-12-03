@@ -2,16 +2,12 @@
 
 namespace App\Controllers\Homepage;
 
-require_once('src/model/post.php');
 
-use Application\Model\Post\PostRepository;
+class Homepage
+{
 
-class Homepage {
-    public function execute(): void {
-        global $posts;
-        $posts = (new PostRepository())->getPosts();
-
-        require('templates/homepage.php');
+    public function execute()
+    {
+        require_once('client/templates/homepage.php');
     }
-
 }

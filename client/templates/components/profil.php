@@ -6,10 +6,10 @@
 <div class="profil-panel">
     <div class="top-profil">
         <div class="banner">
-            <img src="../Img/GodOfWar3_Hero.jpg" alt="banner profil">
+            <img src="../img/GodOfWar3_Hero.jpg" alt="banner profil">
         </div>
         <div class="profil-picture">
-            <img src="../Img/Ezio.jpg" alt="picture profil">
+            <img src="../img/Ezio.jpg" alt="picture profil">
             <p>Ezio Auditore</p>
             <p class="bio">dddddddddddddddddddddddddddddddddddddddddddddddddd dddddddddd dddddddddd dddddddddd dddddddddd dddddddddd dddddddddd dddddddddd dddddddddddddddddddd</p>
         </div>

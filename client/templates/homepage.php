@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Dxvy, Ker, Thomas, xhmyjae" name="author">
-  <meta content="Page principale de Snapagram" name="description">
-  <title>Accueil | Snapagram</title>
-</head>
-<body>
-     <p class="error"><?php global $error;
-        echo $error; ?></p>
-    <div class="list">
-        <?php
-        global $posts;
-        if (empty($posts)) {
-            echo '<p class="empty">No tasks to show</p>';
-        }
-        foreach ($posts as $post) {
-            ?>
-        <div class="list-element">
-            <p class="task-priority"><?= $post->id ?></p>
-            <p class="task-name"><?= $post->message ?></p>
-        </div>
-        <?php
-        }
-        ?>
-    </div>
-</body>
-</html>
+<?php $title = 'Snapagram';
+$styles = ['menu.css', 'main.css', 'post.css', "friends_panel.css", "right-panel.css", "profile.css"];
+?>
+
+<?php ob_start(); ?>
+
+<?php require_once('client/templates/components/menu.php'); ?>
+<?php require_once('client/templates/components/post.php'); ?>
+<?php require_once('client/templates/components/friends_panel.php'); ?>
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require_once 'base.php'; ?>

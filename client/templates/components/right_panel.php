@@ -8,7 +8,7 @@
 <!--    test d'un commentaire (sera dans un component a part plus tard)-->
     <div class="main-comment">
         <div class="avatar-box">
-            <img alt="profile-picture" class="avatar" src="../Img/antaBinome.png">
+            <img alt="profile-picture" class="avatar" src="../img/antaBinome.png">
         </div>
         <div class="comment-box">
             <div class="pseudo-box">

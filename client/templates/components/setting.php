@@ -3,7 +3,7 @@
 
 <div class="setting">
     <div class="picture-setting">
-        <img src="../Img/Ezio.jpg" alt="picture profil">
+        <img src="../img/Ezio.jpg" alt="picture profil">
         <button class="custom-btn setting-button">Changer Photo</button>
     </div>
     <div class="bio-setting">
