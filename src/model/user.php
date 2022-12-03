@@ -36,7 +36,7 @@ class UserRepository
             $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password, creation_date) VALUES (:name, :mail, :avatar, :password, :creation_date)');
             $statement->execute(compact('name', 'mail', 'password'));
 
-            header("templates/login");
+            require_once('client/templates/homepage.php');
         } else {
             // user already exists
         }
