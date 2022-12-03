@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Dxvy, Ker, Thomas, xhmyjae" name="author">
-  <meta content="Page principale de Snapagram" name="description">
-  <title>Accueil | Snapagram</title>
-</head>
-<body>
-    <?php echo $_SESSION['name']; echo $_SESSION['id']; echo $_SESSION['email']; ?>
-</body>
-</html>
+<?php $title = 'Snapagram';
+$styles = ['menu.css', 'main.css', 'post.css', "friends_panel.css", "right-panel.css", "profile.css"];
+?>
+
+<?php ob_start(); ?>
+
+<?php require_once('client/templates/components/menu.php'); ?>
+<?php require_once('client/templates/components/post.php'); ?>
+<?php require_once('client/templates/components/friends_panel.php'); ?>
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require_once 'base.php'; ?>

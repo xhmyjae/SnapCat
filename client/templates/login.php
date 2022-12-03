@@ -9,24 +9,27 @@
 </head>
 <body>
 <div class="main">
-    <div class="container a-container" id="a-container">
-        <form class="form" id="a-form" method="POST" action="">
+        <!--        register-->
+        <form class="form" id="a-form" method="POST" action="/index.php?signup">
             <h2 class="form_title title">S'inscrire</h2>
-            <input class="form__input" type="text" placeholder="Pseudo">
-            <input class="form__input" type="email" placeholder="Email">
-            <input class="form__input" type="password" placeholder="Nouveau mot de passe">
-            <input class="form__input" type="password" placeholder="Confirmer nouveau mot de passe">
-            <button class="form__button button submit">S'inscrire</button>
+            <input class="form__input" type="text" placeholder="Pseudo" autofocus name="name" required maxlength="20" minlength="3">
+            <input class="form__input" type="email" placeholder="Email" name="mail" required maxlength="255">
+            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
+            <input class="form__input" type="password" placeholder="Confirmer mot de passe" required>
+            <button class="form__button button submit" type="submit" name="submit-signup" value="signup">S'inscrire</button>
         </form>
+
     </div>
     <div class="container b-container" id="b-container">
+
+        <!--        login-->
         <form class="form" id="b-form" method="POST" action="/index.php?login">
             <h2 class="form_title title">Se connecter</h2>
-            <input class="form__input" type="email" placeholder="Adresse e-mail" required>
-            <input class="form__input" type="password" placeholder="Mot de passe" required>
-<!--            <a class="form__link">Mot de passe oublié ?</a>-->
-            <button class="form__button button submit" type="submit" name="signin">SIGN IN</button>
+            <input class="form__input" type="text" placeholder="Email ou pseudo" autofocus name="ids" required maxlength="255">
+            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
+            <button class="form__button button submit" type="submit" name="submit-login" value="login">SIGN IN</button>
         </form>
+
     </div>
     <div class="switch" id="switch-cnt">
         <div class="switch__circle"></div>
@@ -34,12 +37,12 @@
         <div class="switch__container" id="switch-c1">
             <h2 class="switch__title title">Re.</h2>
             <p class="switch__description description"> Pour rester avec nous, veuillez vous connecter avec votre compte personnel</p>
-            <button class="switch__button button switch-btn">SIGN IN</button>
+            <button class="switch__button button switch-btn">Se connecter</button>
         </div>
         <div class="switch__container is-hidden" id="switch-c2">
             <h2 class="switch__title title">Holà !</h2>
             <p class="switch__description description">Entrez vos données personnelles et commencez votre voyage avec nous</p>
-            <button class="switch__button button switch-btn">SIGN UP</button>
+            <button class="switch__button button switch-btn">S'inscrire</button>
         </div>
     </div>
 </div>

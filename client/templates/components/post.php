@@ -8,7 +8,7 @@
     <div class="write-post">
         <div class="header-post">
             <div class="avatar-box">
-                <img alt="profile-picture" class="avatar" src="../Img/beemo.png">
+                <img alt="profile-picture" class="avatar" src="client/templates/img/beemo.png">
             </div>
             <div class="input">
                 <label>
@@ -18,7 +18,7 @@
         </div>
         <div class="footer-post">
             <div class="img-box">
-                <img alt="profile-picture" class="insert-img" src="../Img/img.png">
+                <img alt="profile-picture" class="insert-img" src="client/templates/img/img.png">
             </div>
             <div class="post-button-box">
                 <button class="post-button">Publier</button>
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="header-post">
                 <div class="avatar-box">
-                    <img alt="profile-picture" class="avatar" src="../Img/beemo.png">
+                    <img alt="profile-picture" class="avatar" src="client/templates/img/beemo.png">
                 </div>
             </div>
             <div class="content-post">

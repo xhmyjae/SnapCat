@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../../style/main.css"/>
 <link rel="stylesheet" type="text/css" href="../../style/right-panel.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/friends-panel.css"/>
+<link rel="stylesheet" type="text/css" href="../../style/friends_panel.css"/>
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script src="../../js/friends-panel.js"></script>
 
@@ -13,7 +13,7 @@
     <div class="Friend-list">
         <div class="friend" data-friend="1">
             <div class="friend_avatar">
-                <img src="../antaBinome.png" alt="avatar">
+                <img src="client/templates/img/antaBinome.png" alt="avatar">
             </div>
             <div class="Friend_name">
                 <p>Best binome</p>
@@ -21,7 +21,7 @@
         </div>
         <div class="friend" data-friend="1">
             <div class="friend_avatar">
-                <img src="../antaBinome.png" alt="avatar">
+                <img src="client/templates/img/antaBinome.png" alt="avatar">
             </div>
             <div class="Friend_name">
                 <p>Best binome</p>
