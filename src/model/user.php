@@ -43,4 +43,9 @@ class UserRepository {
         $statement = $this->databaseConnection->prepare('DELETE FROM users WHERE id = :id');
         $statement->execute(compact('id'));
     }
+
+    public function loginUser(string $ids, string $password) {
+
+    }
+
 }
