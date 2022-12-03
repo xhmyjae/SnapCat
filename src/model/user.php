@@ -28,12 +28,11 @@ class UserRepository
 
     public function createUser(string $name, string $mail, string $password): void {
         $avatar = "avatar image";
-        $creation_date = date('d-m-y h:i:s');
         // checks if user already exist
         $result = $this->query("SELECT * FROM users WHERE name = :name OR mail = :mail");
         if ($result->num_rows == 0) {
             // create user
-            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password, creation_date) VALUES (:name, :mail, :avatar, :password, :creation_date)');
+            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
             $statement->execute(compact('name', 'mail', 'password'));
 
             require_once('client/templates/homepage.php');

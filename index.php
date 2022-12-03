@@ -10,7 +10,7 @@ use App\Controllers\User\Create\CreateUser;
 
 $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
-$uri = $uri[1];
+$uri = $uri[0];
 
 try {
     switch ($uri) {
@@ -24,9 +24,7 @@ try {
             break;
         case 'signup':
             $signup = new CreateUser();
-            if (!isset($_POST['name'], $_POST['mail'], $_POST['password'])) throw new RuntimeException('Invalid input');
-
-            $signup->execute($_POST['name'], $_POST['mail'], $_POST['password']);
+            $signup->execute($_POST);
             break;
         default:
             throw new Exception('Page not found');
