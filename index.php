@@ -10,7 +10,7 @@ use App\Controllers\User\Create\CreateUser;
 
 $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
-$uri = $uri[0];
+$uri = $uri[1];
 
 try {
     switch ($uri) {
