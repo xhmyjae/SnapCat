@@ -1,4 +1,4 @@
-<?php $title = 'Snapagram';
+<?php $title = 'CatSnap';
 $styles = ['menu.css', 'main.css', 'post.css', "friends_panel.css", "right-panel.css", "profile.css"];
 ?>
 

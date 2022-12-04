@@ -124,7 +124,9 @@ body {
     line-height: 3;
     color: #ffffff;
 }
-
+.site-title {
+    line-height: 1.5;
+}
 .description {
     font-size: 14px;
     letter-spacing: 0.25px;

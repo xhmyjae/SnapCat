@@ -51,14 +51,20 @@ class UserRepository
         return false;
     }
 
-    public function loginUser(string $ids, string $password): void {
+    public function loginUser(string $ids, string $password): ?User {
         $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE (name = :ids OR mail = :ids) AND password = :password");
         $result->execute(compact('ids', 'password'));
         $count = $result->rowCount();
         if ($count == 0) {
             throw new \RuntimeException('Account doesnt exist');
         } else {
-            throw new \RuntimeException('logged in user');
+            return $result->fetchObject(User::class);
         }
+    }
+
+    public function getUserById(int $id): User|false {
+        $statement = $this->databaseConnection->prepare('SELECT * FROM users WHERE id = :id');
+        $statement->execute(compact('id'));
+        return $statement->fetchObject(User::class);
     }
 }

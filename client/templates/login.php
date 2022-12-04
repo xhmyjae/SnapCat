@@ -34,12 +34,14 @@ $styles = ['login.css'];
             <div class="switch__circle"></div>
             <div class="switch__circle switch__circle--t"></div>
             <div class="switch__container" id="switch-c1">
+                <h2 class="switch__title title site-title">CatSnap</h2>
                 <h2 class="switch__title title">Re.</h2>
                 <p class="switch__description description"> Pour rester avec nous, veuillez vous connecter avec votre
                     compte personnel</p>
                 <button class="switch__button button switch-btn">Se connecter</button>
             </div>
             <div class="switch__container is-hidden" id="switch-c2">
+                <h2 class="switch__title title site-title">CatSnap</h2>
                 <h2 class="switch__title title">Hola !</h2>
                 <p class="switch__description description">Entrez vos données personnelles et commencez votre voyage
                     avec nous</p>

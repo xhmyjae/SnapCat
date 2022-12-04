@@ -13,6 +13,12 @@ class LoginUser {
     {
         if (!isset($input['ids'], $input['password']))
             throw new RuntimeException('Invalid input');
-        (new UserRepository())->loginUser($input['ids'], $input['password']);
+
+        $user = (new UserRepository())->loginUser($input['ids'], $input['password']);
+        if ($user !== null) {
+            $_SESSION['user_id'] = $user->id;
+
+            require_once('client/templates/homepage.php');
+        }
     }
 }

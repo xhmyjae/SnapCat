@@ -5,18 +5,36 @@ require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
 require_once('src/controllers/login_user.php');
+require_once('src/controllers/get_connected_user.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
 use App\Controllers\User\Create\CreateUser;
+use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
 
 $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
 $uri = $uri[1];
 
+session_start();
+
 try {
+    global $connected_user;
+    $connected_user = (new GetConnectedUser())->execute($_SESSION);
+
+    if ($connected_user != null) {
+        $_SESSION['end'] = time() + 3600;
+        if (time() > $_SESSION['end']) {
+            session_destroy();
+        }
+    }
+
+    if ($connected_user == null) {
+        $uri = '';
+    }
+
     switch ($uri) {
         case 'create_post':
             $createPost = new Create_Post();
@@ -31,12 +49,16 @@ try {
             $login->execute();
             break;
         case 'signup':
-            $signup = new CreateUser();
-            $signup->execute($_POST);
+            if ($connected_user == null) {
+                $signup = new CreateUser();
+                $signup->execute($_POST);
+            }
             break;
         case 'login':
-            $login = new LoginUser();
-            $login->execute($_POST);
+            if ($connected_user == null) {
+                $login = new LoginUser();
+                $login->execute($_POST);
+            }
             break;
         default:
             throw new Exception('Page not found');
