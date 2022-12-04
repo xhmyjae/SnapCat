@@ -22,7 +22,7 @@ $styles = ['login.css'];
         <div class="container b-container" id="b-container">
 
             <!--        login-->
-            <form class="form" id="b-form" method="POST" action="/index.php?login">
+            <form class="form" id="b-form" method="POST" action="/login">
                 <h2 class="form_title title">Se connecter</h2>
                 <input class="form__input" type="text" placeholder="Email ou pseudo" autofocus name="ids" required maxlength="255">
                 <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">

@@ -15,7 +15,6 @@ class CreateUser {
         $result = (new UserRepository())->checkUserAvailability($input['name'], $input['mail']);
         if ($result) {
             (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
-            require_once('client/templates/homepage.php');
         } else {
             throw new RuntimeException('User already exists');
         }
