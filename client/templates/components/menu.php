@@ -2,7 +2,7 @@
 
 <div class="menu">
     <div class="site-title-box">
-        <p id="site-title">SNAPAGRAM</p>
+        <p id="site-title">SNAPCAT</p>
     </div>
     <div class="categories">
         <ul>
