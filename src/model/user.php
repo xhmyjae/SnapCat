@@ -27,12 +27,18 @@ class UserRepository
     }
 
     public function createUser(string $name, string $mail, string $password): void {
-        $avatar = "avatar image";
+        // check if username is valid
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $name)) {
+            require_once('client/templates/login.php');
+        } else {
+            $avatar = "avatar image";
 
-        $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
-        $statement->execute(compact('name', 'mail', 'password', 'avatar'));
+            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
+            $statement->execute(compact('name', 'mail', 'password', 'avatar'));
 
-        require_once('client/templates/homepage.php');
+            require_once('client/templates/homepage.php');
+        }
+
     }
 
     public function checkUserAvailability(string $name, string $mail): bool {
