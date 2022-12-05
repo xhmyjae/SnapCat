@@ -75,6 +75,9 @@ try {
             $logout = new LogoutUser();
             $logout->execute($_SESSION);
             break;
+        case 'settings':
+            require_once('client/templates/settings.php');
+            break;
         default:
             throw new Exception('Page not found');
     }
