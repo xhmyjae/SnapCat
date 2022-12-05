@@ -27,7 +27,7 @@ try {
     $connected_user = (new GetConnectedUser())->execute($_SESSION);
 
     if ($connected_user == null && $uri !== 'login') {
-        redirect('/');
+        $uri = '';
     }
 
     if ($connected_user != null) {
