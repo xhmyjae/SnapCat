@@ -21,6 +21,22 @@
     align-items: center;
     padding-top: 10px;
 }
+.feelings{
+    display: flex;
+    align-items: center;
+    margin-left: -12vw;
+}
+.feelings select{
+    margin-left:0.5vw;
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A6B70;
+    color: white;
+    font-size: 0.8em;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
 .footer-post{
     display: flex;
     justify-content: space-between;
