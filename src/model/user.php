@@ -30,13 +30,15 @@ class UserRepository
         // check if username is valid
         if (!preg_match('/^[a-zA-Z0-9_]+$/', $name)) {
             require_once('client/templates/login.php');
-        } else {
-            $avatar = "avatar image";
+        } else {global $avatar;
+            $avatar = "client/templates/img/img.png";
 
             $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
             $statement->execute(compact('name', 'mail', 'password', 'avatar'));
 
             require_once('client/templates/homepage.php');
+            require_once('client/templates/accueil.php');
+            require_once ('client/templates/base_profil.php');
         }
 
     }
