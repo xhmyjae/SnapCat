@@ -30,6 +30,13 @@ try {
         redirect('/');
     }
 
+    if ($connected_user != null) {
+        $_SESSION['end'] = time() + 3600;
+        if (time() > $_SESSION['end']) {
+            session_destroy();
+        }
+    }
+
     switch ($uri) {
         case 'create_post':
             $createPost = new Create_Post();
