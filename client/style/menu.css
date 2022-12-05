@@ -2,21 +2,32 @@
 
 .menu {
     font-family: 'instagram', sans-serif;
-    width: 20vw;
+    width: 26vw;
     height: 100vh;
     position: fixed;
     border-right: solid 1px #6A6B70;
-
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: flex-end;
+}
+.site-title-box{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+}
+#site-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #F5F5F5;
 }
 .search-box{
     width: 85%;
     position: relative;
     display: flex;
-
 }
 .search-input{
     width: 100%;
@@ -40,18 +51,25 @@
     color: #6A6B70;
 }
 .categories {
+    margin-top: -45%;
     width: 78%;
     font-size: 20px;
 }
 .categories ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none;;
 }
 li.category {
     padding: 0;
-    margin: 75px 0;
+    margin: 25px 0;
     cursor: pointer;
     transition: color 0.2s ease;
+}
+li.category logout {
+    transition: color 0.2s ease;
+
+}
+li.category logout:hover {
+    color: #D62976;
 }
 li.category:hover {
     color: #D62976;
