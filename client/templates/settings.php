@@ -3,7 +3,7 @@
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 
 <div class="settings">
-    <span class="settings-title">Paramètres</span>
+    <span class="page-title">Paramètres</span>
 
     <form action="/settings" enctype="multipart/form-data" id="settings-form" method="POST">
 

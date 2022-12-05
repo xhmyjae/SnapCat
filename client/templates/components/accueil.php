@@ -1,5 +1,5 @@
 <div class="post-panel">
-    <F1>Accueil</F1>
+    <p class="page-title">Accueil</p>
     <div class="write-post">
         <form action="/create_post" method="POST">
         <div class="header-post">

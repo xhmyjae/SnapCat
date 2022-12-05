@@ -1,6 +1,6 @@
 <div class="post-panel">
     <div class="post-header">
-        <p> Accueil </p>
+        <p class="page-title">Accueil</p>
     </div>
     <div class="write-post">
         <div class="header-post">
