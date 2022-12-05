@@ -26,11 +26,17 @@ try {
     global $connected_user;
     $connected_user = (new GetConnectedUser())->execute($_SESSION);
 
-    if ($connected_user == null && $uri !== 'login') {
-        $uri = '';
+    var_dump($_SESSION);
+
+    var_dump($connected_user);
+
+    $method = $_SERVER['REQUEST_METHOD'] ?? '';
+
+    if ($connected_user === null && $uri !== '' && $method === 'GET') {
+        redirect('/');
     }
 
-    if ($connected_user != null) {
+    if ($connected_user !== null) {
         $_SESSION['end'] = time() + 3600;
         if (time() > $_SESSION['end']) {
             session_destroy();
