@@ -69,4 +69,21 @@ class UserRepository
         $statement->execute(compact('id'));
         return $statement->fetchObject(User::class);
     }
+
+    public function updateName(int $id, string $name): void {
+        // need to check if name already taken
+        $statement = $this->databaseConnection->prepare('UPDATE users SET name := name WHERE id := id');
+        $statement->execute(compact('id', 'name'));
+    }
+
+    public function updateMail(int $id, string $mail): void {
+        // need to check id mail already taken
+        $statement = $this->databaseConnection->prepare('UPDATE users SET mail := mail WHERE id := id');
+        $statement->execute(compact('id', 'mail'));
+    }
+
+    public function updatePassword(int $id, string $password): void {
+        $statement = $this->databaseConnection->prepare('UPDATE users SET password := password WHERE id := id');
+        $statement->execute(compact('id', 'password'));
+    }
 }
