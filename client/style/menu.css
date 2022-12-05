@@ -64,13 +64,11 @@ li.category {
     margin: 25px 0;
     cursor: pointer;
     transition: color 0.2s ease;
+    width: 80%;
 }
 li.category logout {
     transition: color 0.2s ease;
 
-}
-li.category logout:hover {
-    color: #D62976;
 }
 li.category:hover {
     color: #D62976;
@@ -80,4 +78,8 @@ li.category:hover {
 }
 .logout {
     color: #D62976;
+}
+.redirect-menu {
+    text-decoration: none;
+    color: #F5F5F5;
 }

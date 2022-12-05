@@ -70,20 +70,35 @@ class UserRepository
         return $statement->fetchObject(User::class);
     }
 
-    public function updateName(int $id, string $name): void {
-        // need to check if name already taken
-        $statement = $this->databaseConnection->prepare('UPDATE users SET name := name WHERE id := id');
-        $statement->execute(compact('id', 'name'));
+    public function updateName(int $id, string $name, string $confirm_password): void {
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE name = :name");
+        $result->execute(compact('name'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            $statement = $this->databaseConnection->prepare('UPDATE users SET name := name WHERE id := id AND password := confirm_password');
+            $statement->execute(compact('id', 'name', 'confirm_password'));
+        }
     }
 
-    public function updateMail(int $id, string $mail): void {
-        // need to check id mail already taken
-        $statement = $this->databaseConnection->prepare('UPDATE users SET mail := mail WHERE id := id');
-        $statement->execute(compact('id', 'mail'));
+    public function updateMail(int $id, string $mail, string $confirm_password): void {
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE mail = :mail");
+        $result->execute(compact('mail'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            $statement = $this->databaseConnection->prepare('UPDATE users SET mail := mail WHERE id := id AND password := confirm_password');
+            $statement->execute(compact('id', 'mail', 'confirm_password'));
+        }
     }
 
-    public function updatePassword(int $id, string $password): void {
-        $statement = $this->databaseConnection->prepare('UPDATE users SET password := password WHERE id := id');
-        $statement->execute(compact('id', 'password'));
+    public function updatePassword(int $id, string $password, string $confirm_password): void {
+        $statement = $this->databaseConnection->prepare('UPDATE users SET password := password WHERE id := id AND password := confirm_password');
+        $statement->execute(compact('id', 'password', 'confirm_password'));
     }
+
+    public function updateBio(int $id, string $description, string $confirm_password): void {
+        $statement = $this->databaseConnection->prepare('UPDATE users SET description := description WHERE id := id AND password := confirm_password');
+        $statement->execute(compact('id', 'description', 'confirm_password'));
+    }
+
+    // updateAvatar
 }
