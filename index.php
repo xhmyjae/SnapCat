@@ -5,6 +5,7 @@ require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
 require_once('src/controllers/login_user.php');
+require_once('src/controllers/logout_user.php');
 require_once('src/controllers/get_connected_user.php');
 require_once('src/lib/utils.php');
 
@@ -14,6 +15,7 @@ use App\Controllers\post\Create\Create_Post;
 use App\Controllers\User\Create\CreateUser;
 use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
+use App\Controllers\User\Logout\LogoutUser;
 use function App\Lib\Utils\redirect;
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -68,6 +70,10 @@ try {
             }
             $login = new LoginUser();
             $login->execute($_POST);
+            break;
+        case 'logout':
+            $logout = new LogoutUser();
+            $logout->execute($_SESSION);
             break;
         default:
             throw new Exception('Page not found');
