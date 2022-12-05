@@ -26,10 +26,6 @@ try {
     global $connected_user;
     $connected_user = (new GetConnectedUser())->execute($_SESSION);
 
-    var_dump($_SESSION);
-
-    var_dump($connected_user);
-
     $method = $_SERVER['REQUEST_METHOD'] ?? '';
 
     if ($connected_user === null && $uri !== '' && $method === 'GET') {

@@ -49,7 +49,7 @@
 }
 li.category {
     padding: 0;
-    margin: 75px 0;
+    margin: 25px 0;
     cursor: pointer;
     transition: color 0.2s ease;
 }
@@ -58,4 +58,7 @@ li.category:hover {
 }
 .list-icon {
     padding-right: 20px;
+}
+.logout {
+    color: #D62976;
 }

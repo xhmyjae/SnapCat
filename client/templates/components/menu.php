@@ -10,6 +10,7 @@
             <li class="category"><span class="list-icon"><i class="fa-regular fa-bell"></i></span>Notifications</li>
             <li class="category"><span class="list-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>Découvrir</li>
             <li class="category"><span class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</li>
+            <li class="category logout"><span class="list-icon"><i class="fa-solid fa-door-open"></i></span>Se déconnecter</li>
         </ul>
     </div>
     <div class="search-box">
