@@ -5,6 +5,7 @@ require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
 require_once('src/controllers/login_user.php');
+require_once('src/controllers/profil.php');
 require_once('src/controllers/logout_user.php');
 require_once('src/controllers/get_connected_user.php');
 require_once('src/lib/utils.php');
@@ -15,6 +16,7 @@ use App\Controllers\post\Create\Create_Post;
 use App\Controllers\User\Create\CreateUser;
 use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
+use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Logout\LogoutUser;
 use function App\Lib\Utils\redirect;
 
@@ -42,6 +44,10 @@ try {
     }
 
     switch ($uri) {
+        case 'profile':
+            $ProfileUser = new ProfilUser();
+            $ProfileUser->execute();
+            break;
         case 'create_post':
             $createPost = new Create_Post();
             $createPost->execute($_POST);

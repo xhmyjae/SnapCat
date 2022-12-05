@@ -2,14 +2,17 @@
 
 .post-panel {
     font-family: 'Playfair Display', serif;
-    left : 20vw;
-    width : 52vw;
+    left : 26vw;
+    width : 40vw;
     height : 100vh;
     position : fixed;
     border-left: solid 1px #6A6B70;
-    border-right: solid 1px #6A6B70;
+}
+.post-header{
+    padding-top: 5px;
 }
 .write-post{
+    width: 99%;
     height: 20vh;
     border-bottom: solid 1px #6A6B70;
 }
@@ -17,6 +20,22 @@
     display: flex;
     align-items: center;
     padding-top: 10px;
+}
+.feelings{
+    display: flex;
+    align-items: center;
+    margin-left: -12vw;
+}
+.feelings select{
+    margin-left:0.5vw;
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+    background-color: #6A6B70;
+    color: white;
+    font-size: 0.8em;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 .footer-post{
     display: flex;
@@ -48,12 +67,12 @@ img.insert-img{
     cursor: pointer;
 }
 .input-post{
-    width: 45vw;
+    width: 35vw;
     border: none;
     outline: none;
     font-size: 15px;
     color: #FFFFFF;
-    background: #1C1C21 ;
+    background: #000000 ;
 }
 .post-button{
     text-align: center;
@@ -108,6 +127,5 @@ img.insert-img{
 f1 {
     font-size: 20px;
     color: #ffffff;
-    display: flex;
-    align-items: center;
+    margin-left: 10px
 }
