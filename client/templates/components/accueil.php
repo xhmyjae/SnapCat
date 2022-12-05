@@ -13,14 +13,17 @@
                     <input type="text" class="input-post" name="message" placeholder="Ecris quelque chose...">
                 </label>
             </div>
-            <label for="pet-select">Choose a pet:</label>
+            <div class="feelings">
+                <label for="pet-select">Feeling : </label>
 
-            <select name="emotions" id="emotions-select">
-                <option value="1">heureux</option>
-                <option value="2">déçu</option>
-                <option value="3">douteux</option>
-                <option value="4">triste</option>
-            </select>
+                <select name="emotions" id="emotions-select">
+                    <option value="1">Heureux 😄</option>
+                    <option value="2">Déçu 😔</option>
+                    <option value="3">Douteux 🤔</option>
+                    <option value="4">Triste 😭</option>
+                </select>
+            </div>
+
         </div>
         <div class="footer-post">
             <div class="img-box">
