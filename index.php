@@ -9,6 +9,7 @@ require_once('src/controllers/profil.php');
 require_once('src/controllers/logout_user.php');
 require_once('src/controllers/get_connected_user.php');
 require_once('src/lib/utils.php');
+require_once('src/controllers/update_user.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
@@ -18,6 +19,7 @@ use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
 use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Logout\LogoutUser;
+use App\Controllers\User\Update\UpdateUser;
 use function App\Lib\Utils\redirect;
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -82,6 +84,8 @@ try {
             $logout->execute($_SESSION);
             break;
         case 'settings':
+            $update = new UpdateUser();
+            $update->execute($_POST, $_SESSION);
             break;
         default:
             throw new Exception('Page not found');

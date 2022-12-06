@@ -10,7 +10,7 @@
 
         <div class="name-settings settings-category">
             <span class="settings-type">Nom d'utilisateur<i class="fa-solid fa-arrow-right"></i></span>
-            <input class="form-control" id="username" name="username" type="text"
+            <input class="form-control" id="name" name="name" type="text"
                    placeholder="Mettre nom du connected user" autocomplete="off" maxlength="20">
 <!--            if focus => value = nom-->
         </div>
@@ -60,7 +60,7 @@
         <div class="confirm-password-settings settings-category">
             <input class="form-control" id="confirm-password" name="confirm-password" type="password"
                    placeholder="Confirmer mot de passe" autocomplete="off" required>
-            <button class="custom-btn settings-button btn-8" type="submit" name="submit-settings" value="login">VALIDER</button>
+            <button class="custom-btn settings-button btn-8" type="submit" name="submit-settings" value="settings">VALIDER</button>
         </div>
 
     </form>
