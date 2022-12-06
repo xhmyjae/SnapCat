@@ -1,6 +1,8 @@
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script defer src="client/scripts/logout.js"></script>
 <script defer src="client/scripts/redirect.js"></script>
+<script defer src="client/scripts/friends-panel.js"></script>
+
 
 <div class="menu">
     <div class="site-title-box">

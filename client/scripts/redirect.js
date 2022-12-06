@@ -6,3 +6,4 @@ window.addEventListener('load', () => {
         window.location.href = '/settings';
     });
 });
+

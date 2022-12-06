@@ -56,4 +56,5 @@
     justify-content: flex-start;
     gap: 100%;
     margin-top: 15px;
+    cursor: pointer;
 }

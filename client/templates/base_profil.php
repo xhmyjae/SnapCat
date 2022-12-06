@@ -9,6 +9,7 @@ $styles = ['profil.css', 'menu.css', 'main.css', 'post.css', "friends_panel.css"
 <link rel="stylesheet" type="text/css" href="../style/menu.css"/>
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 
+
 <div class="profil-panel">
     <div class="top-profil">
         <?php global $banner; ?>
