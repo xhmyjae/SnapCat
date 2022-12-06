@@ -17,7 +17,7 @@
 .banner{
     height: 20vh;
     max-height: 20vh;
-    border-bottom: solid 1px #6A6B70;
+    /*border-bottom: solid 1px #6A6B70;*/
 }
 .banner img{
     width: 100%;
@@ -27,7 +27,6 @@
 .profil-picture{
     width: 70vw;
     margin: -7.5vh 0 0 2vw;
-    border: solid 5px #1C1C21;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -36,7 +35,6 @@
 }
 .profil-picture .bio{
     width: 45vw;
-    height: 10vh;
     max-width: 45vw;
     margin: 0 0 0 2vw;
     font-size: 15px;
