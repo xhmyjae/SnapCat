@@ -28,7 +28,7 @@
                     <img src="client/templates/img/antaBinome.png" alt="avatar">
                 </div>
                 <div class="Friend_name">
-                    <p>Best binome</p>
+                    <p>Best binome 2</p>
                 </div>
                 <div class="Accept_button">
                     <i class="fas fa-check"></i>
