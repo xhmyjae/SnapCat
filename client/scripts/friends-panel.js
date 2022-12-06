@@ -1,14 +1,11 @@
 let friendsButton = document.querySelector("#friends");
 let requestButton = document.querySelector("#request");
 let waitingButton = document.querySelector("#waiting");
+let acceptButton = document.querySelector(".fa-check");
+let deniedButton = document.querySelector(".fa-xmark");
 
 
-window.addEventListener("load", () => {
-    console.log("DOM fully loaded and parsed");
-});
 friendsButton.addEventListener("click", function (e) {
-    console.log("friends");
-    //display none waiting-container & request-container, display block friends-container
     let switchFriends1 = document.querySelector(".friends-container");
     let switchFriends2 = document.querySelector(".request-container");
     let switchFriends3 = document.querySelector(".waiting-container");
@@ -18,8 +15,6 @@ friendsButton.addEventListener("click", function (e) {
 
 });
 requestButton.addEventListener("click", function (e) {
-        console.log("request");
-        //display none friends-container & waiting-container, display block request-container
         let switchFriends1 = document.querySelector(".friends-container");
         let switchFriends2 = document.querySelector(".request-container");
         let switchFriends3 = document.querySelector(".waiting-container");
@@ -29,8 +24,6 @@ requestButton.addEventListener("click", function (e) {
     }
 );
 waitingButton.addEventListener("click", function (e) {
-        console.log("waiting");
-        //display none friends-container & request-container, display block waiting-container
         let switchFriends1 = document.querySelector(".friends-container");
         let switchFriends2 = document.querySelector(".request-container");
         let switchFriends3 = document.querySelector(".waiting-container");
@@ -40,4 +33,17 @@ waitingButton.addEventListener("click", function (e) {
     }
 );
 
+acceptButton.addEventListener("click", function (e) {
+    let accept = document.querySelector(".request-container .friend");
+    let friendsContainer = document.querySelector(".friends-container");
+    friendsContainer.appendChild(accept);
+    acceptButton.style.display = "none";
+    deniedButton.style.display = "none";
+}
+);
 
+deniedButton.addEventListener("click", function (e) {
+    let denied = document.querySelector(".request-container .friend");
+    denied.style.display = "none";
+}
+);

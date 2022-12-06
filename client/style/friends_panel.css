@@ -58,3 +58,9 @@
     margin-top: 15px;
     cursor: pointer;
 }
+.request-container{
+    display: none;
+}
+.waiting-container{
+    display: none;
+}

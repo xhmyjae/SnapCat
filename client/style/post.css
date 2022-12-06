@@ -24,7 +24,7 @@
 .feelings{
     display: flex;
     align-items: center;
-    margin-left: 2vw;
+    margin-left: 5vw;
 }
 .feelings select{
     margin-left:0.5vw;

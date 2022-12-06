@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="../../style/right-panel.css"/>
 <link rel="stylesheet" type="text/css" href="../../style/friends_panel.css"/>
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
-<script defer src="client/scripts/friends_panel.js"></script>
+<script defer src="client/scripts/friends-panel.js"></script>
 
 
 <div class="right-panel">
