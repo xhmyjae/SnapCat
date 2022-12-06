@@ -1,4 +1,7 @@
-.settings {
+body {
+    overflow-x: hidden;
+}
+.settings-page {
     left: 26vw;
     width: 80vw;
     border-left: solid 1px #6A6B70;

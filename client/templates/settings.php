@@ -1,9 +1,11 @@
-<link rel="stylesheet" type="text/css" href="../style/settings.css"/>
-<link rel="stylesheet" type="text/css" href="../style/main.css"/>
-<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
+<?php $title = 'Paramètres';
+$styles = ['settings.css', 'menu.css', 'main.css'];
 
+require_once('client/templates/components/menu.php'); ?>
 
-<div class="settings">
+<?php ob_start(); ?>
+
+<div class="settings-page">
     <span class="page-title">Paramètres</span>
 
     <form action="/settings" enctype="multipart/form-data" id="settings-form" method="POST">
@@ -30,23 +32,23 @@
         <div class="avatar-settings settings-category">
             <span class="settings-type">Avatar<i class="fa-solid fa-arrow-right"></i></span>
             <div class="avatar-box">
-                <img class="avatar-choices" src="Img/catspaghetti.png" alt="avatar">
+                <img class="avatar-choices" src="client/templates/Img/catspaghetti.png" alt="avatar">
                 <input class="form-control form-control-avatar" id="avatar1" name="avatar1" type="radio">
             </div>
             <div class="avatar-box">
-                <img class="avatar-choices" src="Img/catdepressed.png" alt="avatar">
+                <img class="avatar-choices" src="client/templates/Img/catdepressed.png" alt="avatar">
                 <input class="form-control form-control-avatar" id="avatar1" name="avatar1" type="radio">
             </div>
             <div class="avatar-box">
-                <img class="avatar-choices" src="Img/cathaha.png" alt="avatar">
+                <img class="avatar-choices" src="client/templates/Img/cathaha.png" alt="avatar">
                 <input class="form-control form-control-avatar" id="avatar1" name="avatar1" type="radio">
             </div>
             <div class="avatar-box">
-                <img class="avatar-choices" src="Img/cathefuck.png" alt="avatar">
+                <img class="avatar-choices" src="client/templates/Img/cathefuck.png" alt="avatar">
                 <input class="form-control form-control-avatar" id="avatar1" name="avatar1" type="radio">
             </div>
             <div class="avatar-box">
-                <img class="avatar-choices" src="Img/catstare.png" alt="avatar">
+                <img class="avatar-choices" src="client/templates/Img/catstare.png" alt="avatar">
                 <input class="form-control form-control-avatar" id="avatar1" name="avatar1" type="radio">
             </div>
         </div>
@@ -66,29 +68,6 @@
     </form>
 </div>
 
+<?php $content = ob_get_clean(); ?>
 
-
-<!--        </div>-->
-<!--        <div class="picture-setting">-->
-<!--            <img src="../img/Ezio.jpg" alt="picture profil">-->
-<!--            <button class="custom-btn setting-button">Changer Photo</button>-->
-<!--        </div>-->
-<!--        <div class="bio-setting">-->
-<!--            <p>sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf sfddsf </p>-->
-<!--            <button class="custom-btn setting-button">Changer Bio</button>-->
-<!--        </div>-->
-<!--        <div class="password-setting">-->
-<!--            <form>-->
-<!--                <div class="group">-->
-<!--                    <input type="text" required>-->
-<!--                    <span class="highlight"></span>-->
-<!--                    <span class="bar"></span>-->
-<!--                    <label>Mot de passe</label>-->
-<!--                </div>-->
-<!--            </form>-->
-    <!--        <input type="password" name="password" placeholder="Mot de passe">-->
-<!--            <button class="custom-btn setting-button"">Modifier Mot de passe</button>-->
-<!--            <button class="custom-btn setting-button"">Confirmer</button>-->
-<!--        </div>-->
-
-<?php
+<?php require_once 'base.php'; ?>

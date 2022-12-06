@@ -10,6 +10,7 @@ require_once('src/controllers/logout_user.php');
 require_once('src/controllers/get_connected_user.php');
 require_once('src/lib/utils.php');
 require_once('src/controllers/update_user.php');
+require_once('src/controllers/go_settings.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
@@ -20,6 +21,7 @@ use App\Controllers\User\Login\LoginUser;
 use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Logout\LogoutUser;
 use App\Controllers\User\Update\UpdateUser;
+use App\Controllers\Settings\Settings;
 use function App\Lib\Utils\redirect;
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -82,6 +84,10 @@ try {
         case 'logout':
             $logout = new LogoutUser();
             $logout->execute($_SESSION);
+            break;
+        case 'settings-page':
+            $settings_page = new Settings();
+            $settings_page->execute();
             break;
         case 'settings':
             $update = new UpdateUser();

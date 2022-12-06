@@ -12,6 +12,7 @@ use function App\Lib\Utils\redirect;
 class UpdateUser {
     public function execute(array $input, array $session): void
     {
+
         if (!isset($session['user_id'])) {
             throw new RuntimeException('User is not connected');
         }

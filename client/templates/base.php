@@ -8,6 +8,7 @@
     <?php if (isset($styles)) { ?>
         <?php foreach ($styles as $style) { ?>
             <link rel="stylesheet" type="text/css" href="../client/style/<?= $style ?>"/>
+            <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
         <?php } ?>
     <?php } ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
