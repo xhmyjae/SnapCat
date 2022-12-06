@@ -24,14 +24,14 @@
 .feelings{
     display: flex;
     align-items: center;
-    margin-left: -12vw;
+    margin-left: 2vw;
 }
 .feelings select{
     margin-left:0.5vw;
     height: 4vh;
     border: none;
     border-radius: 5px;
-    background-color: #6A6B70;
+    background-color:rgba(35, 34, 34, 0.26);
     color: white;
     font-size: 0.8em;
     font-family: 'Playfair Display', serif;
@@ -67,12 +67,15 @@ img.insert-img{
     cursor: pointer;
 }
 .input-post{
-    width: 35vw;
+    width: 25vw;
+    height: 10vh;
     border: none;
     outline: none;
     font-size: 15px;
-    color: #FFFFFF;
-    background: #000000 ;
+    color: #ffffff;
+    background: rgba(35, 34, 34, 0.26);
+    resize: none;
+    overflow-y: hidden;
 }
 .post-button{
     text-align: center;
@@ -128,4 +131,7 @@ f1 {
     font-size: 20px;
     color: #ffffff;
     margin-left: 10px
+}
+.img-box img{
+    background-color: rgb(128, 125, 125);
 }

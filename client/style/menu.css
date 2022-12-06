@@ -68,7 +68,9 @@ li.category {
 }
 li.category logout {
     transition: color 0.2s ease;
-
+}
+li.category logout:hover {
+    color: #D62976;
 }
 li.category:hover {
     color: #D62976;
@@ -76,10 +78,10 @@ li.category:hover {
 .list-icon {
     padding-right: 20px;
 }
-.logout {
-    color: #D62976;
-}
 .redirect-menu {
     text-decoration: none;
     color: #F5F5F5;
+}
+.redirect-menu:hover {
+    color: #D62976;
 }

@@ -10,7 +10,7 @@
             </div>
             <div class="input">
                 <label>
-                    <input type="text" class="input-post" name="message" placeholder="Ecris quelque chose...">
+                    <textarea class="input-post" name="message" placeholder="Ecris quelque chose..." maxlength="400"></textarea>
                 </label>
             </div>
             <div class="feelings">
