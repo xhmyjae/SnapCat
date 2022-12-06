@@ -12,16 +12,18 @@ $styles = ['profil.css', 'menu.css', 'main.css', 'post.css', "friends_panel.css"
 <div class="profil-panel">
     <div class="top-profil">
         <?php global $banner; ?>
-        <?php $banner = "client/templates/img/GodOfWar3_Hero.png"; ?>
+        <?php $banner = "client/templates/img/GodOfWar3_Hero.jpg"; ?>
         <div class="banner">
             <img src="<?= $banner ?>" alt="banner profil">
         </div>
         <?php global $avatar; ?>
-        <?php $pp = "client/templates/img/catspahetti.png"; ?>
+        <?php $avatar = "client/templates/img/catspaghetti.png"; ?>
         <div class="profil-picture">
-            <img src="img/Ezio.jpg" alt="picture profil">
-            <p>Ezio Auditore</p>
-            <p class="bio"></p>
+            <img src="<?= $avatar ?>" alt="picture profil">
+            <?php global $pseudo; ?>
+            <?php $pseudo = "Bebou"; ?>
+            <p><?= $pseudo ?></p>
+            <p class="bio">fgfhgfhgfhgfghfhgfhfhgfhgfhgh</p>
         </div>
         <div class="friends">
             <p>Amis</p>

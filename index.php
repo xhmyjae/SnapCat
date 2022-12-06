@@ -81,6 +81,8 @@ try {
             $logout = new LogoutUser();
             $logout->execute($_SESSION);
             break;
+        case 'settings':
+            break;
         default:
             throw new Exception('Page not found');
     }

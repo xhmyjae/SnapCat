@@ -1,0 +1,318 @@
+.settings {
+    left: 26vw;
+    width: 80vw;
+    border-left: solid 1px #6A6B70;
+    right: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.settings-category {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    display: flex;
+}
+.settings-type {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.avatar-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+img.avatar-choices {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+i.fa-solid.fa-arrow-right {
+    color: #838383;
+}
+.form-control:not(.form-control-avatar) {
+    background-color: transparent;
+    color: #FFF;
+    padding: 12px 16px;
+    width: 400px;
+    border: solid thin #838383;
+    border-radius: 5px;
+    outline: none;
+}
+.form-control:focus {
+    border-color: #FEDA75;
+}
+span.settings-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 20px 20px 30px 20px;
+}
+.confirm-password-settings.settings-category {
+    margin: 50px 0 0 30px;
+}
+input#confirm-password {
+    margin-right: 20px;
+    width: 210px;
+}
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #1a1a1a;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 700;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+.btn-8 {
+    background-color: #f0ecfc;
+    background-image: linear-gradient(315deg, #f0ecfc 0%, #b16288 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-8 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: #b16288;
+    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+    transition: all 0.3s ease;
+}
+.btn-8:before{
+    height: 0%;
+    width: 2px;
+}
+.btn-8:after {
+    width: 0%;
+    height: 2px;
+}
+.btn-8:hover:before {
+    height: 100%;
+}
+.btn-8:hover:after {
+    width: 100%;
+}
+.btn-8:hover{
+    background-color: #f0ecfc;
+    background-image: linear-gradient(315deg, #b16288 0%, #f0ecfc 74%);
+}
+.btn-8 span:hover{
+    color: #b16288;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #b16288;
+    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+    transition: all 0.3s ease;
+}
+.btn-8 span:before {
+    width: 2px;
+    height: 0%;
+}
+.btn-8 span:after {
+    height: 2px;
+    width: 0%;
+}
+.btn-8 span:hover:before {
+    height: 100%;
+}
+.btn-8 span:hover:after {
+    width: 100%;
+}
+/*.picture-setting img{*/
+/*    width: 150px;*/
+/*    height: 150px;*/
+/*    border-radius: 50%;*/
+/*    border: solid 5px #1C1C21;*/
+/*}*/
+/*.picture-setting{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+/*.bio-setting{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+/*.password-setting{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+/*button {*/
+/*    margin: 20px;*/
+/*    outline: none;*/
+/*}*/
+/*.custom-btn {*/
+/*    width: 200px;*/
+/*    height: 40px;*/
+/*    padding: 10px 25px;*/
+/*    border: 2px solid #000;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    font-weight: 500;*/
+/*    background: transparent;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease;*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+
+/* 13 */
+/*.settings-button {*/
+/*    background: #000;*/
+/*    color: #fff;*/
+/*    z-index: 1;*/
+/*}*/
+/*.settings-button:after {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    z-index: -1;*/
+/*    background: #e0e5ec;*/
+/*    transition: all 0.3s ease;*/
+/*}*/
+/*.settings-button:hover {*/
+/*    color: #000;*/
+/*}*/
+/*.settings-button:hover:after {*/
+/*    top: 0;*/
+/*    height: 100%;*/
+/*}*/
+/*.setting-button:active {*/
+/*    top: 2px;*/
+/*}*/
+/*.bio-setting p{*/
+/*    display: flex;*/
+/*    font-size: 20px;*/
+/*    width: 50vw;*/
+/*    height: 10vh;*/
+/*    border: solid 1px #6A6B70;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/* form starting stylings ------------------------------- */
+/*.group 			  {*/
+/*    position:relative;*/
+/*    margin-bottom:-13px;*/
+/*}*/
+/*input 				{*/
+/*    font-size:18px;*/
+/*    padding:10px 10px 10px 5px;*/
+/*    display:block;*/
+/*    width:300px;*/
+/*    border:none;*/
+/*    border-bottom:1px solid #757575;*/
+/*}*/
+/*input:focus 		{ outline:none; }*/
+
+/* LABEL ======================================= */
+/*label 				 {*/
+/*    color:#999;*/
+/*    font-size:18px;*/
+/*    font-weight:normal;*/
+/*    position:absolute;*/
+/*    pointer-events:none;*/
+/*    left:5px;*/
+/*    top:10px;*/
+/*    transition:0.2s ease all;*/
+/*    -moz-transition:0.2s ease all;*/
+/*    -webkit-transition:0.2s ease all;*/
+/*}*/
+
+/*!* active state *!*/
+/*input:focus ~ label, input:valid ~ label 		{*/
+/*    top:-20px;*/
+/*    font-size:14px;*/
+/*    color:#5264AE;*/
+/*}*/
+
+/* BOTTOM BARS ================================= */
+/*.bar 	{ position:relative; display:block; width:300px; }*/
+/*.bar:before, .bar:after 	{*/
+/*    content:'';*/
+/*    height:2px;*/
+/*    width:0;*/
+/*    bottom:1px;*/
+/*    position:absolute;*/
+/*    background:#5264AE;*/
+/*    transition:0.2s ease all;*/
+/*    -moz-transition:0.2s ease all;*/
+/*    -webkit-transition:0.2s ease all;*/
+/*}*/
+/*.bar:before {*/
+/*    left:50%;*/
+/*}*/
+/*.bar:after {*/
+/*    right:50%;*/
+/*}*/
+
+/*!* active state *!*/
+/*input:focus ~ .bar:before, input:focus ~ .bar:after {*/
+/*    width:50%;*/
+/*}*/
+
+/*!* HIGHLIGHTER ================================== *!*/
+/*.highlight {*/
+/*    position:absolute;*/
+/*    height:60%;*/
+/*    width:100px;*/
+/*    top:25%;*/
+/*    left:0;*/
+/*    pointer-events:none;*/
+/*    opacity:0.5;*/
+/*}*/
+
+/*!* active state *!*/
+/*input:focus ~ .highlight {*/
+/*    -webkit-animation:inputHighlighter 0.3s ease;*/
+/*    -moz-animation:inputHighlighter 0.3s ease;*/
+/*    animation:inputHighlighter 0.3s ease;*/
+/*}*/
+
+/*!* ANIMATIONS ================ *!*/
+/*@-webkit-keyframes inputHighlighter {*/
+/*    from { background:#5264AE; }*/
+/*    to 	{ width:0; background:transparent; }*/
+/*}*/
+/*@-moz-keyframes inputHighlighter {*/
+/*    from { background:#5264AE; }*/
+/*    to 	{ width:0; background:transparent; }*/
+/*}*/
+/*@keyframes inputHighlighter {*/
+/*    from { background:#5264AE; }*/
+/*    to 	{ width:0; background:transparent; }*/
+/*}*/

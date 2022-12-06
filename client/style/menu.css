@@ -51,29 +51,35 @@
     color: #6A6B70;
 }
 .categories {
-    margin-top: -45%;
-    width: 78%;
+    margin-top: -25%;
+    width: 90%;
     font-size: 20px;
 }
 .categories ul {
-    list-style-type: none;;
+    list-style-type: none;
+    padding: 0;
 }
 li.category {
     padding: 0;
     margin: 25px 0;
     cursor: pointer;
     transition: color 0.2s ease;
+    width: 80%;
 }
 li.category logout {
     transition: color 0.2s ease;
 
-}
-li.category logout:hover {
-    color: #D62976;
 }
 li.category:hover {
     color: #D62976;
 }
 .list-icon {
     padding-right: 20px;
+}
+.logout {
+    color: #D62976;
+}
+.redirect-menu {
+    text-decoration: none;
+    color: #F5F5F5;
 }

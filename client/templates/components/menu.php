@@ -1,5 +1,6 @@
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script defer src="client/scripts/logout.js"></script>
+<script defer src="client/scripts/redirect.js"></script>
 
 <div class="menu">
     <div class="site-title-box">
@@ -10,7 +11,7 @@
             <li class="category"><span class="list-icon"><i class="fa-regular fa-comment"></i></span>Accueil</li>
             <li class="category"><span class="list-icon"><i class="fa-regular fa-bell"></i></span>Notifications</li>
             <li class="category"><span class="list-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>Découvrir</li>
-            <li class="category"><span class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</li>
+            <li class="category"><a class="redirect-menu" href="client/templates/settings.php"><span class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</a></li>
             <li class="category logout"><span class="list-icon"><i class="fa-solid fa-door-open"></i></span>Se déconnecter</li>
         </ul>
     </div>
