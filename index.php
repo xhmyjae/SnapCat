@@ -50,7 +50,7 @@ try {
     switch ($uri) {
         case 'profile':
             $ProfileUser = new ProfilUser();
-            $ProfileUser->execute();
+            $ProfileUser->execute($_SESSION);
             break;
         case 'create_post':
             $createPost = new Create_Post();

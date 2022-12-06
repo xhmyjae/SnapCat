@@ -1,6 +1,6 @@
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script defer src="client/scripts/logout.js"></script>
-<script defer src="client/scripts/redirect.js"></script>
+<!--<script defer src="client/scripts/redirect.js"></script>-->
 <script defer src="client/scripts/friends-panel.js"></script>
 
 
@@ -10,11 +10,11 @@
     </div>
     <div class="categories">
         <ul>
-            <li class="category"><span class="list-icon"><i class="fa-regular fa-comment"></i></span>Accueil</li>
+            <li class="category"><a href="/homepage"><span class="list-icon"><i class="fa-regular fa-comment"></i></span>Accueil</a></li>
             <li class="category"><span class="list-icon"><i class="fa-regular fa-bell"></i></span>Notifications</li>
             <li class="category"><span class="list-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>Découvrir</li>
-            <li class="category settings"><span class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</li>
-            <li class="category logout"><span class="list-icon"><i class="fa-solid fa-door-open"></i></span>Se déconnecter</li>
+            <li class="category"><a href="/profile"><span class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</a></li>
+            <li class="category"><a href="/logout"><span class="list-icon"><i class="fa-solid fa-door-open"></i></span>Se déconnecter</a></li>
         </ul>
     </div>
     <div class="search-box">

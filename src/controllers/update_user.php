@@ -35,6 +35,10 @@ class UpdateUser {
             (new UserRepository())->updateBio($session['user_id'], $input['bio'], $input['confirm-password']);
         }
 
+        if (!empty($input['avatar']) && !empty($input['confirm-password'])) {
+            (new UserRepository())->updateAvatar($session['user_id'], $input['avatar'], $input['confirm-password']);
+        }
+
         redirect('/homepage');
 
     }

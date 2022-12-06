@@ -1,9 +1,9 @@
 window.addEventListener('load', () => {
-    const settings = document.querySelector('.settings');
+    const settings = document.querySelector('.profile-link');
     settings?.addEventListener('click', e => {
         e.preventDefault();
         localStorage.clear();
-        window.location.href = '/settings-page';
+        window.location.href = '/profile';
     });
 });
 

@@ -1,5 +1,7 @@
 <?php $title = 'Profil';
 $styles = ['profil.css', 'menu.css', 'main.css', 'post.css', "friends_panel.css", "right-panel.css", "profile.css"];
+
+global $connected_user;
 ?>
 
 <?php ob_start(); ?>
@@ -13,18 +15,18 @@ $styles = ['profil.css', 'menu.css', 'main.css', 'post.css', "friends_panel.css"
 <div class="profil-panel">
     <div class="top-profil">
         <?php global $banner; ?>
-        <?php $banner = "client/templates/img/GodOfWar3_Hero.jpg"; ?>
+        <?php $banner = "client/templates/img/banner.jpg"; ?>
         <div class="banner">
             <img src="<?= $banner ?>" alt="banner profil">
         </div>
-        <?php global $avatar; ?>
-        <?php $avatar = "client/templates/img/catspaghetti.png"; ?>
         <div class="profil-picture">
-            <img src="<?= $avatar ?>" alt="picture profil">
-            <?php global $pseudo; ?>
-            <?php $pseudo = "Bebou"; ?>
-            <p><?= $pseudo ?></p>
-            <p class="bio">fgfhgfhgfhgfghfhgfhfhgfhgfhgh</p>
+            <img src="client/templates/img/<?= $connected_user->avatar ?>.png" alt="picture profil">
+            <p><?= $connected_user->name ?></p>
+            <p class="bio"><?= $connected_user->description ?></p>
+        </div>
+
+        <div class="">
+            <a href="/settings-page">Paramètres</a>
         </div>
         <div class="friends">
             <p>Amis</p>

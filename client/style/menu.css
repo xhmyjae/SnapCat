@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .menu {
-    font-family: 'instagram', sans-serif;
     width: 26vw;
     height: 100vh;
     position: fixed;
@@ -63,16 +62,9 @@ li.category {
     padding: 0;
     margin: 25px 0;
     cursor: pointer;
-    transition: color 0.2s ease;
     width: 80%;
 }
-li.category logout {
-    transition: color 0.2s ease;
-}
-li.category logout:hover {
-    color: #D62976;
-}
-li.category:hover {
+li.category a:hover {
     color: #D62976;
 }
 .list-icon {
@@ -84,4 +76,9 @@ li.category:hover {
 }
 .redirect-menu:hover {
     color: #D62976;
+}
+.category a {
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: #F5F5F5;
 }
