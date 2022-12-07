@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .profil-panel{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     left : 26vw;
     width : 80vw;
     height : 100vh;
@@ -9,6 +10,7 @@
     border-left: solid 1px #6A6B70;
     border-right: solid 1px #6A6B70;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .top-profil{
     /*height: 40vh;*/
@@ -29,6 +31,7 @@
     height: 125px;
     border-radius: 50%;
     border: solid 5px #1C1C21;
+    margin-bottom: 15px;
 }
 .profile-information {
     display: flex;
@@ -43,9 +46,38 @@ p.friends-popup-link {
     justify-content: center;
 }
 .profile-information-left {
-    margin-right: 50px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
 }
-
+.name-box {
+    display: flex;
+    padding-bottom: 20px;
+}
+a.settings-link {
+    text-decoration: none;
+    color: #FFF;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+.profile-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #6A6B70;
+    padding: 5px 9px!important;
+    border: 1px solid #6A6B70;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+p.user-name {
+    margin: 0 1em 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
 /*.profil-picture{*/
 /*    width: 70vw;*/
 /*    margin: -7.5vh 0 0 2vw;*/

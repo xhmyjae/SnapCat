@@ -27,12 +27,13 @@ ob_start(); ?>
         <div class="profile-information">
             <div class="profile-information-left">
                 <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
+                <a class="profile-links" href="">Ajouter</a>
                 <p class="friends-popup-link">Amis</p>
             </div>
             <div class="profile-information-right">
                 <div class="name-box">
                     <p class="user-name"><?= $user->name ?></p>
-                    <?php if ($connected_user->id === $user->id) echo '<a class="settings-link" href="settings.php">Paramètres</a>'?>
+                    <?php if ($connected_user->id === $user->id) echo '<a class="profile-links" href="settings.php">Modifier profil</a>'?>
                 </div>
                 <span class="description-box"><?= $user->description ?></span>
             </div>
