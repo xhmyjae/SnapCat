@@ -21,12 +21,14 @@ global $connected_user;
         </div>
         <div class="profil-picture">
             <img src="client/templates/img/<?= $connected_user->avatar ?>.png" alt="picture profil">
-            <p><?= $connected_user->name ?></p>
-            <p class="bio"><?= $connected_user->description ?></p>
+            <div class="user-infos">
+                <p class="user-name"><?= $connected_user->name ?></p>
+                <p class="user-bio"><?= $connected_user->description ?></p>
+            </div>
         </div>
 
-        <div class="">
-            <a href="/settings-page">Paramètres</a>
+        <div>
+            <a class="settings-button" href="/settings-page">Paramètres</a>
         </div>
         <div class="friends">
             <p>Amis</p>

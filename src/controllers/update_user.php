@@ -39,7 +39,7 @@ class UpdateUser {
             (new UserRepository())->updateAvatar($session['user_id'], $input['avatar'], $input['confirm-password']);
         }
 
-        redirect('/homepage');
+        redirect('/profile');
 
     }
 }

@@ -35,7 +35,7 @@ class UserRepository
             require_once('client/templates/login.php');
         } else {
             global $avatar;
-            $avatar = "client/templates/img/img.png";
+            $avatar = "catspaghetti";
 
             $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
             $statement->execute(compact('name', 'mail', 'password', 'avatar'));
