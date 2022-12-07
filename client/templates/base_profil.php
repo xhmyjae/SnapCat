@@ -1,10 +1,14 @@
-<?php $title = 'Profil';
-$styles = ['profil.css', 'menu.css', 'main.css', 'post.css', "friends_panel.css", "right-panel.css", "profile.css"];
+<?php $title = 'Profile';
+$styles = ['profil.css', 'menu.css', 'main.css'];
+
+require_once('client/templates/components/menu.php');
+
+//$avatar = new GetAvatar();
+//$avatar->execute($_SESSION['id']);
 
 global $connected_user;
-?>
 
-<?php ob_start(); ?>
+ob_start(); ?>
 
 <link rel="stylesheet" type="text/css" href="../style/main.css"/>
 <link rel="stylesheet" type="text/css" href="../style/profil.css"/>

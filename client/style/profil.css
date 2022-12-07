@@ -2,7 +2,7 @@
 
 .profil-panel{
     font-family: 'Playfair Display', serif;
-    left : 20vw;
+    left : 26vw;
     width : 80vw;
     height : 100vh;
     position : fixed;
@@ -11,7 +11,7 @@
     overflow-y: scroll;
 }
 .top-profil{
-    height: 40vh;
+    /*height: 40vh;*/
     /*border-bottom: solid 1px #6A6B70;*/
 }
 .banner{
