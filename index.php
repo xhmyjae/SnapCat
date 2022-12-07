@@ -24,11 +24,8 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
 use function App\Lib\Utils\redirect;
 
-$uri = $_SERVER['REQUEST_URI'];
-$uri = explode('/', $uri);
-$uri = $uri[1];
-
-$uri = strtok($uri, '?');
+$uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$first_segment = $uri_segments[1] ?? '';
 
 session_start();
 
@@ -38,7 +35,7 @@ try {
 
     $method = $_SERVER['REQUEST_METHOD'] ?? '';
 
-    if ($connected_user === null && $uri !== '' && $method === 'GET') {
+    if ($connected_user === null && $first_segment !== '' && $method === 'GET') {
         redirect('/');
     }
 
@@ -49,7 +46,7 @@ try {
         }
     }
 
-    switch ($uri) {
+    switch ($first_segment) {
         case 'profile':
             $ProfileUser = new ProfilUser();
             $ProfileUser->execute($_GET);

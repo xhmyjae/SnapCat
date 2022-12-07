@@ -7,6 +7,7 @@ require_once('client/templates/components/menu.php');
 //$avatar->execute($_SESSION['id']);
 
 global $user;
+global $connected_user;
 
 ob_start(); ?>
 
@@ -23,19 +24,18 @@ ob_start(); ?>
         <div class="banner">
             <img src="<?= $banner ?>" alt="banner profil">
         </div>
-        <div class="profil-picture">
-            <img src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
-            <div class="user-infos">
-                <p class="user-name"><?= $user->name ?></p>
-                <p class="user-bio"><?= $user->description ?></p>
+        <div class="profile-information">
+            <div class="profile-information-left">
+                <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
+                <p class="friends-popup-link">Amis</p>
             </div>
-        </div>
-
-        <div>
-            <a class="settings-button" href="/settings-page">Paramètres</a>
-        </div>
-        <div class="friends">
-            <p>Amis</p>
+            <div class="profile-information-right">
+                <div class="name-box">
+                    <p class="user-name"><?= $user->name ?></p>
+                    <?php if ($connected_user->id === $user->id) echo '<a class="settings-link" href="settings.php">Paramètres</a>'?>
+                </div>
+                <span class="description-box"><?= $user->description ?></span>
+            </div>
         </div>
     </div>
 </div>
