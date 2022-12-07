@@ -6,7 +6,7 @@ require_once('client/templates/components/menu.php');
 //$avatar = new GetAvatar();
 //$avatar->execute($_SESSION['id']);
 
-global $connected_user;
+global $user;
 
 ob_start(); ?>
 
@@ -24,10 +24,10 @@ ob_start(); ?>
             <img src="<?= $banner ?>" alt="banner profil">
         </div>
         <div class="profil-picture">
-            <img src="client/templates/img/<?= $connected_user->avatar ?>.png" alt="picture profil">
+            <img src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
             <div class="user-infos">
-                <p class="user-name"><?= $connected_user->name ?></p>
-                <p class="user-bio"><?= $connected_user->description ?></p>
+                <p class="user-name"><?= $user->name ?></p>
+                <p class="user-bio"><?= $user->description ?></p>
             </div>
         </div>
 

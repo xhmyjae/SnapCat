@@ -7,6 +7,7 @@ require_once('src/lib/DatabaseConnection.php');
 use App\Lib\Database\DatabaseConnection;
 use http\QueryString;
 use PDO;
+use function App\Lib\Utils\redirect;
 
 class User
 {
@@ -40,9 +41,10 @@ class UserRepository
             $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
             $statement->execute(compact('name', 'mail', 'password', 'avatar'));
 
-            require_once('client/templates/homepage.php');
-            require_once('client/templates/accueil.php');
-            require_once('client/templates/base_profil.php');
+            redirect('/');
+//            require_once('client/templates/homepage.php');
+//            require_once('client/templates/accueil.php');
+//            require_once('client/templates/base_profil.php');
         }
 
     }

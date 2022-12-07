@@ -28,6 +28,8 @@ $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
 $uri = $uri[1];
 
+$uri = strtok($uri, '?');
+
 session_start();
 
 try {
@@ -50,7 +52,7 @@ try {
     switch ($uri) {
         case 'profile':
             $ProfileUser = new ProfilUser();
-            $ProfileUser->execute($_SESSION);
+            $ProfileUser->execute($_GET);
             break;
         case 'create_post':
             $createPost = new Create_Post();
