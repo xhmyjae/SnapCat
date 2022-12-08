@@ -66,7 +66,6 @@ class UserRepository
         $result->execute(compact('ids', 'password'));
         $count = $result->rowCount();
         if ($count == 0) {
-            $_SESSION['error'] = true;
             return null;
         } else {
             return $result->fetchObject(User::class);
