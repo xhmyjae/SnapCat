@@ -36,6 +36,7 @@ session_start();
 
 try {
     global $error;
+    $error = false;
 
     global $connected_user;
     $connected_user = (new GetConnectedUser())->execute($_SESSION);

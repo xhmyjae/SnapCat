@@ -1,6 +1,8 @@
 <?php $title = 'SnapCat';
 $styles = ['login.css'];
 
+global $error;
+
 ob_start(); ?>
 
     <div class="main">
