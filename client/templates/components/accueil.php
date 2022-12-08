@@ -1,12 +1,15 @@
+
+<?php
+global $connected_user;
+?>
+
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
         <form action="/create_post" method="POST">
             <div class="header-post">
                 <div class="avatar-box">
-                    <?php global $avatar; ?>
-                    <?php $avatar = "client/templates/img/catspaghetti.png"; ?>
-                    <img alt="profile-picture" class="avatar" src="<?= $avatar ?>">
+                    <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $connected_user->avatar ?>.png">
                 </div>
                 <div class="input">
                     <label>
