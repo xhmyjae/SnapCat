@@ -27,24 +27,55 @@ class FriendsRepository{
         $this->databaseConnection = (new DatabaseConnection())->getConnection();
     }
 
-    public function getFriends(int $user_id): array
-    {
-        $result = $this->databaseConnection->prepare("SELECT * FROM friends WHERE (user_id1 = :user_id OR user_id2 = :user_id)");
-        $result->execute(compact('user_id'));
-        // get all users that are friends with the current user
-        $friends = $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
-        $friends_id = [];
-        foreach ($friends as $friend) {
-            if ($friend->user_id1 === $user_id) {
-                $friends_id[] = $friend->user_id2;
-            } else {
-                $friends_id[] = $friend->user_id1;
+        public function getFriends(int $user_id): array
+        {
+            $result = $this->databaseConnection->prepare("SELECT * FROM friends WHERE (user_id1 = :user_id OR user_id2 = :user_id) AND accepted = 1");
+            $result->execute(compact('user_id'));
+            // get all users that are friends with the current user
+            $friends = $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
+            $friends_id = [];
+            foreach ($friends as $friend) {
+                if ($friend->user_id1 === $user_id) {
+                    $friends_id[] = $friend->user_id2;
+                } else {
+                    $friends_id[] = $friend->user_id1;
+                }
             }
+            $friends_id = implode(',', $friends_id);
+            $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE id IN ($friends_id)");
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
         }
-        $friends_id = implode(',', $friends_id);
-        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE id IN ($friends_id)");
-        $result->execute();
-        return $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
+
+        public function getFriendRequests(int $user_id): array
+        {
+            $result = $this->databaseConnection->prepare("SELECT * FROM friends WHERE user_id1 = :user_id AND accepted = 0");
+            $result->execute(compact('user_id'));
+            //get all users that want to be friends with the current user
+            $friends = $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
+            $friends_id = [];
+            foreach ($friends as $friend) {
+                $friends_id[] = $friend->user_id2;
+            }
+            $friends_id = implode(',', $friends_id);
+            if (empty($friends_id)) {
+                return [];
+            }
+            $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE id IN ($friends_id)");
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_CLASS, Friends::class);
+        }
+
+        public function sendFriendRequest(int $user_id1, int $user_id2): void
+        {
+            $result = $this->databaseConnection->prepare("INSERT INTO friends (user_id1, user_id2, accepted) VALUES (:user_id1, :user_id2, 0)");
+            $result->execute(compact('user_id1', 'user_id2'));
+        }
+
+        public function addFriend(int $user_id1, int $user_id2): void
+        {
+            $result = $this->databaseConnection->prepare("UPDATE friends SET accepted = 1 WHERE user_id1 = :user_id1 AND user_id2 = :user_id2");
+            $result->execute(compact('user_id1', 'user_id2'));
         }
 }
 
