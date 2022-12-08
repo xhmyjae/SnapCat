@@ -58,11 +58,7 @@ try {
             break;
         case 'create_post':
             $createPost = new Create_Post();
-            $createPost->execute($_POST);
-            break;
-        case 'show_post':
-            $showPost = new get_Posts();
-            $showPost->execute();
+            $createPost->execute($_POST, $connected_user);
             break;
         case 'homepage':
             global $posts;

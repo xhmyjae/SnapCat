@@ -3,6 +3,7 @@
 namespace App\Controllers\Homepage;
 
 use App\Lib\Database\DatabaseConnection;
+use App\Model\User\UserRepository;
 use PDO;
 
 
@@ -16,16 +17,15 @@ class PostRepository
     }
 
 
-    public function createPost(string $message): void
+    public function createPost(string $message, int $user_id): void
     {
-        $user_id = 1;
         $emotion = 1;
         $statement = $this->databaseConnection->prepare('INSERT INTO posts (message, user_id, emotion) VALUES (:message, :user_id, :emotion)');
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
 
     function getPosts() : array {
-        $statement = $this->databaseConnection->prepare('SELECT message, user_id FROM posts');
+        $statement = $this->databaseConnection->prepare('SELECT message, user_id FROM posts INNER JOIN users ON posts.user_id = users.id');
         $statement->execute();
         $posts = $statement->fetchAll();
         return $posts;

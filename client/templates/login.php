@@ -16,6 +16,7 @@ $styles = ['login.css'];
                 <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
                 <input class="form__input" type="password" placeholder="Confirmer mot de passe" required>
                 <button class="form__button button submit" type="submit" name="submit-signup" value="signup">S'inscrire</button>
+                <script defer src="client/scripts/login.js"></script>
             </form>
 
         </div>
@@ -49,7 +50,7 @@ $styles = ['login.css'];
             </div>
         </div>
     </div>
-    <script defer src="client/scripts/login.js"></script>
+
 
 <?php $content = ob_get_clean(); ?>
 

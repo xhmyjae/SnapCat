@@ -75,6 +75,29 @@ body {
     width: 100%;
     height: 100%;
 }
+.form__icon {
+    object-fit: contain;
+    width: 30px;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: 0.15s;
+}
+.form__icon:hover {
+    opacity: 1;
+    transition: 0.15s;
+    cursor: pointer;
+}
+.form__span {
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+.form__link {
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 25px;
+    border-bottom: 1px solid #a0a5a8;
+    line-height: 2;
+}
 
 .form__input {
     width: 350px;
