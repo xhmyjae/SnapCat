@@ -13,7 +13,7 @@ class LoginUser {
     public function execute(array $input): void
     {
         if (!isset($input['ids'], $input['password'])) {
-            throw new RuntimeException('Invalid input');
+            $_SESSION['error'] = true;
         }
 
         $user = (new UserRepository())->loginUser($input['ids'], $input['password']);

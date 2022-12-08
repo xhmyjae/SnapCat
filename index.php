@@ -11,6 +11,7 @@ require_once('src/controllers/get_connected_user.php');
 require_once('src/lib/utils.php');
 require_once('src/controllers/update_user.php');
 require_once('src/controllers/go_settings.php');
+require_once('src/controllers/go_error.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
@@ -22,6 +23,7 @@ use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Logout\LogoutUser;
 use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
+use App\Controllers\Error\Error;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -92,8 +94,12 @@ try {
             $update = new UpdateUser();
             $update->execute($_POST, $_SESSION);
             break;
+        case 'error':
+            $error_page = new Error();
+            $error_page->execute();
+            break;
         default:
-            throw new Exception('Page not found');
+            redirect('/homepage');
     }
 } catch (Exception $e) {
     echo $e->getMessage();

@@ -11,12 +11,13 @@ class CreateUser {
     public function execute(array $input): void
     {
         if (!isset($input['name'], $input['mail'], $input['password']))
-            throw new RuntimeException('Invalid input');
-        $result = (new UserRepository())->checkUserAvailability($input['name'], $input['mail']);
+            $_SESSION['error'] = true;
+            $result = (new UserRepository())->checkUserAvailability($input['name'], $input['mail']);
         if ($result) {
+            unset($_SESSION['error']);
             (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
         } else {
-            throw new RuntimeException('User already exists');
+            $_SESSION['error'] = true;
         }
     }
 }

@@ -1,8 +1,7 @@
 <?php $title = 'SnapCat';
 $styles = ['login.css'];
-?>
 
-<?php ob_start(); ?>
+ob_start(); ?>
 
     <div class="main">
         <!--        register-->
@@ -17,6 +16,11 @@ $styles = ['login.css'];
                 <input class="form__input" type="password" placeholder="Confirmer mot de passe" required>
                 <button class="form__button button submit" type="submit" name="submit-signup" value="signup">S'inscrire</button>
             </form>
+            <?php
+            if (isset($_SESSION['errorMessage'])){
+                echo '<p class="error"></p>';
+            }
+            ?>
 
         </div>
         <div class="container b-container" id="b-container">
@@ -28,6 +32,7 @@ $styles = ['login.css'];
                 <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
                 <button class="form__button button submit" type="submit" name="submit-login" value="login">SIGN IN</button>
             </form>
+            <p class="error"><?=$_SESSION['error']?></p>
 
         </div>
         <div class="switch" id="switch-cnt">

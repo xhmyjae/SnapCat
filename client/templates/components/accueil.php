@@ -1,38 +1,63 @@
+<?php global $connected_user ?>
+
+<!--<div class="post-panel">-->
+<!--    <p class="page-title">Accueil</p>-->
+<!--    <div class="write-post">-->
+<!--        <img class="post-avatar" src="client/templates/img///= $connected_user->avatar .png" alt="post avatar">-->
+<!--        <form action="/create_post" method="POST">-->
+<!--            <div class="post-content">-->
+<!--                <select name="emotions" id="select-emotion" required>-->
+<!--                    <option value="1">Haha</option>-->
+<!--                    <option value="2">Meh</option>-->
+<!--                    <option value="3">Sad</option>-->
+<!--                    <option value="4">Disappointed</option>-->
+<!--                    <option value="5">Mad</option>-->
+<!--                </select>-->
+<!--                <textarea class="post-text" name="post-text" placeholder="Ecris quelque chose..." maxlength="400"></textarea>-->
+<!--                <div class="post-actions">-->
+<!--                    <i class="fa-solid fa-image"></i>-->
+<!--                    <button type="submit" class="post-button" value="post-submit">Publier</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
         <form action="/create_post" method="POST">
-        <div class="header-post">
-            <div class="avatar-box">
-                <?php global $avatar; ?>
-                <?php $avatar = "client/templates/img/catspaghetti.png"; ?>
-                <img alt="profile-picture" class="avatar" src="<?= $avatar ?>">
-            </div>
-            <div class="input">
-                <label>
-                    <textarea class="input-post" name="message" placeholder="Ecris quelque chose..." maxlength="400"></textarea>
-                </label>
-            </div>
-            <div class="feelings">
-                <label for="pet-select">Feeling : </label>
+            <div class="header-post">
+                <div class="avatar-box">
+                    <?php global $avatar; ?>
+                    <?php $avatar = "client/templates/img/catspaghetti.png"; ?>
+                    <img alt="profile-picture" class="avatar" src="<?= $avatar ?>">
+                </div>
+                <div class="input">
+                    <label>
+                        <textarea class="input-post" name="message" placeholder="Ecris quelque chose..." maxlength="400"></textarea>
+                    </label>
+                </div>
+                <div class="feelings">
+                    <label for="pet-select">Feeling : </label>
 
-                <select name="emotions" id="emotions-select">
-                    <option value="1">Heureux 😄</option>
-                    <option value="2">Déçu 😔</option>
-                    <option value="3">Douteux 🤔</option>
-                    <option value="4">Triste 😭</option>
-                </select>
-            </div>
+                    <select name="emotions" id="emotions-select">
+                        <option value="1">Heureux 😄</option>
+                        <option value="2">Déçu 😔</option>
+                        <option value="3">Douteux 🤔</option>
+                        <option value="4">Triste 😭</option>
+                    </select>
+                </div>
 
-        </div>
-        <div class="footer-post">
-            <div class="img-box">
-                <img alt="profile-picture" class="insert-img" src="client/templates/img/img.png">
             </div>
-            <div class="post-button-box">
-                <button type="submit" class="post-button" value="create_post">Publier</button>
-            </div>
+            <div class="footer-post">
+                <div class="img-box">
+                    <img alt="profile-picture" class="insert-img" src="client/templates/img/img.png">
+                </div>
+                <div class="post-button-box">
+                    <button type="submit" class="post-button" value="create_post">Publier</button>
+                </div>
         </form>
-        </div>
     </div>
+</div>
 </div>

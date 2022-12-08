@@ -1,3 +1,5 @@
+<?php global $user ?>
+
 <div class="post-panel">
     <div class="post-header">
     </div>
