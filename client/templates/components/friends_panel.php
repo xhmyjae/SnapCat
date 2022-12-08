@@ -1,5 +1,6 @@
 <?php
 global $friends;
+global $friend_requests;
 ?>
 
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
@@ -27,30 +28,24 @@ global $friends;
             <?php endforeach; ?>
         </div>
         <div class="request-container">
-            <div class="friend" data-friend="1">
-                <div class="friend_avatar">
-                    <img src="client/templates/img/antaBinome.png" alt="avatar">
-                </div>
-                <div class="Friend_name">
-                    <p>Best binome 2</p>
-                </div>
-                <div class="Accept_button">
-                    <i class="fas fa-check"></i>
-                    <i class="fas fa-xmark"></i>
-                </div>
-            </div>
-            <div class="friend" data-friend="1">
-                <div class="friend_avatar">
-                    <img src="client/templates/img/antaBinome.png" alt="avatar">
-                </div>
-                <div class="Friend_name">
-                    <p>Best binome 3</p>
-                </div>
-                <div class="Accept_button">
-                    <i class="fas fa-check"></i>
-                    <i class="fas fa-xmark"></i>
-                </div>
-            </div>
+            <?php foreach ($friend_requests as $friend_request): ?>
+                <a href="/profile?user_id=<?=$friend_request->id ?>" class="friend">
+                    <div class="friend-avatar">
+                        <img src="client/templates/img/<?= $friend_request->avatar ?>.png" alt="friend picture">
+                    </div>
+                    <div class="friend-name">
+                        <p><?= $friend_request->name ?></p>
+                    </div>
+                    <div class="Accept_button">
+                        <a href="/addfriend?user_id2=<?=$friend_request->id?>">
+                            <i class="fas fa-check"></i>
+                        </a>
+                        <a href="">
+                            <i class="fas fa-xmark"></i>
+                        </a>
+                    </div>
+                </a>
+            <?php endforeach; ?>
         </div>
         <div class="waiting-container">
 
