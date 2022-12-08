@@ -35,7 +35,8 @@
                 </div>
                 <div class="input">
                     <label>
-                        <textarea class="input-post" name="message" placeholder="Ecris quelque chose..." maxlength="400"></textarea>
+                        <textarea class="input-post" name="message" placeholder="Ecris quelque chose..."
+                                  maxlength="400"></textarea>
                     </label>
                 </div>
                 <div class="feelings">
@@ -58,6 +59,10 @@
                     <button type="submit" class="post-button" value="create_post">Publier</button>
                 </div>
         </form>
+    </div>
+
+    <div class="posts">
+        <?php require_once('client/templates/components/post.php'); ?>
     </div>
 </div>
 </div>
