@@ -13,6 +13,8 @@ class Homepage
     public function execute(User $connected_user): void
     {
         global $friends;
+        global $friend_requests;
+        $friend_requests = (new FriendsRepository())->getFriendRequests($connected_user->id);
         $friends = (new FriendsRepository())->getFriends($connected_user->id);
         require_once ('client/templates/homepage.php');
     }
