@@ -70,13 +70,7 @@ li.category a:hover {
 .list-icon {
     padding-right: 20px;
 }
-.redirect-menu {
-    text-decoration: none;
-    color: #F5F5F5;
-}
-.redirect-menu:hover {
-    color: #D62976;
-}
+
 .category a {
     transition: color 0.2s ease;
     text-decoration: none;

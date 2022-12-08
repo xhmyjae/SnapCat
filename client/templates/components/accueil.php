@@ -39,4 +39,3 @@
         <?php require_once('client/templates/components/post.php'); ?>
     </div>
 </div>
-</div>

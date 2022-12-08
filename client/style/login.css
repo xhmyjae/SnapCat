@@ -75,18 +75,7 @@ body {
     width: 100%;
     height: 100%;
 }
-.form__icon {
-    object-fit: contain;
-    width: 30px;
-    margin: 0 5px;
-    opacity: 0.5;
-    transition: 0.15s;
-}
-.form__icon:hover {
-    opacity: 1;
-    transition: 0.15s;
-    cursor: pointer;
-}
+
 .form__input {
     width: 350px;
     height: 40px;
@@ -105,17 +94,6 @@ body {
 }
 .form__input:focus {
     box-shadow: inset 4px 4px 4px rgba(28, 28, 33, 0.5), inset -4px -4px 4px #3c3f41;
-}
-.form__span {
-    margin-top: 30px;
-    margin-bottom: 12px;
-}
-.form__link {
-    color: #ffffff;
-    font-size: 15px;
-    margin-top: 25px;
-    border-bottom: 1px solid #a0a5a8;
-    line-height: 2;
 }
 
 .title {
@@ -218,32 +196,12 @@ body {
 }
 
 /**/
-.is-txr {
-    left: calc(100% - 400px);
-    transition: 1.25s;
-    transform-origin: left;
-}
-
-.is-txl {
-    left: 0;
-    transition: 1.25s;
-    transform-origin: right;
-}
-
-.is-z200 {
-    z-index: 200;
-    transition: 1.25s;
-}
 
 .is-hidden {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     transition: 1.25s;
-}
-
-.is-gx {
-    animation: is-gx 1.25s;
 }
 
 @keyframes is-gx {

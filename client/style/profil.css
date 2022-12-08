@@ -55,12 +55,7 @@ p.friends-popup-link {
     display: flex;
     padding-bottom: 20px;
 }
-a.settings-link {
-    text-decoration: none;
-    color: #FFF;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-}
+
 .profile-links {
     display: flex;
     justify-content: center;

@@ -36,23 +36,11 @@ img.avatar-choices {
 i.fa-solid.fa-arrow-right {
     color: #838383;
 }
-.form-control:not(.form-control-avatar) {
-    background-color: transparent;
-    color: #FFF;
-    padding: 12px 16px;
-    width: 400px;
-    border: solid thin #838383;
-    border-radius: 5px;
-    outline: none;
-}
+
 .form-control:focus {
     border-color: #FEDA75;
 }
-span.settings-title {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin: 20px 20px 30px 20px;
-}
+
 .confirm-password-settings.settings-category {
     margin: 50px 0 0 30px;
 }

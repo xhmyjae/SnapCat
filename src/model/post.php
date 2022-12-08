@@ -24,10 +24,10 @@ class PostRepository
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
 
-    function getPosts() {
+    function getPosts() : array {
         $statement = $this->databaseConnection->prepare('SELECT message, user_id FROM posts');
         $statement->execute();
-        $posts = $statement->fetchAll();;
+        $posts = $statement->fetchAll();
         return $posts;
     }
 }

@@ -18,7 +18,6 @@ foreach ($posts as $post): ?>
                     <div class="content-post">
                         <p class="pseudo"></p>
                         <p class="content"><?php  echo $post['message']; ?></p>
-                        </p>
                     </div>
                 </div>
                 <div class="react">
