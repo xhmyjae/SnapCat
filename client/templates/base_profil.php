@@ -33,14 +33,18 @@ ob_start(); ?>
             <div class="profile-information-right">
                 <div class="name-box">
                     <p class="user-name"><?= $user->name ?></p>
-                    <?php if ($connected_user->id === $user->id) echo '<a class="profile-links" href="settings.php">Modifier profil</a>'?>
+                    <?php if ($connected_user->id === $user->id) echo '<a class="profile-links" href="settings-page">Modifier profil</a>'?>
                 </div>
                 <span class="description-box"><?= $user->description ?></span>
             </div>
         </div>
     </div>
+    <div class="user-posts">
+
+    </div>
 </div>
 
 <?php $content = ob_get_clean(); ?>
+
 
 <?php require_once 'base.php'; ?>

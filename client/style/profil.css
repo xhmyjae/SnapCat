@@ -6,7 +6,7 @@
     left : 26vw;
     width : 80vw;
     height : 100vh;
-    position : fixed;
+    position : absolute;
     border-left: solid 1px #6A6B70;
     border-right: solid 1px #6A6B70;
     overflow-y: scroll;
@@ -49,6 +49,7 @@ p.friends-popup-link {
     margin-right: 100px;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #6A6B70;
 }
 .name-box {
     display: flex;
