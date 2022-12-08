@@ -67,8 +67,8 @@ try {
         case 'homepage':
             global $posts;
             $posts = (new get_Posts())->execute();
-            $homepage = new Homepage();
-            $homepage->execute();
+            $homepage = new Homepage($connected_user);
+            $homepage->execute($connected_user);
             break;
         case '':
             if ($connected_user !== null) {
