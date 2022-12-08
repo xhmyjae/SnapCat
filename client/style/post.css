@@ -10,7 +10,9 @@
     display: flex;
     flex-direction: column;
 }
-
+.post-header{
+    padding-top: 5px;
+}
 .write-post{
     width: 99%;
     height: 20vh;
@@ -48,7 +50,15 @@
     align-items: center;
     padding: 0 20px;
 }
-
+.post-panel .post-header {
+    height : 5vh;
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    padding : 0 5vw;
+    font-size: 15px;
+    border-bottom : solid 1px #6A6B70;
+}
 img.avatar {
     width: 45px;
     height: 45px;

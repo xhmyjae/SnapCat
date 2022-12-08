@@ -3,6 +3,7 @@
 namespace App\Controllers\Homepage;
 
 use App\Lib\Database\DatabaseConnection;
+use App\Model\User\User;
 use PDO;
 
 
@@ -24,10 +25,10 @@ class PostRepository
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
 
-    function getPosts() {
+    function getPosts() : array {
         $statement = $this->databaseConnection->prepare('SELECT message, user_id FROM posts');
         $statement->execute();
-        $posts = $statement->fetchAll();;
+        $posts = $statement->fetchAll();
         return $posts;
     }
 }

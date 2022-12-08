@@ -117,7 +117,6 @@ body {
     border-bottom: 1px solid #a0a5a8;
     line-height: 2;
 }
-
 .title {
     font-size: 34px;
     font-weight: 700;
@@ -234,14 +233,12 @@ body {
     z-index: 200;
     transition: 1.25s;
 }
-
 .is-hidden {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     transition: 1.25s;
 }
-
 .is-gx {
     animation: is-gx 1.25s;
 }
