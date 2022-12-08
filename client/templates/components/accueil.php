@@ -39,6 +39,6 @@ global $connected_user;
         </form>
     </div>
     <div class="posts">
-        <?php require_once('client/templates/components/post.php'); ?>
+        <?php require_once('client/templates/components/Friendspost.php'); ?>
     </div>
 </div>
