@@ -58,8 +58,8 @@ try {
             $createPost->execute($_POST);
             break;
         case 'homepage':
-            $homepage = new Homepage();
-            $homepage->execute();
+            $homepage = new Homepage($connected_user);
+            $homepage->execute($connected_user);
             break;
         case '':
             if ($connected_user !== null) {

@@ -43,7 +43,7 @@
     gap: 30px;
 }
 
-.friend_avatar > img {
+.friend-avatar > img {
     width: 45px;
     height: 45px;
     object-fit: cover;
