@@ -42,6 +42,9 @@ class FriendsRepository{
                 }
             }
             $friends_id = implode(',', $friends_id);
+            if (empty($friends_id)) {
+                return [];
+            }
             $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE id IN ($friends_id)");
             $result->execute();
             return $result->fetchAll(PDO::FETCH_CLASS, Friends::class);

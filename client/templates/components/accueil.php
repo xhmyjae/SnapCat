@@ -1,28 +1,3 @@
-<?php global $connected_user ?>
-
-<!--<div class="post-panel">-->
-<!--    <p class="page-title">Accueil</p>-->
-<!--    <div class="write-post">-->
-<!--        <img class="post-avatar" src="client/templates/img///= $connected_user->avatar .png" alt="post avatar">-->
-<!--        <form action="/create_post" method="POST">-->
-<!--            <div class="post-content">-->
-<!--                <select name="emotions" id="select-emotion" required>-->
-<!--                    <option value="1">Haha</option>-->
-<!--                    <option value="2">Meh</option>-->
-<!--                    <option value="3">Sad</option>-->
-<!--                    <option value="4">Disappointed</option>-->
-<!--                    <option value="5">Mad</option>-->
-<!--                </select>-->
-<!--                <textarea class="post-text" name="post-text" placeholder="Ecris quelque chose..." maxlength="400"></textarea>-->
-<!--                <div class="post-actions">-->
-<!--                    <i class="fa-solid fa-image"></i>-->
-<!--                    <button type="submit" class="post-button" value="post-submit">Publier</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
-
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
@@ -60,9 +35,7 @@
                 </div>
         </form>
     </div>
-
     <div class="posts">
         <?php require_once('client/templates/components/post.php'); ?>
     </div>
-</div>
 </div>
