@@ -158,5 +158,8 @@ f1 {
     background-color: rgb(128, 125, 125);
 }
 
-.posts {
+.date{
+    font-size: 10px;
+    color: #ffffff;
+    margin-left: 10px;
 }

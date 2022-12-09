@@ -13,11 +13,11 @@ use RuntimeException;
 use function App\Lib\Utils\redirect;
 
 class Create_Post {
-    public function execute(array $input, User $connected_user): void
+    public function execute(array $input, User $connected_user, int $emotion): void
     {
         if (!isset($input['message']))
             throw new RuntimeException('Invalid input');
-        (new PostRepository())->createPost($input['message'], $connected_user->id);
+        (new PostRepository())->createPost($input['message'], $connected_user->id, $emotion);
         redirect('/homepage');
     }
 }

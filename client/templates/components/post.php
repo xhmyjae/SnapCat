@@ -21,6 +21,7 @@ foreach ($posts as $post) {
             </div>
             <div class="content-post">
                 <p class="pseudo"> <?= $user->name ?> </p>
+                <p class="date"> <?= $post['creation_date'] ?> </p>
                 <p class="content"><?= $post['message'] ?></p>
             </div>
         </div>
