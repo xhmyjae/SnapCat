@@ -11,7 +11,6 @@ global $connected_user;
 global $posts;
 global $has_requested;
 
-echo $is_friend;
 ob_start(); ?>
 
 <link rel="stylesheet" type="text/css" href="../style/main.css"/>
