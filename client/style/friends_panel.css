@@ -91,3 +91,30 @@ a .friend-name p {
 .search-container{
     display: none;
 }
+ .search-box{
+     width: 85%;
+     position: relative;
+     display: flex;
+     margin-left: 5vw;
+ }
+ .search-input{
+     width: 100%;
+     padding: 10px;
+     border-radius: 20px 0 0 20px;
+     border: none;
+     outline: none;
+     font-size: 15px;
+     color: #FEDA75;
+     background: #393A41;
+ }
+ .search-button{
+     text-align: center;
+     width: 40px;
+     outline: none;
+     cursor: pointer;
+     border-radius: 0 20px 20px 0;
+     border: none;
+     background: #393A41;
+     font-size: 15px;
+     color: #6A6B70;
+ }

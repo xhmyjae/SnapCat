@@ -62,7 +62,12 @@
             <?php endforeach; ?>
         </div>
         <div class="search-container">
-            <p>test</p>
+            <div class="search-box">
+                <label>
+                    <input type="text" class="search-input" placeholder="Recherche...">
+                </label>
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
         </div>
     </div>
 </div>
