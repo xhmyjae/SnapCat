@@ -59,9 +59,6 @@ ob_start(); ?>
                         <div class="post-profile-container">
                             <p class="post-profile-text"><?= $post['message'] ?></p>
                         </div>
-                        <?php if ($user->id == $connected_user->id) { ?>
-                            <a href="" class="delete-post-profile red"><i class="fa-solid fa-trash-can"></i></a>
-                        <?php } ?>
                         <div class="post-profile-hover">
                             <i class="fa-solid fa-heart"></i>
                             <i class="fa-solid fa-comment"></i>
