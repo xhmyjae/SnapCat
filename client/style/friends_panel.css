@@ -24,11 +24,6 @@
     transform: scale(1.3);
 }
 
-.Switch_button:active {
-    background-color: rgb(28, 28, 33);
-    color: #FEDA75;
-}
-
 .Friend-list {
     display: flex;
     flex-direction: column;
