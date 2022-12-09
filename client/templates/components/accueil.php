@@ -14,13 +14,13 @@ global $connected_user;
                 <div class="input">
                     <label>
                         <textarea class="input-post" name="message" placeholder="Ecris quelque chose..."
-                                  maxlength="400"></textarea>
+                                  maxlength="400" required></textarea>
                     </label>
                 </div>
                 <div class="feelings">
                     <label for="pet-select">Feeling : </label>
 
-                    <select name="emotions" id="emotions-select">
+                    <select name="emotion" id="emotions-select" required>
                         <option value="1">Heureux 😄</option>
                         <option value="2">Déçu 😔</option>
                         <option value="3">Douteux 🤔</option>

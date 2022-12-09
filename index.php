@@ -68,7 +68,8 @@ try {
             break;
         case 'create_post':
             $createPost = new Create_Post();
-            $createPost->execute($_POST, $connected_user);
+            $emotion = $_POST['emotion'] ?? 1;
+            $createPost->execute($_POST, $connected_user, $emotion);
             break;
         case 'homepage':
             global $friends_posts;

@@ -18,9 +18,8 @@ class PostRepository
     }
 
 
-    public function createPost(string $message, int $user_id): void
+    public function createPost(string $message, int $user_id, int $emotion): void
     {
-        $emotion = 1;
         $statement = $this->databaseConnection->prepare('INSERT INTO posts (message, user_id, emotion) VALUES (:message, :user_id, :emotion)');
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
