@@ -71,6 +71,7 @@ class FriendsRepository{
 
         public function sendFriendRequest(int $user_id1, int $user_id2): void
         {
+
             $result = $this->databaseConnection->prepare("INSERT INTO friends (user_id1, user_id2, accepted) VALUES (:user_id1, :user_id2, 0)");
             $result->execute(compact('user_id1', 'user_id2'));
         }
@@ -79,6 +80,23 @@ class FriendsRepository{
         {
             $result = $this->databaseConnection->prepare("UPDATE friends SET accepted = 1 WHERE user_id1 = :user_id1 AND user_id2 = :user_id2");
             $result->execute(compact('user_id1', 'user_id2'));
+        }
+
+        public function deleteFriend(int $user_id1, int $user_id2): void
+        {
+            $result = $this->databaseConnection->prepare("DELETE FROM friends WHERE (user_id1 = :user_id1 AND user_id2 = :user_id2) OR (user_id1 = :user_id2 AND user_id2 = :user_id1)");
+            $result->execute(compact('user_id1', 'user_id2'));
+        }
+
+        public function isFriend(int $user_id1, int $user_id2): bool
+        {
+            $result = $this->databaseConnection->prepare("SELECT * FROM friends WHERE (user_id1 = :user_id1 AND user_id2 = :user_id2) OR (user_id1 = :user_id2 AND user_id2 = :user_id1) AND accepted = 1");
+            $result->execute(compact('user_id1', 'user_id2'));
+            $friend = $result->fetchObject(Friends::class);
+            if ($friend) {
+                return true;
+            }
+            return false;
         }
 }
 
