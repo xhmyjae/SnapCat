@@ -21,6 +21,11 @@ foreach ($friends_posts as $post) {
                 <div class="avatar-box">
                     <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $user->avatar ?>.png">
                 </div>
+                <div class="delete-post">
+                    <form action="/delete_post" method="POST">
+                        <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+                        <button type="submit" class="delete-button" value="delete_post">X</button>
+                    </form>
             </div>
             <div class="content-post">
                 <p class="pseudo"> <?= $user->name ?> </p>
