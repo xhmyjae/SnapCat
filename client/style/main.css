@@ -6,6 +6,7 @@ html, body {
     color: #FFF;
     font-family: Arial, serif;
     display: flex;
+    overflow-x: hidden;
 }
 
 .page-title {

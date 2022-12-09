@@ -14,6 +14,8 @@ class Homepage
     {
         global $friends;
         global $friend_requests;
+        global $friend_requests_sent;
+        $friend_requests_sent = (new FriendsRepository())->getSentFriendRequests($connected_user->id);
         $friend_requests = (new FriendsRepository())->getFriendRequests($connected_user->id);
         $friends = (new FriendsRepository())->getFriends($connected_user->id);
         require_once ('client/templates/homepage.php');

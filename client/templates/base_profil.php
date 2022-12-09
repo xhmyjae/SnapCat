@@ -6,11 +6,10 @@ $styles = ['profil.css', 'menu.css', 'main.css'];
 
 require_once('client/templates/components/menu.php');
 
-//$avatar = new GetAvatar();
-//$avatar->execute($_SESSION['id']);
-
 global $user;
 global $connected_user;
+global $posts;
+global $has_requested;
 
 echo $is_friend;
 ob_start(); ?>
@@ -19,7 +18,6 @@ ob_start(); ?>
 <link rel="stylesheet" type="text/css" href="../style/profil.css"/>
 <link rel="stylesheet" type="text/css" href="../style/menu.css"/>
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
-
 
 <div class="profil-panel">
     <div class="top-profil">
@@ -31,8 +29,16 @@ ob_start(); ?>
         <div class="profile-information">
             <div class="profile-information-left">
                 <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
-                <?php if ($is_friend==1) echo '<a class="profile-links" href="/deletefriend?user_id2=<?=$friend_request->id?>">Supprimer</a>';
-                else echo '<a class="profile-links" href="/addfriend?user_id2=<?=$friend_request->id?>">Ajouter</a>' ?>
+                <?php if ($is_friend==1) { ?>
+                    <a class="profile-links red" href="/deletefriend?user_id=<?= $user->id ?>">Supprimer</a>
+                <?php } else  { ?>
+                    <?php if ($has_requested==1 || $user->id == $connected_user->id) { ?>
+                        <a class="profile-links"  href="">En attente</a>
+                    <?php } else { ?>
+                        <a class="profile-links"  href="/addfriend?user_id=<?= $user->id ?>">Ajouter</a>
+                    <?php }
+                } ?>
+
 
                 <p class="friends-popup-link">Amis</p>
             </div>
@@ -45,9 +51,30 @@ ob_start(); ?>
             </div>
         </div>
     </div>
-    <div class="user-posts">
-
+    <div class="users-profile-posts">
+        <div class="user-posts">
+            <?php
+            if ($posts !== null) {
+                foreach ($posts as $post) {?>
+                    <div class="post-profile">
+                        <div class="post-profile-container">
+                            <p class="post-profile-text"><?= $post['message'] ?></p>
+                        </div>
+                        <?php if ($user->id == $connected_user->id) { ?>
+                            <a href="" class="delete-post-profile red"><i class="fa-solid fa-trash-can"></i></a>
+                        <?php } ?>
+                        <div class="post-profile-hover">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } else {
+                echo "Cet utilisateur n'a jamais rien envoyé ici...";
+            } ?>
+        </div>
     </div>
+
 </div>
 
 <?php $content = ob_get_clean(); ?>
