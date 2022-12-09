@@ -14,6 +14,8 @@ require_once('src/lib/utils.php');
 require_once('src/controllers/update_user.php');
 require_once('src/controllers/go_settings.php');
 require_once('src/controllers/add_friend.php');
+require_once('src/controllers/delete_friend.php');
+require_once('src/controllers/is_friend.php');
 require_once('src/model/post.php');
 
 use App\Controllers\Homepage\Homepage;
@@ -28,6 +30,8 @@ use App\Controllers\User\Logout\LogoutUser;
 use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
 use App\Controllers\Friends\AddFriend\AddFriend;
+use App\Controllers\Friends\DeleteFriend\DeleteFriend;
+use App\Controllers\Friends\IsFriend\IsFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -60,7 +64,7 @@ try {
     switch ($first_segment) {
         case 'profile':
             $ProfileUser = new ProfilUser();
-            $ProfileUser->execute($_GET);
+            $ProfileUser->execute($_GET, $connected_user);
             break;
         case 'create_post':
             $createPost = new Create_Post();
@@ -109,6 +113,10 @@ try {
         case 'addfriend':
             $add_friend = new AddFriend();
             $add_friend->execute($connected_user, $_GET);
+            break;
+        case 'deletefriend':
+            $delete_friend = new DeleteFriend();
+            $delete_friend->execute($connected_user, $_GET);
             break;
         default:
             redirect('/homepage');
