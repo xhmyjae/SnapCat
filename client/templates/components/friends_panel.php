@@ -1,11 +1,10 @@
 <?php
-global $friends;
-global $friend_requests;
+    global $friends;
+    global $friend_requests;
 ?>
 
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script defer src="client/scripts/friends-panel.js"></script>
-
 
 <div class="right-panel">
     <div class="Switch">
@@ -40,7 +39,7 @@ global $friend_requests;
                         <a href="/addfriend?user_id2=<?=$friend_request->id?>">
                             <i class="fas fa-check"></i>
                         </a>
-                        <a href="">
+                        <a href="/deletefriend?user_id2=<?=$friend_request->id?>">
                             <i class="fas fa-xmark"></i>
                         </a>
                     </div>

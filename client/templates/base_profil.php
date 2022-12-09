@@ -28,6 +28,7 @@ ob_start(); ?>
             <div class="profile-information-left">
                 <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
                 <a class="profile-links" href="">Ajouter</a>
+               <a class="profile-links" href="">Supprimer</a>
                 <p class="friends-popup-link">Amis</p>
             </div>
             <div class="profile-information-right">
