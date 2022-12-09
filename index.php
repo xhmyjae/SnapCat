@@ -64,7 +64,7 @@ try {
     switch ($first_segment) {
         case 'profile':
             $ProfileUser = new ProfilUser();
-            $ProfileUser->execute($_GET);
+            $ProfileUser->execute($_GET, $connected_user);
             break;
         case 'create_post':
             $createPost = new Create_Post();
@@ -116,10 +116,6 @@ try {
         case 'deletefriend':
             $delete_friend = new DeleteFriend();
             $delete_friend->execute($connected_user, $_GET);
-            break;
-        case 'isfriend':
-            $is_friend = new IsFriend();
-            $is_friend->execute($connected_user, $_GET);
             break;
         default:
             redirect('/homepage');

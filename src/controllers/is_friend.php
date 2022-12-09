@@ -19,7 +19,7 @@ class IsFriend {
         }
         $user = (new UserRepository())->getUserById($input2['user_id2']);
         $friend = new Friends();
-        $friend = (new FriendsRepository())->addFriend($input->id, $user->id);
+        $friend = (new FriendsRepository())->isFriend($input->id, $user->id);
         redirect('/homepage');
     }
 }

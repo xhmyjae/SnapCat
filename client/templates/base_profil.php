@@ -1,4 +1,7 @@
-<?php $title = 'Profile';
+<?php
+
+global $is_friend;
+$title = 'Profile';
 $styles = ['profil.css', 'menu.css', 'main.css'];
 
 require_once('client/templates/components/menu.php');
@@ -9,6 +12,7 @@ require_once('client/templates/components/menu.php');
 global $user;
 global $connected_user;
 
+echo $is_friend;
 ob_start(); ?>
 
 <link rel="stylesheet" type="text/css" href="../style/main.css"/>
@@ -27,9 +31,9 @@ ob_start(); ?>
         <div class="profile-information">
             <div class="profile-information-left">
                 <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
-<!--                --><?php //if ?>
-                <a class="profile-links" href="">Ajouter</a>
-               <a class="profile-links" href="">Supprimer</a>
+                <?php if ($is_friend==1) echo '<a class="profile-links" href="/deletefriend?user_id2=<?=$friend_request->id?>">Supprimer</a>';
+                else echo '<a class="profile-links" href="/addfriend?user_id2=<?=$friend_request->id?>">Ajouter</a>' ?>
+
                 <p class="friends-popup-link">Amis</p>
             </div>
             <div class="profile-information-right">
