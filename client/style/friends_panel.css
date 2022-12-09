@@ -1,3 +1,4 @@
+ @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 * {
     font-family: 'instagram sans-reflects', sans-serif;
 }
@@ -14,16 +15,13 @@
     height: 50px;
     text-align: center;
     line-height: 50px;
+    transition: 0.3s ease-in-out;
+    scale: 1.3;
 }
 
 .Switch_button:hover {
     cursor: pointer;
-    color: #FEDA75;
-}
-
-.Switch_button:active {
-    background-color: rgb(28, 28, 33);
-    color: #FEDA75;
+    transform: scale(1.3);
 }
 
 .Friend-list {
@@ -32,6 +30,9 @@
     align-items: flex-start;
     padding: 15px;
     font-size: 15px;
+}
+.Friend-list a{
+    text-decoration: none;
 }
 
 .friend{
@@ -49,18 +50,71 @@
     object-fit: cover;
     border-radius: 50%;
 }
-
+.friend-name{
+    margin-left: 2vw;
+    font-size: 15px;
+}
+a .friend-name p {
+    color: #ffffff;
+    font-family: "Righteous", cursive;
+}
+.friend-name p:hover {
+    color: #FEDA75;
+}
+.friend-name p:first-letter {
+    text-transform: uppercase;
+}
 .Accept_button {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 100%;
-    margin-top: 15px;
+    gap: 140%;
+    margin: -8vh 0 0 17.5vw;
     cursor: pointer;
 }
 .request-container{
     display: none;
 }
+.request-container a{
+    text-decoration: none;
+}
+.fas{
+    color: #ffffff;
+}
+.fa-check:hover{
+    color: forestgreen;
+}
+.fa-xmark:hover{
+    color: red;
+}
 .waiting-container{
     display: none;
 }
+.search-container{
+    display: none;
+}
+ .search-box{
+     width: 85%;
+     position: relative;
+     display: flex;
+     margin-left: 5vw;
+ }
+ .search-input{
+     width: 100%;
+     padding: 10px;
+     border-radius: 20px 0 0 20px;
+     border: none;
+     outline: none;
+     font-size: 15px;
+     color: #FEDA75;
+     background: #393A41;
+ }
+ .search-button{
+     text-align: center;
+     width: 40px;
+     outline: none;
+     cursor: pointer;
+     border-radius: 0 20px 20px 0;
+     border: none;
+     background: #393A41;
+     font-size: 15px;
+     color: #6A6B70;
+ }
