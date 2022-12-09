@@ -3,6 +3,7 @@
     width: 27vw;
     height: 100vh;
     position: fixed;
+    top : 0;
     border-left: solid 1px #6A6B70;
     right: 0;
     display: flex;

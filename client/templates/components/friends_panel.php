@@ -68,6 +68,9 @@
                 </label>
                 <button class="search-button"><i class="fas fa-search"></i></button>
             </div>
+            <div class="search-results">
+
+            </div>
         </div>
     </div>
 </div>
