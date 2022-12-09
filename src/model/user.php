@@ -66,7 +66,7 @@ class UserRepository
         $result->execute(compact('ids', 'password'));
         $count = $result->rowCount();
         if ($count == 0) {
-            throw new \RuntimeException('Account doesnt exist');
+            return null;
         } else {
             return $result->fetchObject(User::class);
         }

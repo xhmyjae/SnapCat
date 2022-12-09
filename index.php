@@ -4,19 +4,24 @@ require_once('src/controllers/homepage.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
+require_once('src/controllers/getPosts.php');
 require_once('src/controllers/login_user.php');
 require_once('src/controllers/profil.php');
 require_once('src/controllers/logout_user.php');
 require_once('src/controllers/get_connected_user.php');
+require_once('src/controllers/getFriendsPost.php');
 require_once('src/lib/utils.php');
 require_once('src/controllers/update_user.php');
 require_once('src/controllers/go_settings.php');
 require_once('src/controllers/add_friend.php');
 require_once('src/controllers/delete_friend.php');
+require_once('src/controllers/is_friend.php');
+require_once('src/model/post.php');
 
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
+use App\Controllers\post\GetFriendsPosts\get_FriendsPosts;
 use App\Controllers\User\Create\CreateUser;
 use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
@@ -26,6 +31,7 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
 use App\Controllers\Friends\AddFriend\AddFriend;
 use App\Controllers\Friends\DeleteFriend\DeleteFriend;
+use App\Controllers\Friends\IsFriend\IsFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -34,6 +40,9 @@ $first_segment = $uri_segments[1] ?? '';
 session_start();
 
 try {
+    global $error;
+    $error = false;
+
     global $connected_user;
     $connected_user = (new GetConnectedUser())->execute($_SESSION);
 
@@ -42,6 +51,8 @@ try {
     if ($connected_user === null && $first_segment !== '' && $method === 'GET') {
         redirect('/');
     }
+
+
 
     if ($connected_user !== null) {
         $_SESSION['end'] = time() + 3600;
@@ -57,9 +68,11 @@ try {
             break;
         case 'create_post':
             $createPost = new Create_Post();
-            $createPost->execute($_POST);
+            $createPost->execute($_POST, $connected_user);
             break;
         case 'homepage':
+            global $friends_posts;
+            $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
             $homepage->execute($connected_user);
             break;
@@ -104,8 +117,12 @@ try {
             $delete_friend = new DeleteFriend();
             $delete_friend->execute($connected_user, $_GET);
             break;
+        case 'isfriend':
+            $is_friend = new IsFriend();
+            $is_friend->execute($connected_user, $_GET);
+            break;
         default:
-            throw new Exception('Page not found');
+            redirect('/homepage');
     }
 } catch (Exception $e) {
     echo $e->getMessage();

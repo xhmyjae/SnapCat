@@ -1,14 +1,17 @@
 <?php
-global $posts;
+global $friends_posts;
+
 use App\Controllers\User\GetUser\GetUser;
+require_once 'src/controllers/getFriendsPost.php';
 require_once 'src/controllers/GetUser.php';
+
+
 ?>
 
 
 
 <?php
-if ($posts !== null) {
-foreach ($posts as $post) {
+foreach ($friends_posts as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
 ?>
@@ -34,7 +37,3 @@ foreach ($posts as $post) {
         </div>
     </div>
 <?php } ?>
-<?php } else {
-    echo "No posts";
-} ?>
-}

@@ -7,6 +7,10 @@
     height : 100vh;
     position : fixed;
     border-left: solid 1px #6A6B70;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .post-header{
     padding-top: 5px;
@@ -16,17 +20,20 @@
     height: 20vh;
     border-bottom: solid 1px #6A6B70;
 }
+
 .header-post{
     margin-left: 1vw;
     display: flex;
     align-items: center;
     padding-top: 10px;
 }
+
 .feelings{
     display: flex;
     align-items: center;
     margin-left: 2vw;
 }
+
 .feelings select{
     margin-left:0.5vw;
     height: 4vh;
@@ -38,6 +45,7 @@
     font-family: 'Playfair Display', serif;
     text-align: center;
 }
+
 .footer-post{
     display: flex;
     justify-content: space-between;
@@ -52,7 +60,6 @@
     padding : 0 5vw;
     font-size: 15px;
     border-bottom : solid 1px #6A6B70;
-
 }
 img.avatar {
     width: 45px;
@@ -62,11 +69,13 @@ img.avatar {
     padding : 10px;
     cursor: pointer;
 }
+
 img.insert-img{
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
+
 .input-post{
     margin-left: 2vw;
     width: 25vw;
@@ -75,10 +84,11 @@ img.insert-img{
     outline: none;
     font-size: 15px;
     color: #ffffff;
-    background: rgba(35, 34, 34, 0.26);
+    background: rgb(22, 22, 22);
     resize: none;
     overflow-y: hidden;
 }
+
 .post-button{
     text-align: center;
     width:80px;
@@ -91,38 +101,47 @@ img.insert-img{
     font-size: 15px;
     color: #F5F5F5;
 }
+
 .post-button:hover{
     background: #D62976;
 }
+
 .container{
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
 .post{
-    height: 30vh;
+    height: fit-content;
     border-bottom: solid 1px #6A6B70;
+    margin: 10% 0;
 }
+
 .content-post{
     max-width: 45vw;
     height: 22vh;
     max-height: 22vh;
     overflow: hidden;
 }
+
 .react{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
     margin-top: 3vh;
 }
+
 .react span {
     display: flex;
     align-items: center;
     height: 20px;
 }
+
 .react span:hover {
     cursor: pointer;
 }
+
 .react span p{
     font-size: 20px;
     margin-top: 12px;
@@ -134,6 +153,10 @@ f1 {
     color: #ffffff;
     margin-left: 10px
 }
+
 .img-box img{
     background-color: rgb(128, 125, 125);
+}
+
+.posts {
 }
