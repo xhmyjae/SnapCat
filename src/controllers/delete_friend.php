@@ -14,12 +14,11 @@ use function App\Lib\Utils\redirect;
 class DeleteFriend {
     public function execute(User $input, array $input2): void
     {
-        if (!isset($input->id) || !isset($input2['user_id2'])) {
+        if (!isset($input->id) || !isset($input2['user_id'])) {
             throw new RuntimeException('Invalid input');
         }
-        $user = (new UserRepository())->getUserById($input2['user_id2']);
-        $friend = new Friends();
-        $friend = (new FriendsRepository())->deleteFriend($input->id, $user->id);
+        $user = (new UserRepository())->getUserById($input2['user_id']);
+        (new FriendsRepository())->deleteFriend($input->id, $user->id);
         redirect('/homepage');
     }
 }

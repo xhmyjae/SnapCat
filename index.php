@@ -4,6 +4,7 @@ require_once('src/controllers/homepage.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
+require_once 'src/controllers/delete_post.php';
 require_once('src/controllers/getPosts.php');
 require_once('src/controllers/login_user.php');
 require_once('src/controllers/profil.php');
@@ -21,6 +22,7 @@ require_once('src/model/post.php');
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
+use App\Controllers\post\Delete\delete_Post;
 use App\Controllers\post\GetFriendsPosts\get_FriendsPosts;
 use App\Controllers\User\Create\CreateUser;
 use App\Controllers\User\GetConnected\GetConnectedUser;
@@ -53,7 +55,6 @@ try {
     }
 
 
-
     if ($connected_user !== null) {
         $_SESSION['end'] = time() + 3600;
         if (time() > $_SESSION['end']) {
@@ -70,6 +71,12 @@ try {
             $createPost = new Create_Post();
             $emotion = $_POST['emotion'] ?? 1;
             $createPost->execute($_POST, $connected_user, $emotion);
+            break;
+        case 'delete_post':
+            $post_id = (int) $_POST['post_id'];
+            $deletePost = new delete_Post();
+            $deletePost->execute($post_id, $connected_user);
+            redirect('/');
             break;
         case 'homepage':
             global $friends_posts;

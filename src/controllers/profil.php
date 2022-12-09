@@ -24,6 +24,8 @@ class ProfilUser
         $posts = (new PostRepository())->getUserPost($user);
         global $is_friend;
         $is_friend = (new FriendsRepository())->isFriend($user->id, $connected_user->id);
+        global $has_requested;
+        $has_requested = (new FriendsRepository())->hasRequested($user->id, $connected_user->id);
 
         require_once('client/templates/base_profil.php');
     }
