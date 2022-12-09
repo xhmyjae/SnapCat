@@ -80,11 +80,34 @@ p.user-name {
     font-size: 25px;
 }
 .post-profile {
-    border: 1px solid;
-    width: 200px;
-    height: 200px;
+    border: 1px solid #6A6B70;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    break-inside: avoid;
+    border-radius: 4px;
 }
 a.delete-post-profile {
     text-decoration: none;
+}
+.post-profile-container {
+    width: 90%;
+    height: 100%;
+    text-overflow: ellipsis;
+}
+.user-posts {
+    margin: 0 25px;
+    columns: 3;
+    display: inline-block;
+}
+.users-profile-posts {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 95%;
+}
+.red {
     color: #c53f3f;
 }

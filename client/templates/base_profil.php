@@ -43,21 +43,24 @@ ob_start(); ?>
             </div>
         </div>
     </div>
-    <div class="user-posts">
-        <?php
-        if ($posts !== null) {
-            foreach ($posts as $post) {?>
-                <div class="post-profile">
-                    <div class="post-profile-container">
-                        <p class="post-profile-text"><?= $post['message'] ?></p>
+    <div class="users-profile-posts">
+        <div class="user-posts">
+            <?php
+            if ($posts !== null) {
+                foreach ($posts as $post) {?>
+                    <div class="post-profile">
+                        <div class="post-profile-container">
+                            <p class="post-profile-text"><?= $post['message'] ?></p>
+                        </div>
+                        <a href="" class="delete-post-profile red"><i class="fa-solid fa-trash-can"></i></a>
                     </div>
-                    <a href="" class="delete-post-profile"><i class="fa-solid fa-trash-can"></i></a>
-                </div>
-            <?php } ?>
-        <?php } else {
-            echo "Cet utilisateur n'a jamais rien envoyé ici...";
-        } ?>
+                <?php } ?>
+            <?php } else {
+                echo "Cet utilisateur n'a jamais rien envoyé ici...";
+            } ?>
+        </div>
     </div>
+
 </div>
 
 <?php $content = ob_get_clean(); ?>

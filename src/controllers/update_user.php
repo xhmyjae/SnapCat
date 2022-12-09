@@ -17,8 +17,6 @@ class UpdateUser {
             throw new RuntimeException('User is not connected');
         }
 
-        var_dump($input);
-
         if (!empty($input['name']) && !empty($input['confirm-password'])) {
             (new UserRepository())->updateName($session['user_id'], $input['name'], $input['confirm-password']);
         }
@@ -39,7 +37,7 @@ class UpdateUser {
             (new UserRepository())->updateAvatar($session['user_id'], $input['avatar'], $input['confirm-password']);
         }
 
-        redirect('/profile');
+        redirect("/profile?user_id=$session[user_id]");
 
     }
 }
