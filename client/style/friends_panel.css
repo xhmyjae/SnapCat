@@ -55,6 +55,7 @@
     font-size: 15px;
 }
 a .friend-name p {
+    margin-top: 2vh;
     color: #ffffff;
     font-family: "Righteous", cursive;
 }
