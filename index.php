@@ -76,6 +76,7 @@ try {
             $post_id = (int) $_POST['post_id'];
             $deletePost = new delete_Post();
             $deletePost->execute($post_id, $connected_user);
+            redirect('/');
             break;
         case 'homepage':
             global $friends_posts;
