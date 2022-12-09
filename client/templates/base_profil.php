@@ -31,8 +31,13 @@ ob_start(); ?>
         <div class="profile-information">
             <div class="profile-information-left">
                 <img class="profil-picture" src="client/templates/img/<?= $user->avatar ?>.png" alt="picture profil">
-                <?php if ($is_friend==1) echo '<a class="profile-links" href="/deletefriend?user_id2=<?=$friend_request->id?>">Supprimer</a>';
-                else echo '<a class="profile-links" href="/addfriend?user_id2=<?=$friend_request->id?>">Ajouter</a>' ?>
+                <?php if ($is_friend==1) { ?>
+                    <a class="profile-links" href="/deletefriend?user_id=<?= $user->id ?>">Supprimer</a>
+                <?php } else if ($is_friend==0 ) { ?>
+                <a class="profile-links"  href="">En attente</a>
+                <?php } else  { ?>
+                    <a class="profile-links"  href="/addfriend?user_id=<?= $user->id ?>">Ajouter</a>
+                <?php } ?>
 
                 <p class="friends-popup-link">Amis</p>
             </div>

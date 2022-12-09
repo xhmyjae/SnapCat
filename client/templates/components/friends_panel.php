@@ -1,6 +1,7 @@
 <?php
     global $friends;
     global $friend_requests;
+    global $friend_requests_sent;
 ?>
 
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
@@ -36,10 +37,10 @@
                         <p><?= $friend_request->name ?></p>
                     </div>
                     <div class="Accept_button">
-                        <a href="/addfriend?user_id2=<?=$friend_request->id?>">
+                        <a href="/addfriend?user_id=<?=$friend_request->id?>">
                             <i class="fas fa-check"></i>
                         </a>
-                        <a href="/deletefriend?user_id2=<?=$friend_request->id?>">
+                        <a href="/deletefriend?user_id=<?=$friend_request->id?>">
                             <i class="fas fa-xmark"></i>
                         </a>
                     </div>
@@ -47,7 +48,16 @@
             <?php endforeach; ?>
         </div>
         <div class="waiting-container">
-
+            <?php foreach ($friend_requests_sent as $friend_request_sent): ?>
+                <a href="/profile?user_id=<?=$friend_request_sent->id ?>" class="friend">
+                    <div class="friend-avatar">
+                        <img src="client/templates/img/<?= $friend_request_sent->avatar ?>.png" alt="friend picture">
+                    </div>
+                    <div class="friend-name">
+                        <p><?= $friend_request_sent->name ?></p>
+                    </div>
+                </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
