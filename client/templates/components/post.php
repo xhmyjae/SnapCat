@@ -37,4 +37,3 @@ foreach ($posts as $post) {
 <?php } else {
     echo "No posts";
 } ?>
-}

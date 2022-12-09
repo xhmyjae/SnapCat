@@ -3,11 +3,9 @@ $styles = ['profil.css', 'menu.css', 'main.css'];
 
 require_once('client/templates/components/menu.php');
 
-//$avatar = new GetAvatar();
-//$avatar->execute($_SESSION['id']);
-
 global $user;
 global $connected_user;
+global $posts;
 
 ob_start(); ?>
 
@@ -40,7 +38,19 @@ ob_start(); ?>
         </div>
     </div>
     <div class="user-posts">
-
+        <?php
+        if ($posts !== null) {
+            foreach ($posts as $post) {?>
+                <div class="post-profile">
+                    <div class="post-profile-container">
+                        <p class="post-profile-text"><?= $post['message'] ?></p>
+                    </div>
+                    <a href="" class="delete-post-profile"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            <?php } ?>
+        <?php } else {
+            echo "Cet utilisateur n'a jamais rien envoyé ici...";
+        } ?>
     </div>
 </div>
 
