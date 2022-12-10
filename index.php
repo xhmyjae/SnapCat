@@ -17,6 +17,7 @@ require_once('src/controllers/go_settings.php');
 require_once('src/controllers/add_friend.php');
 require_once('src/controllers/delete_friend.php');
 require_once('src/controllers/is_friend.php');
+require_once('src/controllers/searchFriends.php');
 require_once('src/model/post.php');
 
 use App\Controllers\Homepage\Homepage;
@@ -33,7 +34,6 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
 use App\Controllers\Friends\AddFriend\AddFriend;
 use App\Controllers\Friends\DeleteFriend\DeleteFriend;
-use App\Controllers\Friends\IsFriend\IsFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -82,7 +82,7 @@ try {
             global $friends_posts;
             $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
-            $homepage->execute($connected_user);
+            $homepage->execute($connected_user, $_GET);
             break;
         case '':
             if ($connected_user !== null) {
