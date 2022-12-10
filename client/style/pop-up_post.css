@@ -1,49 +1,138 @@
-.close-pop-up{
+.modal-post {
     position: fixed;
-    right: 1vw;
-    margin-top: -8vh;
+    display: none;
+    border: 1px solid #6A6B70;
+    width: 60vw;
+    height: 75vh;
+    left: 20vw;
+    top: 12.5vh;
 }
-.close-pop-up:hover{
-    cursor: pointer;
-}
-.pop-up-post{
+.modal-post-content {
+    position: relative;
     display: flex;
+    width: 97%;
+    justify-content: center;
+    background-color: #282828;
+    word-break: break-all;
     flex-direction: column;
-    width: 52vw;
 }
-.pop-up-post img{
-    width: 100%;
-    height: 73vh;
+p.modal-post-content-text {
+    padding: 20px;
+    font-size: 18px;
 }
-.pop-up-panel{
+.modal-reactions {
     display: flex;
-    margin: 10vh 10vw;
-    width: 80vw;
-    height: 79vh;
-    border: solid 1px #F5F5F5;
-    justify-content: flex-end;
+    justify-content: space-around;
+    margin: 19px 0;
 }
-.pop-up-right-panel{
-    width:28vw;
-    height: 79vh;
-    border-left: solid 1px #6A6B70;
-}
-.react{
+.modal-reaction {
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    margin-top: 1vh;
+    align-content: center;
+    gap: 10px;
+    color: #6A6B70;
+    font-size: 15px;
 }
-.react span {
+p.modal-reaction-number {
+    margin: 0;
     display: flex;
     align-items: center;
-    height: 20px;
 }
-.react span:hover {
-    cursor: pointer;
+a.modal-reaction-icon {
+    color: #6A6B70;
+    display: flex;
+    text-decoration: none;
+    gap: 10px;
 }
-.react span p{
-    font-size: 20px;
-    margin-top: 3.25vh;
-    padding-left: 5px;
-}w²
+.modal-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-comment {
+    display: flex;
+    padding: 0 15px;
+}
+img.modal-comment-avatar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-position: center;
+    margin-right: 14px;
+}
+.modal-comment-votes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #6A6B70;
+    margin-left: 14px;
+}
+.modal-comment-information {
+    display: flex;
+    gap: 20px;
+}
+.modal-comment-date {
+    color: #6A6B70;
+}
+p.modal-comment-name {
+    font-weight: 600;
+}
+p.modal-post-date {
+    margin: 0 20px;
+    color: #6A6B70;
+}
+.modal-information {
+    background-color: rgb(22, 22, 22);
+}
+.modal-display {
+    display: flex;
+}
+
+/*.close-pop-up{*/
+/*    position: fixed;*/
+/*    right: 1vw;*/
+/*    margin-top: -8vh;*/
+/*}*/
+/*.close-pop-up:hover{*/
+/*    cursor: pointer;*/
+/*}*/
+/*.pop-up-post{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 52vw;*/
+/*}*/
+/*.pop-up-post img{*/
+/*    width: 100%;*/
+/*    height: 73vh;*/
+/*}*/
+/*.pop-up-panel{*/
+/*    display: flex;*/
+/*    margin: 10vh 10vw;*/
+/*    width: 80vw;*/
+/*    height: 79vh;*/
+/*    border: solid 1px #F5F5F5;*/
+/*    justify-content: flex-end;*/
+/*}*/
+/*.pop-up-right-panel{*/
+/*    width:28vw;*/
+/*    height: 79vh;*/
+/*    border-left: solid 1px #6A6B70;*/
+/*}*/
+/*.react{*/
+/*    display: flex;*/
+/*    justify-content: space-evenly;*/
+/*    align-items: flex-end;*/
+/*    margin-top: 1vh;*/
+/*}*/
+/*.react span {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    height: 20px;*/
+/*}*/
+/*.react span:hover {*/
+/*    cursor: pointer;*/
+/*}*/
+/*.react span p{*/
+/*    font-size: 20px;*/
+/*    margin-top: 3.25vh;*/
+/*    padding-left: 5px;*/
+/*}*/

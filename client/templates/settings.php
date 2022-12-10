@@ -3,9 +3,6 @@ $styles = ['settings.css', 'menu.css', 'main.css'];
 
 require_once('client/templates/components/menu.php');
 
-//$avatar = new GetAvatar();
-//$avatar->execute($_SESSION['id']);
-
 global $connected_user;
 
 ob_start(); ?>

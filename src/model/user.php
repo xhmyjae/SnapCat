@@ -60,6 +60,28 @@ class UserRepository
         return false;
     }
 
+    public function checkNameAvailability(string $name): bool
+    {
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE name = :name");
+        $result->execute(compact('name'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function checkMailAvailability(string $mail): bool
+    {
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE mail = :mail");
+        $result->execute(compact('mail'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            return true;
+        }
+        return false;
+    }
+
     public function loginUser(string $ids, string $password): ?User
     {
         $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE (name = :ids OR mail = :ids) AND password = :password");
@@ -77,6 +99,12 @@ class UserRepository
         $statement = $this->databaseConnection->prepare('SELECT * FROM users WHERE id = :id');
         $statement->execute(compact('id'));
         return $statement->fetchObject(User::class);
+    }
+
+    public function updateUser(int $id, string $name, string $mail, string $avatar, string $password, string $description, string $confirm_password): void
+    {
+        $statement = $this->databaseConnection->prepare('UPDATE users SET name = :name, mail = :mail, avatar = :avatar, password = :password, description = :description WHERE id = :id AND password = :confirm_password');
+        $statement->execute(compact('id', 'name', 'mail', 'avatar', 'password', 'description'));
     }
 
     public function updateName(int $id, string $name, string $confirm_password): void

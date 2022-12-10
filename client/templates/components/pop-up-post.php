@@ -1,45 +1,49 @@
-<link rel="stylesheet" type="text/css" href="../../style/main.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/profil.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/menu.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/right-panel.css"/>
-<link rel="stylesheet" type="text/css" href="../../style/pop-up_post.css"/>
+<?php global $post ?>
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
+<script defer src="client/scripts/popup-post.js"></script>
 
-<div class="close-pop-up">X</div>
-<div class="pop-up-panel">
-    <div class="pop-up-post">
-        <img src="" alt="">
-        <div class="pop-up-bottom-panel">
-            <div class="react">
-                <span>👍<p>199</p></span>
-                <span>👎<p>199</p></span>
-                <span>❤<p>199</p></span>
-                <span>😄<p>199</p></span>
-                <span>😭<p>199</p></span>
-                <span>💬<p>199</p></span>
+<div class="modal-post">
+<!--    <span class="close">&times;</span>-->
+    <div class="modal-post-content">
+        <p class="modal-post-date"><?= $post['creation_date'] ?></p>
+        <p class="modal-post-content-text"><?= $post['message'] ?></p>
+    </div>
+    <div class="modal-information">
+        <div class="modal-reactions">
+            <div class="modal-reaction">
+                <a href="" class="modal-reaction-icon"><i class="fa-solid fa-thumbs-up"></i><p class="modal-reaction-number">222</p></a>
+            </div>
+            <div class="modal-reaction">
+                <a href="" class="modal-reaction-icon"><i class="fa-solid fa-thumbs-down"></i><p class="modal-reaction-number">222</p></a>
+            </div>
+            <div class="modal-reaction">
+                <a href="" class="modal-reaction-icon"><i class="fa-solid fa-heart"></i><p class="modal-reaction-number">222</p></a>
+            </div>
+            <div class="modal-reaction">
+                <a href="" class="modal-reaction-icon"><i class="fa-solid fa-star"></i><p class="modal-reaction-number">222</p></a>
+            </div>
+            <div class="modal-reaction">
+                <a href="" class="modal-reaction-icon"><i class="fa-solid fa-star"></i><p class="modal-reaction-number">222</p></a>
             </div>
         </div>
-    </div>
-    
-    <div class="pop-up-right-panel">
-        <div class="main-comment">
-            <div class="avatar-box">
-                <img alt="profile-picture" class="avatar" src="../img/antaBinome.png">
-            </div>
-            <div class="comment-box">
-                <div class="pseudo-box">
-                    <span class="pseudo">Bebou</span>
+        <div class="modal-comments">
+            <div class="modal-comment">
+                <img class="modal-comment-avatar" src="../img/catspaghetti.png" alt="comment avatar">
+                <div class="modal-comment-content">
+                    <div class="modal-comment-information">
+                        <p class="modal-comment-name">jae</p>
+                        <p class="modal-comment-date">22-01-01</p>
+                    </div>
+                    <div class="modal-comment-text">wjbvwlijfbwk.jfbwijfbwj kjnfjk; njn ijwnfjk njn f kjw nfkwjnfnf kn ngbjkelbv wjbf jwebfijbefjgf bjm</div>
                 </div>
-                <div class="comment-text-box">
-                    <span class="comment">Haha trop nul kheir la loose, du coup margot ce verre ?</span>
-                </div>
-                <div class="stats-box">
-                    <span class="up-vote"><i class="fa-solid fa-chevron-up"></i></span>
-                    <span class="vote-count">3</span>
-                    <span class="down-vote"><i class="fa-solid fa-chevron-down"></i></span>
+                <div class="modal-comment-votes">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <p class="modal-comment-votes-total">23</p>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <?php

@@ -101,6 +101,7 @@ a.delete-post-profile {
     width: 90%;
     height: 100%;
     text-overflow: ellipsis;
+    word-break: break-all;
 }
 .user-posts {
     margin: 0 25px;
