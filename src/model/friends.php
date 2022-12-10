@@ -119,6 +119,7 @@ class FriendsRepository{
             return false;
         }
 
+
         public function hasRequested(int $user_id1, int $user_id2): bool
         {
             $result = $this->databaseConnection->prepare("SELECT * FROM friends WHERE (user_id1 = :user_id1 AND user_id2 = :user_id2) OR (user_id1 = :user_id2 AND user_id2 = :user_id1) AND accepted = 0");
@@ -129,5 +130,7 @@ class FriendsRepository{
             }
             return false;
         }
+
+
 }
 

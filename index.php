@@ -17,6 +17,7 @@ require_once('src/controllers/go_settings.php');
 require_once('src/controllers/add_friend.php');
 require_once('src/controllers/delete_friend.php');
 require_once('src/controllers/is_friend.php');
+require_once('src/controllers/searchFriends.php');
 require_once 'src/controllers/create_comment.php';
 require_once('src/model/post.php');
 require_once('src/model/comments.php');
@@ -89,7 +90,7 @@ try {
             global $friends_posts;
             $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
-            $homepage->execute($connected_user);
+            $homepage->execute($connected_user, $_GET);
             break;
         case '':
             if ($connected_user !== null) {

@@ -2,6 +2,7 @@
     global $friends;
     global $friend_requests;
     global $friend_requests_sent;
+    global $all_users;
 ?>
 
 
@@ -63,13 +64,29 @@
         </div>
         <div class="search-container">
             <div class="search-box">
-                <label>
-                    <input type="text" class="search-input" placeholder="Recherche...">
-                </label>
-                <button class="search-button"><i class="fas fa-search"></i></button>
+                <form method="get">
+                    <label>
+                        <input type="search" name="search" class="search-input" placeholder="Recherche..." autocomplete="off">
+                    </label>
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             <div class="search-results">
-
+                <?php
+                if (isset($all_users) && !empty($all_users)) {
+                    foreach ($all_users as $user) {
+                        echo '<a href="/profile?user_id=' . $user->id . '" class="friend">
+                                <div class="friend-avatar">
+                                    <img src="client/templates/img/' . $user->avatar . '.png" alt="friend picture">
+                                </div>
+                                <div class="friend-name">
+                                    <p>' . $user->name . '</p>
+                                </div>
+                               </a>';
+                    } ?>
+                <?php } else { ?>
+                    <p class="no-result">Aucun résultat</p>
+                <?php } ?>
             </div>
         </div>
     </div>
