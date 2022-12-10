@@ -85,7 +85,7 @@
                                </a>';
                     } ?>
                 <?php } else { ?>
-                    <p>Aucun résultat</p>
+                    <p class="no-result">Aucun résultat</p>
                 <?php } ?>
             </div>
         </div>
