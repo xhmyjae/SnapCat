@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Controllers\Homepage;
+namespace App\Model\comments;
 
 use App\Lib\Database\DatabaseConnection;
 use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use PDO;
+use RuntimeException;
+
+require_once('src/lib/DatabaseConnection.php');
 
 
 class CommentRepository
@@ -22,5 +25,4 @@ class CommentRepository
         $statement = $this->databaseConnection->prepare('INSERT INTO comments (message, user_id, post_id) VALUES (:message, :user_id, :post_id)');
         $statement->execute(compact('message', 'user_id', 'post_id'));
     }
-
 }

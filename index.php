@@ -75,8 +75,9 @@ try {
             $createPost->execute($_POST, $connected_user, $emotion);
             break;
         case 'create_comment':
+            $post_id = $_POST['post_id'] ?? 0;
             $createComment = new Create_Comment();
-            $createComment->execute($_POST, $connected_user, $_GET['post_id']);
+            $createComment->execute($_POST, $connected_user, $post_id);
             break;
         case 'delete_post':
             $post_id = (int)$_POST['post_id'];
