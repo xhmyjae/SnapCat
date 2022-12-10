@@ -51,7 +51,7 @@ foreach ($friends_posts as $post) {
             </form>
         </div>
         <div class="comment-form" style="display: block;">
-            <form action="/create_comment" method="POST">
+            <form action="create_comment" method="POST">
                 <input type="hidden" id="post-id" value="<?= $post['id']?>">
                 <input type="hidden" id="user-id" value="<?= $_SESSION['user_id'] ?>">
                 <textarea id="comment-message" name="message" placeholder="Write a comment..." required></textarea>
