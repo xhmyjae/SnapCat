@@ -62,5 +62,6 @@ class PostRepository
             'post_id' => $post_id,
         ]);
     }
+
 }
 

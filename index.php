@@ -17,8 +17,11 @@ require_once('src/controllers/go_settings.php');
 require_once('src/controllers/add_friend.php');
 require_once('src/controllers/delete_friend.php');
 require_once('src/controllers/is_friend.php');
+require_once 'src/controllers/create_comment.php';
 require_once('src/model/post.php');
+require_once('src/model/comments.php');
 
+use App\Controllers\comment\Create\Create_Comment;
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
@@ -33,7 +36,6 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Settings\Settings;
 use App\Controllers\Friends\AddFriend\AddFriend;
 use App\Controllers\Friends\DeleteFriend\DeleteFriend;
-use App\Controllers\Friends\IsFriend\IsFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -72,8 +74,12 @@ try {
             $emotion = $_POST['emotion'] ?? 1;
             $createPost->execute($_POST, $connected_user, $emotion);
             break;
+        case 'create_comment':
+            $createComment = new Create_Comment();
+            $createComment->execute($_POST, $connected_user, $_GET['post_id']);
+            break;
         case 'delete_post':
-            $post_id = (int) $_POST['post_id'];
+            $post_id = (int)$_POST['post_id'];
             $deletePost = new delete_Post();
             $deletePost->execute($post_id, $connected_user);
             redirect('/');
