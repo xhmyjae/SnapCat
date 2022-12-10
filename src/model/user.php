@@ -5,6 +5,7 @@ namespace App\Model\User;
 require_once('src/lib/DatabaseConnection.php');
 
 use App\Lib\Database\DatabaseConnection;
+use App\Model\Friends\Friends;
 use http\QueryString;
 use PDO;
 use function App\Lib\Utils\redirect;
@@ -145,5 +146,12 @@ class UserRepository
     {
         $statement = $this->databaseConnection->prepare('UPDATE users SET avatar = :avatar WHERE id = :id AND password = :confirm_password');
         $statement->execute(compact('id', 'avatar', 'confirm_password'));
+    }
+
+    public function searchFriend(string $search): array
+    {
+        $result = $this->databaseConnection->prepare('SELECT * FROM users WHERE name LIKE :search');
+        $result->execute(['search' => "%$search%"]);
+        return $result->fetchAll(PDO::FETCH_CLASS, User::class);
     }
 }
