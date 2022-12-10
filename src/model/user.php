@@ -123,11 +123,7 @@ class UserRepository
     public function searchFriend(string $search): array
     {
         $result = $this->databaseConnection->prepare('SELECT * FROM users WHERE name LIKE :search');
-        $result->execute(compact('search'));
-        if ($result->rowCount() == 0) {
-            return [];
-        } else {
-            return $result->fetchAll(PDO::FETCH_CLASS, User::class);
-        }
+        $result->execute(['search' => "%$search%"]);
+        return $result->fetchAll(PDO::FETCH_CLASS, User::class);
     }
 }

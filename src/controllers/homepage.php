@@ -22,7 +22,6 @@ class Homepage
         $friends = (new FriendsRepository())->getFriends($connected_user->id);
         if (isset($search) && !empty($search['search'])) {
             $all_users = (new UserRepository())->searchFriend($search['search']);
-            var_dump($all_users);
         }
         require_once ('client/templates/homepage.php');
     }
