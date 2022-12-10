@@ -95,7 +95,7 @@ img.insert-img {
 
 .input-post {
     margin-left: 2vw;
-    width: 21vw;
+    width: 25vw;
     height: 10vh;
     border: none;
     outline: none;
@@ -176,8 +176,7 @@ f1 {
 }
 
 .img-box img {
-    background-color: rgb(128, 125, 125);
-}
+margin-left: 0.75vw}
 
 .date {
     font-size: 25vm;
