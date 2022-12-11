@@ -73,6 +73,7 @@ a .friend-name p {
 }
 .request-container{
     display: none;
+    width: 100%;
 }
 .request-container a{
     text-decoration: none;
@@ -93,10 +94,11 @@ a .friend-name p {
     display: none;
 }
  .search-box{
-     width: 85%;
+     width: 100%;
      position: relative;
      display: flex;
-     margin-left: 5vw;
+     margin-bottom: 5vw;
+     justify-content: center;
  }
  .search-input{
      width: 80%;
@@ -107,6 +109,7 @@ a .friend-name p {
      font-size: 15px;
      color: #FEDA75;
      background: #393A41;
+     height: 40px;
  }
  .search-button{
      text-align: center;
@@ -121,8 +124,18 @@ a .friend-name p {
      color: #6A6B70;
  }
  .no-result{
-     margin: 5vw 0 0 8vw;
      font-size: 20px;
      color: rgba(255, 255, 255, 0.05);
      cursor: default;
+     text-align: center;
+     width: 100%;
+ }
+ .friends-container {
+     width: 100%;
+ }
+ .waiting-container {
+     width: 100%;
+ }
+ .search-container {
+     width: 100%;
  }

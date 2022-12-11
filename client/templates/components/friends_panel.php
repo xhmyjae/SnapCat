@@ -17,50 +17,64 @@
         <div class="Switch_button" id="search" data-switch="">🔍</div>
     </div>
     <div class="Friend-list">
-
         <div class="friends-container">
-            <?php foreach ($friends as $friend): ?>
-                <a href="/profile?user_id=<?=$friend->id ?>" class="friend">
-                    <div class="friend-avatar">
-                        <img src="client/templates/img/<?= $friend->avatar ?>.png" alt="friend picture">
-                    </div>
-                    <div class="friend-name">
-                        <p><?= $friend->name ?></p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+            <p class="page-title">Amis</p>
+            <?php if (isset($friends) && !empty($friends)) {
+                foreach ($friends as $friend): ?>
+                    <a href="/profile?user_id=<?=$friend->id ?>" class="friend">
+                        <div class="friend-avatar">
+                            <img src="client/templates/img/<?= $friend->avatar ?>.png" alt="friend picture">
+                        </div>
+                        <div class="friend-name">
+                            <p><?= $friend->name ?></p>
+                        </div>
+                    </a>
+                <?php endforeach;
+            } else { ?>
+                <p class="no-result">Pas d'amis ?! 🙀</p>
+            <?php } ?>
         </div>
         <div class="request-container">
-            <?php foreach ($friend_requests as $friend_request): ?>
-                <a href="/profile?user_id=<?=$friend_request->id ?>" class="friend">
-                    <div class="friend-avatar">
-                        <img src="client/templates/img/<?= $friend_request->avatar ?>.png" alt="friend picture">
-                    </div>
-                    <div class="friend-name">
-                        <p><?= $friend_request->name ?></p>
-                    </div>
-                    <div class="Accept_button">
-                        <a href="/addfriend?user_id=<?=$friend_request->id?>">
-                            <i class="fas fa-check"></i>
-                        </a>
-                        <a href="/deletefriend?user_id=<?=$friend_request->id?>">
-                            <i class="fas fa-xmark"></i>
-                        </a>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+            <p class="page-title">Requêtes</p>
+            <?php if (isset($friend_requests) && !empty($friend_requests)) {
+                foreach ($friend_requests as $friend_request): ?>
+                    <a href="/profile?user_id=<?=$friend_request->id ?>" class="friend">
+                        <div class="friend-avatar">
+                            <img src="client/templates/img/<?= $friend_request->avatar ?>.png" alt="friend picture">
+                        </div>
+                        <div class="friend-name">
+                            <p><?= $friend_request->name ?></p>
+                        </div>
+                        <div class="Accept_button">
+                            <a href="/addfriend?user_id=<?=$friend_request->id?>">
+                                <i class="fas fa-check"></i>
+                            </a>
+                            <a href="/deletefriend?user_id=<?=$friend_request->id?>">
+                                <i class="fas fa-xmark"></i>
+                            </a>
+                        </div>
+                    </a>
+                <?php endforeach;
+            } else { ?>
+                <p class="no-result">Personne ne veut être ton ami ? 🙀</p>
+            <?php } ?>
         </div>
         <div class="waiting-container">
-            <?php foreach ($friend_requests_sent as $friend_request_sent): ?>
-                <a href="/profile?user_id=<?=$friend_request_sent->id ?>" class="friend">
-                    <div class="friend-avatar">
-                        <img src="client/templates/img/<?= $friend_request_sent->avatar ?>.png" alt="friend picture">
-                    </div>
-                    <div class="friend-name">
-                        <p><?= $friend_request_sent->name ?></p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+            <p class="page-title">Demandes en attente</p>
+            <?php if (isset($friend_requests_sent) && !empty($friend_requests_sent)) {
+                foreach ($friend_requests_sent as $friend_request_sent): ?>
+                    <a href="/profile?user_id=<?=$friend_request_sent->id ?>" class="friend">
+                        <div class="friend-avatar">
+                            <img src="client/templates/img/<?= $friend_request_sent->avatar ?>.png" alt="friend picture">
+                        </div>
+                        <div class="friend-name">
+                            <p><?= $friend_request_sent->name ?></p>
+                        </div>
+                    </a>
+                <?php endforeach;
+            } else { ?>
+                <p class="no-result">Tu n'as demandé personne en amis 🙀</p>
+            <?php } ?>
         </div>
         <div class="search-container">
             <div class="search-box">

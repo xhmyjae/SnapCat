@@ -33,9 +33,10 @@
 }
 
 .write-post {
-    width: 99%;
-    height: 20vh;
+    width: 100%;
+    height: fit-content;
     border-bottom: solid 1px #6A6B70;
+    padding: 10px 0;
 }
 
 .header-post {
@@ -51,52 +52,8 @@
     margin-left: 2vw;
 }
 
-.feelings select {
-    margin-left: 0.5vw;
-    height: 4vh;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(35, 34, 34, 0.26);
-    color: white;
-    font-size: 0.8em;
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-}
-
-.footer-post {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.post-panel .post-header {
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-}
-
-img.avatar {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-}
-
-img.insert-img {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
 .input-post {
-    margin-left: 2vw;
-    width: 25vw;
-    height: 10vh;
+    width: 100%;
     border: none;
     outline: none;
     font-size: 15px;
@@ -104,6 +61,9 @@ img.insert-img {
     background: rgb(22, 22, 22);
     resize: none;
     overflow-y: hidden;
+    padding: 15px 0;
+    height: fit-content;
+    min-height: 7vh;
 }
 
 .post-button {
@@ -112,7 +72,7 @@ img.insert-img {
     height: 30px;
     outline: none;
     cursor: pointer;
-    border-radius: 10%;
+    border-radius: 5px;
     border: none;
     background: #4F5BD5;
     font-size: 15px;
@@ -127,17 +87,14 @@ img.insert-img {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-
     padding: 10px 0;
     border-bottom: solid 1px #6A6B70;
 }
-
-
 .post-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 20px;
 }
-
 .content-post {
     display: flex;
     flex-direction: column;
@@ -212,28 +169,67 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .delete-button {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #4b70e2;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    color: #c75656;
 }
 
 .delete-button:hover {
     color: #D62976;
 }
 
-/* COMMENTS */
-/*.comment {*/
-/*    display: none;*/
-/*}*/
-
+form.write-post-form {
+    display: flex;
+    justify-content: space-around;
+}
+.write-post-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.write-post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+i.fa-solid.fa-image {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #6A6B70;
+    cursor: pointer;
+}
+select#emotions-select {
+    width: 20%;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #feda75;
+    padding: 2px;
+    border-color: #6A6B70;
+}
+.form-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 19px;
+}
+.post {
+    width: 100%;
+    height: fit-content;
+    border-bottom: solid 1px #6A6B70;
+    padding: 10px 0;
+}
+.post-content {
+    display: flex;
+    justify-content: space-around;
+}
+.post-container {
+    width: 80%;
+}
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+p.post-message {
+    margin: 20px 0;
+}
