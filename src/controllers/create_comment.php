@@ -1,28 +1,26 @@
 <?php
 
-namespace App\Controllers\comment\Create;
+namespace App\Controllers\Comment\Create;
 
 require_once('src/model/comments.php');
 
-use App\Model\comments\CommentRepository;
-use App\Model\Homepage\HomepageController;
+use App\Model\Comments\CommentRepository;
 
 use App\Model\User\User;
 use RuntimeException;
 use function App\Lib\Utils\redirect;
 
 class Create_Comment {
-    public function execute(array $input, User $connected_user, int $post_id): void
+    public function execute(array $input, User $connected_user): void
     {
-        $message = $input['message'] ?? '';
-        $user_id = $connected_user->id;
+        var_dump($input);
+        $message = $input['comment_content'] ?? '';
 
         if ($message === '') {
             throw new RuntimeException('Le message ne peut pas être vide');
         }
 
-        $commentRepository = new CommentRepository();
-        $commentRepository->createComment($message, $user_id, $post_id);
+        (new CommentRepository())->createComment($message, $connected_user->id, (int) $input['post_id']);
 
         redirect('/');
     }

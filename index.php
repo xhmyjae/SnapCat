@@ -22,7 +22,7 @@ require_once 'src/controllers/create_comment.php';
 require_once('src/model/post.php');
 require_once('src/model/comments.php');
 
-use App\Controllers\comment\Create\Create_Comment;
+use App\Controllers\Comment\Create\Create_Comment;
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
@@ -73,9 +73,8 @@ try {
             $createPost->execute($_POST, $connected_user, $emotion);
             break;
         case 'create_comment':
-            $post_id = $_POST['post_id'] ?? 0;
             $createComment = new Create_Comment();
-            $createComment->execute($_POST, $connected_user, $post_id);
+            $createComment->execute($_POST, $connected_user);
             break;
         case 'delete_post':
             $post_id = (int)$_POST['post_id'];

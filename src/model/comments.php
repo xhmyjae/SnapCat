@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\comments;
+namespace App\Model\Comments;
 
 use App\Lib\Database\DatabaseConnection;
 use App\Model\Friends\FriendsRepository;
@@ -24,5 +24,12 @@ class CommentRepository
     {
         $statement = $this->databaseConnection->prepare('INSERT INTO comments (message, user_id, post_id) VALUES (:message, :user_id, :post_id)');
         $statement->execute(compact('message', 'user_id', 'post_id'));
+    }
+
+    public function getComments(int $post_id): array
+    {
+        $statement = $this->databaseConnection->prepare('SELECT * FROM comments WHERE post_id = :post_id ORDER BY creation_date DESC');
+        $statement->execute(compact('post_id'));
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }
