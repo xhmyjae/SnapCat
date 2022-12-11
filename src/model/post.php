@@ -56,6 +56,11 @@ class PostRepository
 
     public function deletePost(int $post_id, User $connected_user): void
     {
+        // if post has comments, delete comments too
+        $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE post_id = :post_id');
+        $statement->execute([
+            'post_id' => $post_id,
+        ]);
         $statement = $this->databaseConnection->prepare('DELETE FROM posts WHERE user_id = :user_id AND id = :post_id');
         $statement->execute([
             'user_id' => $connected_user->id,
