@@ -13,6 +13,7 @@ if ($posts !== null) {
             <i class="fa-solid fa-heart"></i>
             <i class="fa-solid fa-comment"></i>
         </div>
+        <?php foreach ($post_comments as $comment) { ?>
 
     <div class="modal-post">
         <div class="modal-post-content">

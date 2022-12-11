@@ -63,13 +63,14 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                 <button type="submit" class="submit-comment-button" name="submit-comment" value="create_comment">Submit</button>
             </form>
         </div>
-        <?php foreach ($post_comments as $comment) { ?>
+        <?php foreach ($post_comments as $comment) {
+            $comment_user = $user_method->execute($comment['user_id']); ?>
             <div class="comment">
                 <div class="avatar-box">
-                    <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $user->avatar ?>.png">
+                    <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $comment_user->avatar ?>.png">
                 </div>
                 <div class="content-comment">
-                    <p class="pseudo"> <?= $user->name ?> </p>
+                    <p class="pseudo"> <?= $comment_user->name ?> </p>
                     <p class="content"><?= $comment['message'] ?></p>
                 </div>
             </div>

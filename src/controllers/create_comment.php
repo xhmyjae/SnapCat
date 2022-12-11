@@ -13,7 +13,6 @@ use function App\Lib\Utils\redirect;
 class Create_Comment {
     public function execute(array $input, User $connected_user): void
     {
-        var_dump($input);
         $message = $input['comment_content'] ?? '';
 
         if ($message === '') {
