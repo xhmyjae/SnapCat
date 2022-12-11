@@ -1,21 +1,27 @@
 <?php
 global $friends_posts;
+global $connected_user;
 
-use App\Controllers\Homepage\PostRepository;
+$offset = 0;
+$length = 5;
+
 use App\Controllers\User\GetUser\GetUser;
+use App\Model\Comments\CommentRepository;
 
 require_once 'src/controllers/getFriendsPost.php';
 require_once 'src/controllers/GetUser.php';
-
+require_once 'src/model/comments.php';
 
 ?>
 
 <script defer src="client/scripts/comment.js"></script>
 
 <?php
-foreach ($friends_posts as $post) {
+foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
+    $post_comments = (new CommentRepository())->getComments($post['id']);
+
     ?>
     <div class="post">
     <div class="container">
@@ -51,12 +57,22 @@ foreach ($friends_posts as $post) {
             </form>
         </div>
         <div class="comment-form" style="display: block;">
-            <form action="create_comment" method="POST">
-                <input type="hidden" id="post-id" value="<?= $post['id']?>">
-                <input type="hidden" id="user-id" value="<?= $_SESSION['user_id'] ?>">
-                <textarea id="comment-message" name="message" placeholder="Write a comment..." required></textarea>
-                <button type="submit" class="submit-comment-button" value="create_comment">Submit</button>
+            <form action="/create_comment" method="POST">
+                <input type="hidden" id="post-id" name="post_id" value="<?= $post['id']?>">
+                <textarea id="comment-content" name="comment_content" placeholder="Write a comment..." required></textarea>
+                <button type="submit" class="submit-comment-button" name="submit-comment" value="create_comment">Submit</button>
             </form>
         </div>
+        <?php foreach ($post_comments as $comment) { ?>
+            <div class="comment">
+                <div class="avatar-box">
+                    <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $user->avatar ?>.png">
+                </div>
+                <div class="content-comment">
+                    <p class="pseudo"> <?= $user->name ?> </p>
+                    <p class="content"><?= $comment['message'] ?></p>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 <?php } ?>
