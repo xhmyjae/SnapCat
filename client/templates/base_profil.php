@@ -50,23 +50,7 @@ ob_start(); ?>
     </div>
     <div class="users-profile-posts">
         <div class="user-posts">
-            <?php
-            if ($posts !== null) {
-                foreach ($posts as $post) {?>
-                    <div class="post-profile">
-                        <div class="post-profile-container">
-                            <p class="post-profile-text"><?= $post['message'] ?></p>
-                        </div>
-                        <div class="post-profile-hover">
-                            <i class="fa-solid fa-heart"></i>
-                            <i class="fa-solid fa-comment"></i>
-                        </div>
-                        <?php require_once('client/templates/components/pop-up-post.php'); ?>
-                    </div>
-                <?php } ?>
-            <?php } else {
-                echo "Cet utilisateur n'a jamais rien envoyé ici...";
-            } ?>
+            <?php require_once('client/templates/components/pop-up-post.php'); ?>
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 const modals = document.querySelectorAll('.modal-post');
-const btn = document.querySelectorAll('.post-profile');
-console.log(modals);
-console.log(btn);
+const btn = document.querySelectorAll('.post-profile-hover');
+const closeBtn = document.querySelectorAll('.modal-close');
+console.log(closeBtn);
 
 const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
@@ -18,23 +18,18 @@ function preventDefaultForScrollKeys(e) {
 
 // Make modal appear by adding modal-display class on btn click
 btn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        console.log('clicked');
-        let modal = btn.lastElementChild;
-        console.log(modal);
+    btn.addEventListener('click', (e) => {
+        let clicked = e.target;
+        let modal = clicked.parentElement.lastElementChild;
         modal.classList.add('modal-display');
-        // modals.forEach((modal) => {
-        //
-        //     modal.classList.add('modal-display');
-        // });
     });
 });
 
-// Make modal disappear by removing modal-display class when user clicks outside of modal
-window.addEventListener('click', (e) => {
-    modals.forEach((modal) => {
-        if (e.target === modal) {
-            modal.classList.remove('modal-display');
-        }
+closeBtn.forEach((closeBtn) => {
+    closeBtn.addEventListener('click', (e) => {
+        let clicked = e.target;
+        let modal = clicked.parentElement.parentElement.parentElement;
+        console.log(modal);
+        modal.classList.remove('modal-display');
     });
 });

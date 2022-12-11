@@ -6,11 +6,12 @@
     height: 75vh;
     left: 20vw;
     top: 12.5vh;
+    cursor: default;
 }
 .modal-post-content {
     position: relative;
     display: flex;
-    width: 97%;
+    width: 60%;
     justify-content: center;
     background-color: #282828;
     word-break: break-all;
@@ -82,9 +83,19 @@ p.modal-post-date {
 }
 .modal-information {
     background-color: rgb(22, 22, 22);
+    width: 40%;
 }
 .modal-display {
     display: flex;
     position: fixed;
     z-index: 90000;
+}
+.modal-close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+}
+i.fa-solid.fa-xmark {
+    padding: 10px;
+    cursor: pointer;
 }
