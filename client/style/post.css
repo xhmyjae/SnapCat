@@ -233,3 +233,6 @@ select#emotions-select {
 p.post-message {
     margin: 20px 0;
 }
+p.post-username {
+    font-weight: 700;
+}
