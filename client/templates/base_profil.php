@@ -10,9 +10,11 @@ global $user;
 global $connected_user;
 global $posts;
 global $has_requested;
+global $post;
 
 ob_start(); ?>
-<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
+
+<script defer src="client/scripts/popup-post.js"></script>
 
 <div class="profil-panel">
     <div class="top-profil">
@@ -59,6 +61,7 @@ ob_start(); ?>
                             <i class="fa-solid fa-heart"></i>
                             <i class="fa-solid fa-comment"></i>
                         </div>
+                        <?php require_once('client/templates/components/pop-up-post.php'); ?>
                     </div>
                 <?php } ?>
             <?php } else {

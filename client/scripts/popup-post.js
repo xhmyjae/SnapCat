@@ -20,9 +20,13 @@ function preventDefaultForScrollKeys(e) {
 btn.forEach((btn) => {
     btn.addEventListener('click', () => {
         console.log('clicked');
-        modals.forEach((modal) => {
-            modal.classList.add('modal-display');
-        });
+        let modal = btn.lastElementChild;
+        console.log(modal);
+        modal.classList.add('modal-display');
+        // modals.forEach((modal) => {
+        //
+        //     modal.classList.add('modal-display');
+        // });
     });
 });
 

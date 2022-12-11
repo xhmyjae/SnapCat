@@ -1,6 +1,4 @@
 <?php global $post ?>
-<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
-<script defer src="client/scripts/popup-post.js"></script>
 
 <div class="modal-post">
 <!--    <span class="close">&times;</span>-->
