@@ -17,11 +17,11 @@ class Create_Comment {
         $message = $input['comment_content'] ?? '';
 
         if ($message === '') {
-            throw new RuntimeException('Message cannot be empty');
+            throw new RuntimeException('Le message ne peut pas être vide');
         }
 
         (new CommentRepository())->createComment($message, $connected_user->id, (int) $input['post_id']);
 
-        redirect('/homepage');
+        redirect('/');
     }
 }
