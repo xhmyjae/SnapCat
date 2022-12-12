@@ -5,13 +5,11 @@
     global $all_users;
 ?>
 
-
-<script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 <script defer src="client/scripts/friends-panel.js"></script>
 
 <div class="right-panel">
     <div class="Switch">
-        <div  class="Switch_button" id="friends" data-switch="friends">👥</div>
+        <div class="Switch_button" id="friends" data-switch="friends">👥</div>
         <div class="Switch_button" id="request" data-switch="comments">📥</div>
         <div class="Switch_button" id="waiting" data-switch="messages">📤</div>
         <div class="Switch_button" id="search" data-switch="">🔍</div>

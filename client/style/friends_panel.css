@@ -1,8 +1,3 @@
- @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-* {
-    font-family: 'instagram sans-reflects', sans-serif;
-}
-
 .Switch {
     display: flex;
     align-items : flex-start;

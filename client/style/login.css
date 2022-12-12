@@ -14,7 +14,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     background-color: #3c3f41;
     color: #ffffff;
@@ -96,7 +95,6 @@ body {
     letter-spacing: 0.15px;
     border: none;
     outline: none;
-    font-family: "Montserrat", sans-serif;
     background-color: #3c3f41;
     color: #ffffff;
     transition: 0.25s ease;
