@@ -112,7 +112,7 @@ a.delete-post-profile {
     display: flex;
     justify-content: center;
     margin-top: 40px;
-    width: 95%;
+    width: 100%;
 }
 .red {
     color: #c53f3f;

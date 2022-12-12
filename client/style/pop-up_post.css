@@ -1,6 +1,6 @@
 .modal-post {
     position: fixed;
-    display: none;
+    display: flex;
     border: 1px solid #6A6B70;
     width: 60vw;
     height: 75vh;
@@ -43,6 +43,10 @@ a.modal-reaction-icon {
     display: flex;
     text-decoration: none;
     gap: 10px;
+    transition: color 0.2s;
+}
+a.modal-reaction-icon:hover {
+    color: #feda75;
 }
 .modal-comments {
     display: flex;
@@ -92,10 +96,24 @@ p.modal-post-date {
 }
 .modal-close {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     font-size: 30px;
+    align-items: center;
 }
 i.fa-solid.fa-xmark {
     padding: 10px;
     cursor: pointer;
 }
+.form-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 19px;
+    color: #c53f3f;
+    padding: 10px;
+}
+i.reaction-icon {
+    display: flex;
+    align-items: center;
+}
+
