@@ -2,6 +2,8 @@
 global $connected_user;
 ?>
 
+<script defer src="client/scripts/write-post.js"></script>
+
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
