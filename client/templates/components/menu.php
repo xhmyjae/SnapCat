@@ -4,6 +4,7 @@
 <script defer src="client/scripts/logout.js"></script>
 <!--<script defer src="client/scripts/redirect.js"></script>-->
 <script defer src="client/scripts/friends-panel.js"></script>
+<script defer src="client/scripts/comments.js"></script>
 
 
 <div class="menu">

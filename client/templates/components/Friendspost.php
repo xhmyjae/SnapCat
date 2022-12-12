@@ -13,9 +13,6 @@ require_once 'src/controllers/GetUser.php';
 require_once 'src/model/comments.php';
 
 ?>
-
-<script defer src="client/scripts/comment.js"></script>
-
 <?php
 foreach (array_slice($friends_posts, $offset, $length) as $post) {
 $user_method = new GetUser();
@@ -51,11 +48,11 @@ $post_comments = (new CommentRepository())->getComments($post['id']);
                         <button type="submit" class="sad-button form-btn" value="5">😡<span class="count"></span></button>
                     </form>
                 </div>
-                <i class="fa-regular fa-comment"></i>
+                <button class="comment-button <?= $post['id'];?>"><i class="fa-regular fa-comment"></i></button>
             </div>
         </div>
     </div>
-    <div class="comments">
+    <div class="comments <?= $post['id'];?> hidden">
         <form class="write-comment-form" action="/create_comment" method="POST">
             <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $connected_user->avatar ?>.png">
             <div class="write-comment-container">
@@ -75,6 +72,14 @@ $post_comments = (new CommentRepository())->getComments($post['id']);
                     </div>
                     <p class="comment-content"><?= $comment['message'] ?></p>
                 </div>
+                <?php if ($comment['user_id'] == $connected_user->id) { ?>
+                    <div class="delete-comment">
+                        <form action="/delete_comment" method="POST">
+                            <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
+                            <button type="submit" class="delete-button form-btn" value="delete_comment"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
+                <?php } ?>
                 <form class="comment-votes-form" action="/comment_votes" method="POST">
                     <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
                     <button type="submit" class="comment-up-button form-btn" value="1"><i class="fa-solid fa-chevron-up"></i></button>

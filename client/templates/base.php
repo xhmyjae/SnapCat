@@ -10,6 +10,7 @@
             <link rel="stylesheet" type="text/css" href="../client/style/<?= $style ?>"/>
         <?php } ?>
     <?php } ?>
+    <script src="client/scripts/comment.js"></script>
     <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

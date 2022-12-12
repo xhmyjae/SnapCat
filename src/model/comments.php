@@ -32,4 +32,12 @@ class CommentRepository
         $statement->execute(compact('post_id'));
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function deleteComment(int $comment_id, User $connected_user): void
+    {
+        $user_id = $connected_user->id;
+
+        $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE id = :comment_id AND user_id = :user_id');
+        $statement->execute(compact('comment_id', 'user_id'));
+    }
 }
