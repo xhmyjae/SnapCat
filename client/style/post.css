@@ -217,7 +217,6 @@ select#emotions-select {
     width: 100%;
     height: fit-content;
     border-bottom: solid 1px #6A6B70;
-    padding: 10px 0;
 }
 .post-content {
     display: flex;
@@ -235,4 +234,64 @@ p.post-message {
 }
 p.post-username {
     font-weight: 700;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    margin-top: 1vh;
+    gap: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #6A6B70;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+
+.comment-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment-header > p {
+    margin-left : 20px;
+}
+.comment-content {
+   padding: 3vh;
+}
+
+.fa-solid.fa-chevron-down {
+    color: #6A6B70;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fa-solid.fa-chevron-up {
+    color: #6A6B70;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.comment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
