@@ -2,11 +2,10 @@
 
 namespace App\Controllers\Homepage;
 require_once 'src/model/friends.php';
-use App\Model\Friends\Friends;
+
 use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use App\Model\User\UserRepository;
-use RuntimeException;
 
 class Homepage
 {
@@ -23,6 +22,6 @@ class Homepage
         if (isset($search) && !empty($search['search'])) {
             $all_users = (new UserRepository())->searchFriend($search['search']);
         }
-        require_once ('client/templates/homepage.php');
+        require_once('client/templates/homepage.php');
     }
 }

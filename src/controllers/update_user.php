@@ -5,12 +5,11 @@ namespace App\Controllers\User\Update;
 require_once('src/model/user.php');
 
 use App\Abstract\FlashMessage;
-use App\Model\User\User;
 use App\Model\User\UserRepository;
-use RuntimeException;
 use function App\Lib\Utils\redirect;
 
-class UpdateUser extends FlashMessage {
+class UpdateUser extends FlashMessage
+{
     public function execute(array $input, array $session): void
     {
 

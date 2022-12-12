@@ -7,12 +7,13 @@ let aContainer = document.querySelector("#a-container");
 let bContainer = document.querySelector("#b-container");
 let allButtons = document.querySelectorAll(".submit");
 
-let getButtons = (e) => {}
+let getButtons = (e) => {
+}
 
 let changeForm = (e) => {
 
     switchCtn.classList.add("is-gx");
-    setTimeout(function(){
+    setTimeout(function () {
         switchCtn.classList.remove("is-gx");
     }, 1500)
 
@@ -29,7 +30,7 @@ let changeForm = (e) => {
 
 let mainF = (e) => {
     for (var i = 0; i < allButtons.length; i++)
-        allButtons[i].addEventListener("click", getButtons );
+        allButtons[i].addEventListener("click", getButtons);
     for (var i = 0; i < switchBtn.length; i++)
         switchBtn[i].addEventListener("click", changeForm)
 }

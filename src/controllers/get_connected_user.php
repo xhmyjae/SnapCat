@@ -6,9 +6,9 @@ require_once('src/model/user.php');
 
 use App\Model\User\User;
 use App\Model\User\UserRepository;
-use RuntimeException;
 
-class GetConnectedUser {
+class GetConnectedUser
+{
     public function execute(array $input): ?User
     {
         if (!isset($input['user_id'])) {

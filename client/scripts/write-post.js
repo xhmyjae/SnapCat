@@ -6,9 +6,9 @@ textarea.forEach((el) => {
     });
 });
 
-function autosize(el){
-    setTimeout(function(){
+function autosize(el) {
+    setTimeout(function () {
         el.style.cssText = 'height:auto; padding:0';
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
-    },0);
+    }, 0);
 }

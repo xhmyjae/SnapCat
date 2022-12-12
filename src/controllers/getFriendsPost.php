@@ -6,9 +6,9 @@ require_once('src/model/post.php');
 
 use App\Controllers\Homepage\PostRepository;
 use App\Model\User\User;
-use function App\Lib\Utils\redirect;
 
-class get_FriendsPosts {
+class get_FriendsPosts
+{
     public function execute(User $connected_user): array
     {
         return (new PostRepository())->getPostsbyFriend($connected_user);

@@ -2,7 +2,8 @@
 
 namespace App\Lib\Utils;
 
-function redirect(string $url): never {
+function redirect(string $url): never
+{
     header("Location: $url");
     exit();
 }

@@ -1,9 +1,9 @@
 <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
 
 <div class="right-panel">
-<!--    switch for content-->
+    <!--    switch for content-->
 
-<!--    test d'un commentaire (sera dans un component a part plus tard)-->
+    <!--    test d'un commentaire (sera dans un component a part plus tard)-->
     <div class="main-comment">
         <div class="avatar-box">
             <img alt="profile-picture" class="avatar" src="../img/antaBinome.png">

@@ -1,8 +1,8 @@
 <?php
-    global $friends;
-    global $friend_requests;
-    global $friend_requests_sent;
-    global $all_users;
+global $friends;
+global $friend_requests;
+global $friend_requests_sent;
+global $all_users;
 ?>
 
 <script defer src="client/scripts/friends-panel.js"></script>
@@ -19,7 +19,7 @@
             <p class="page-title">Amis</p>
             <?php if (isset($friends) && !empty($friends)) {
                 foreach ($friends as $friend): ?>
-                    <a href="/profile?user_id=<?=$friend->id ?>" class="friend">
+                    <a href="/profile?user_id=<?= $friend->id ?>" class="friend">
                         <div class="friend-avatar">
                             <img src="client/templates/img/<?= $friend->avatar ?>.png" alt="friend picture">
                         </div>
@@ -36,7 +36,7 @@
             <p class="page-title">Requêtes</p>
             <?php if (isset($friend_requests) && !empty($friend_requests)) {
                 foreach ($friend_requests as $friend_request): ?>
-                    <a href="/profile?user_id=<?=$friend_request->id ?>" class="friend">
+                    <a href="/profile?user_id=<?= $friend_request->id ?>" class="friend">
                         <div class="friend-avatar">
                             <img src="client/templates/img/<?= $friend_request->avatar ?>.png" alt="friend picture">
                         </div>
@@ -44,10 +44,10 @@
                             <p><?= $friend_request->name ?></p>
                         </div>
                         <div class="Accept_button">
-                            <a href="/addfriend?user_id=<?=$friend_request->id?>">
+                            <a href="/addfriend?user_id=<?= $friend_request->id ?>">
                                 <i class="fas fa-check"></i>
                             </a>
-                            <a href="/deletefriend?user_id=<?=$friend_request->id?>">
+                            <a href="/deletefriend?user_id=<?= $friend_request->id ?>">
                                 <i class="fas fa-xmark"></i>
                             </a>
                         </div>
@@ -61,9 +61,10 @@
             <p class="page-title">Demandes en attente</p>
             <?php if (isset($friend_requests_sent) && !empty($friend_requests_sent)) {
                 foreach ($friend_requests_sent as $friend_request_sent): ?>
-                    <a href="/profile?user_id=<?=$friend_request_sent->id ?>" class="friend">
+                    <a href="/profile?user_id=<?= $friend_request_sent->id ?>" class="friend">
                         <div class="friend-avatar">
-                            <img src="client/templates/img/<?= $friend_request_sent->avatar ?>.png" alt="friend picture">
+                            <img src="client/templates/img/<?= $friend_request_sent->avatar ?>.png"
+                                 alt="friend picture">
                         </div>
                         <div class="friend-name">
                             <p><?= $friend_request_sent->name ?></p>
@@ -78,7 +79,8 @@
             <div class="search-box">
                 <form method="get">
                     <label>
-                        <input type="search" name="search" class="search-input" placeholder="Recherche..." autocomplete="off">
+                        <input type="search" name="search" class="search-input" placeholder="Recherche..."
+                               autocomplete="off">
                     </label>
                     <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
                 </form>

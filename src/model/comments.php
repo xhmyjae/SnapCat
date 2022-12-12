@@ -3,10 +3,8 @@
 namespace App\Model\Comments;
 
 use App\Lib\Database\DatabaseConnection;
-use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use PDO;
-use RuntimeException;
 
 require_once('src/lib/DatabaseConnection.php');
 
