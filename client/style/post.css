@@ -38,19 +38,6 @@
     padding: 10px 0;
 }
 
-.header-post {
-    margin-left: 1vw;
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.feelings {
-    display: flex;
-    align-items: center;
-    margin-left: 2vw;
-}
-
 .input-post {
     width: 100%;
     border: none;
@@ -94,37 +81,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.content-post {
-    display: flex;
-    flex-direction: column;
-}
-
-.react {
-    display: flex;
-    align-items: center;
-    padding: 10vm;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.react span {
-    margin-left: 0.5vw;
-    font-size: var(--size-medium);
-    color: #ffffff;
-    display: flex;
-    flex-direction: row;
-}
-
-.react span:hover {
-    cursor: pointer;
-}
-
-.react span p {
-    font-size: var(--size-small);
-    margin-top: 12px;
-    padding-left: 5px;
 }
 
 .content {
