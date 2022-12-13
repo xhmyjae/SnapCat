@@ -3,18 +3,6 @@ const btn = document.querySelectorAll('.post-profile-hover');
 const closeBtn = document.querySelectorAll('.modal-close');
 let profilePanel = document.querySelector('.profil-panel');
 
-const keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-function preventDefault(e) {
-    e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-    }
-}
 
 btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -34,5 +22,3 @@ closeBtn.forEach((closeBtn) => {
         modal.close();
     });
 });
-
-

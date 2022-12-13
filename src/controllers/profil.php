@@ -34,6 +34,8 @@ class ProfilUser extends FlashMessage
         $is_friend = (new FriendsRepository())->isFriend($user->id, $connected_user->id);
         global $has_requested;
         $has_requested = (new FriendsRepository())->hasRequested($user->id, $connected_user->id);
+        global $user_friends;
+        $user_friends = (new FriendsRepository())->getFriends($user->id);
 
         require_once('client/templates/base_profil.php');
     }

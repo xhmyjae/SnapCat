@@ -2,7 +2,7 @@
 
 global $is_friend;
 $title = 'Profile';
-$styles = ['profil.css', 'menu.css', 'main.css', 'pop-up_post.css'];
+$styles = ['profil.css', 'menu.css', 'main.css', 'pop-up_post.css', 'pop-up-friends.css'];
 
 require_once('client/templates/components/menu.php');
 
@@ -15,6 +15,7 @@ global $post;
 ob_start(); ?>
 
     <script defer src="client/scripts/popup-post.js"></script>
+    <script defer src="client/scripts/popup-friends.js"></script>
 
     <div class="profil-panel">
         <div class="top-profil">
@@ -39,6 +40,7 @@ ob_start(); ?>
 
 
                     <p class="friends-popup-link">Amis</p>
+                    <?php require_once('client/templates/components/pop-up-friends.php'); ?>
                 </div>
                 <div class="profile-information-right">
                     <div class="name-box">
