@@ -9,10 +9,10 @@ use App\Model\Friends\Friends;
 use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use App\Model\User\UserRepository;
-use RuntimeException;
 use function App\Lib\Utils\redirect;
 
-class IsFriend extends FlashMessage {
+class IsFriend extends FlashMessage
+{
     public function execute(User $input, array $input2): void
     {
         if (!isset($input->id) || !isset($input2['user_id2'])) {

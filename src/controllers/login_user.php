@@ -5,12 +5,11 @@ namespace App\Controllers\User\Login;
 require_once('src/model/user.php');
 
 use App\Abstract\FlashMessage;
-use App\Model\User\User;
 use App\Model\User\UserRepository;
-use RuntimeException;
 use function App\Lib\Utils\redirect;
 
-class LoginUser extends FlashMessage {
+class LoginUser extends FlashMessage
+{
     public function execute(array $input): void
     {
         if (!isset($input['ids'], $input['password'])) {

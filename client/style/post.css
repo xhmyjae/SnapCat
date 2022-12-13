@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .post-panel {
-    font-family: 'Playfair Display', serif;
     left: 26vw;
     width: 47.3vw;
     height: 100vh;
@@ -39,24 +38,11 @@
     padding: 10px 0;
 }
 
-.header-post {
-    margin-left: 1vw;
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.feelings {
-    display: flex;
-    align-items: center;
-    margin-left: 2vw;
-}
-
 .input-post {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: var(--size-medium);
     color: #ffffff;
     background: rgb(22, 22, 22);
     resize: none;
@@ -75,12 +61,12 @@
     border-radius: 5px;
     border: none;
     background: #4F5BD5;
-    font-size: 15px;
+    font-size: var(--size-medium);
     color: #F5F5F5;
 }
 
 .post-button:hover {
-    background: #D62976;
+    background: var(--pink);
 }
 
 .container {
@@ -90,73 +76,17 @@
     padding: 10px 0;
     border-bottom: solid 1px #6A6B70;
 }
+
 .post-header {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.content-post {
-    display: flex;
-    flex-direction: column;
-}
-
-.react {
-    display: flex;
-    align-items: center;
-    padding: 10vm;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.react span {
-    margin-left: 0.5vw;
-    font-size: 15px;
-    color: #ffffff;
-    display: flex;
-    flex-direction: row;
-}
-
-.react span:hover {
-    cursor: pointer;
-}
-
-.react span p {
-    font-size: 10px;
-    margin-top: 12px;
-    padding-left: 5px;
-}
-
-f1 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-left: 10px
-}
-
-.img-box img {
-margin-left: 0.75vw}
-
-.date {
-    font-size: 25vm;
-    color: #4b70e2;
-    margin: 10px;
-}
-
-.pseudo {
-    font-size: 25vm;
-    color: #ffffff;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.pseudo:hover {
-    cursor: pointer;
-}
 
 .content {
     max-width: 35vw;
     word-wrap: break-word;
-    margin : 10px;
+    margin: 10px;
 }
 
 p {
@@ -176,29 +106,33 @@ p {
 }
 
 .delete-button:hover {
-    color: #D62976;
+    color: var(--pink);
 }
 
 form.write-post-form {
     display: flex;
     justify-content: space-around;
 }
+
 .write-post-box {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
+
 .write-post-footer {
     display: flex;
     justify-content: space-between;
 }
+
 i.fa-solid.fa-image {
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: var(--size-large);
     color: #6A6B70;
     cursor: pointer;
 }
+
 select#emotions-select {
     width: 20%;
     border-radius: 10px;
@@ -207,31 +141,39 @@ select#emotions-select {
     padding: 2px;
     border-color: #6A6B70;
 }
+
 .form-btn {
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 19px;
+    font-size: var(--size-medium);
 }
+
 .post {
     width: 100%;
     height: fit-content;
     border-bottom: solid 1px #6A6B70;
 }
+
 .post-content {
     display: flex;
     justify-content: space-around;
+    padding: 10px 0;
 }
+
 .post-container {
     width: 80%;
 }
+
 .post-footer {
     display: flex;
     justify-content: space-between;
 }
+
 p.post-message {
     margin: 20px 0;
 }
+
 p.post-username {
     font-weight: 700;
 }
@@ -264,21 +206,22 @@ p.post-username {
 }
 
 .comment-header > p {
-    margin-left : 20px;
+    margin-left: 20px;
 }
+
 .comment-content {
-   padding: 3vh;
+    padding: 3vh;
 }
 
 .fa-solid.fa-chevron-down {
     color: #6A6B70;
-    font-size: 20px;
+    font-size: var(--size-large);
     cursor: pointer;
 }
 
 .fa-solid.fa-chevron-up {
     color: #6A6B70;
-    font-size: 20px;
+    font-size: var(--size-large);
     cursor: pointer;
 }
 

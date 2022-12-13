@@ -5,8 +5,6 @@ namespace App\Model\User;
 require_once('src/lib/DatabaseConnection.php');
 
 use App\Lib\Database\DatabaseConnection;
-use App\Model\Friends\Friends;
-use http\QueryString;
 use PDO;
 use function App\Lib\Utils\redirect;
 

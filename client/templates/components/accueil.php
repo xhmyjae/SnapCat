@@ -16,9 +16,10 @@ global $connected_user;
                     <option value="3">Humm 🤔</option>
                     <option value="4">Sadge 😭</option>
                 </select>
-<!--                <input type="text" contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required>-->
-<!--                <span contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></span>-->
-                <textarea contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></textarea>
+                <!--                <input type="text" contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required>-->
+                <!--                <span contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></span>-->
+                <textarea contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..."
+                          minlength="2" maxlength="400" required></textarea>
                 <div class="write-post-footer">
                     <i class="fa-solid fa-image"></i>
                     <button type="submit" class="post-button" value="create_post">Publier</button>

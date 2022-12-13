@@ -1,13 +1,15 @@
 .modal-post {
     position: fixed;
-    display: none;
-    border: 1px solid #6A6B70;
+    display: flex;
     width: 60vw;
     height: 75vh;
     left: 20vw;
     top: 12.5vh;
     cursor: default;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 5px var(--pink));
 }
+
 .modal-post-content {
     position: relative;
     display: flex;
@@ -17,42 +19,55 @@
     word-break: break-all;
     flex-direction: column;
 }
+
 p.modal-post-content-text {
     padding: 20px;
-    font-size: 18px;
+    font-size: var(--size-medium);
 }
+
 .modal-reactions {
     display: flex;
     justify-content: space-around;
     margin: 19px 0;
 }
+
 .modal-reaction {
     display: flex;
     align-content: center;
     gap: 10px;
     color: #6A6B70;
-    font-size: 15px;
+    font-size: var(--size-medium);
 }
+
 p.modal-reaction-number {
     margin: 0;
     display: flex;
     align-items: center;
 }
+
 a.modal-reaction-icon {
     color: #6A6B70;
     display: flex;
     text-decoration: none;
     gap: 10px;
+    transition: color 0.2s;
 }
+
+a.modal-reaction-icon:hover {
+    color: #feda75;
+}
+
 .modal-comments {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 .modal-comment {
     display: flex;
     padding: 0 15px;
 }
+
 img.modal-comment-avatar {
     border-radius: 50%;
     width: 60px;
@@ -60,6 +75,7 @@ img.modal-comment-avatar {
     object-position: center;
     margin-right: 14px;
 }
+
 .modal-comment-votes {
     display: flex;
     flex-direction: column;
@@ -67,35 +83,59 @@ img.modal-comment-avatar {
     color: #6A6B70;
     margin-left: 14px;
 }
+
 .modal-comment-information {
     display: flex;
     gap: 20px;
 }
+
 .modal-comment-date {
     color: #6A6B70;
 }
+
 p.modal-comment-name {
     font-weight: 600;
 }
+
 p.modal-post-date {
     margin: 0 20px;
     color: #6A6B70;
 }
+
 .modal-information {
     background-color: rgb(22, 22, 22);
     width: 40%;
 }
+
 .modal-display {
     display: flex;
     position: fixed;
     z-index: 90000;
 }
+
 .modal-close {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     font-size: 30px;
+    align-items: center;
 }
+
 i.fa-solid.fa-xmark {
     padding: 10px;
     cursor: pointer;
 }
+
+.form-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: var(--size-medium);
+    color: #c53f3f;
+    padding: 10px;
+}
+
+i.reaction-icon {
+    display: flex;
+    align-items: center;
+}
+
