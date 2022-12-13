@@ -37,7 +37,7 @@ global $all_users;
             <?php if (isset($friend_requests) && !empty($friend_requests)) {
                 foreach ($friend_requests as $friend_request): ?>
                     <a href="/profile?user_id=<?= $friend_request->id ?>" class="friend">
-                    <div class="friend-avatar">
+                        <div class="friend-avatar">
                             <img src="client/templates/img/<?= $friend_request->avatar ?>.png" alt="friend picture">
                         </div>
                         <div class="friend-name">

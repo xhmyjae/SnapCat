@@ -64,7 +64,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                 <div class="write-comment-container">
                     <input type="hidden" id="post-id" name="post_id" value="<?= $post['id'] ?>">
                     <textarea class="input-post" id="comment-content" name="comment_content"
-                              placeholder="Write a comment..." required></textarea>
+                              placeholder="Write a comment..." minlength="1" maxlength="120" required></textarea>
                     <button type="submit" class="submit-comment-button" name="submit-comment" value="create_comment">
                         Submit
                     </button>
