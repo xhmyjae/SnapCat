@@ -11,6 +11,7 @@
     align-items: flex-end;
     gap: 140px;
     padding-top: 20px;
+    height: 100%;
 }
 
 .site-title-box {
