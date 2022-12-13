@@ -24,6 +24,49 @@ class PostRepository
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
 
+    public function postPicture(string $filename, int $target_file): void
+    {
+        $statement = $this->databaseConnection->prepare('INSERT INTO posts (picture, user_id) VALUES (:picture, :user_id)');
+        if(isset($_POST['submit_picture'])){
+
+            // Count total files
+            $countfiles = count($_FILES['files']['name']);
+
+            // Prepared statement
+            $query = "INSERT INTO images (name,image) VALUES(?,?)";
+
+            $statement = $this->databaseConnection->prepare($query);
+
+            // Loop all files
+            for($i=0;$i<$countfiles;$i++){
+
+                // File name
+                $filename = $_FILES['files']['name'][$i];
+
+                // Location
+                $target_file = 'upload/'.$filename;
+
+                // file extension
+                $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+                $file_extension = strtolower($file_extension);
+
+                // Valid image extension
+                $valid_extension = array("png","jpeg","jpg");
+
+                if(in_array($file_extension, $valid_extension)){
+
+                    // Upload file
+                    if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
+
+                        // Execute query
+                        $statement->execute(array($filename,$target_file));
+                    }
+                }
+            }
+            echo "File upload successfully";
+        }
+    }
+
     function getPosts(): array
     {
         $statement = $this->databaseConnection->prepare('SELECT message, user_id FROM posts INNER JOIN users ON posts.user_id = users.id');
@@ -67,6 +110,5 @@ class PostRepository
             'post_id' => $post_id,
         ]);
     }
-
 }
 

@@ -4,6 +4,7 @@ require_once('src/controllers/homepage.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/create_post.php');
+require_once('src/controllers/postPicture.php');
 require_once 'src/controllers/delete_post.php';
 require_once('src/controllers/getPosts.php');
 require_once('src/controllers/login_user.php');
@@ -22,10 +23,12 @@ require_once 'src/controllers/create_comment.php';
 require_once('src/model/post.php');
 require_once('src/model/comments.php');
 
+
 use App\Controllers\Comment\Create\Create_Comment;
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
+use App\Controllers\post\Create\Post_Picture;
 use App\Controllers\post\Delete\delete_Post;
 use App\Controllers\post\GetFriendsPosts\get_FriendsPosts;
 use App\Controllers\User\Create\CreateUser;
