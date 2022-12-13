@@ -10,11 +10,14 @@ ob_start(); ?>
         <!--        register-->
         <form class="form" id="a-form" method="POST" action="/signup">
             <h2 class="form_title title">S'inscrire</h2>
-            <input class="form__input" type="text" placeholder="Pseudo" autofocus name="name" required maxlength="20" minlength="3">
+            <input class="form__input" type="text" placeholder="Pseudo" autofocus name="name" required maxlength="20"
+                   minlength="3">
             <input class="form__input" type="email" placeholder="Email" name="mail" required maxlength="255">
-            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
+            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required
+                   maxlength="50">
             <input class="form__input" type="password" placeholder="Confirmer mot de passe" required>
-            <button class="form__button button submit" type="submit" name="submit-signup" value="signup">S'inscrire</button>
+            <button class="form__button button submit" type="submit" name="submit-signup" value="signup">S'inscrire
+            </button>
             <script defer src="client/scripts/login.js"></script>
         </form>
 
@@ -24,8 +27,10 @@ ob_start(); ?>
         <!--        login-->
         <form class="form" id="b-form" method="POST" action="/login">
             <h2 class="form_title title">Se connecter</h2>
-            <input class="form__input" type="text" placeholder="Email ou pseudo" autofocus name="ids" required maxlength="255">
-            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required maxlength="50">
+            <input class="form__input" type="text" placeholder="Email ou pseudo" autofocus name="ids" required
+                   maxlength="255">
+            <input class="form__input" type="password" placeholder="Mot de passe" name="password" required
+                   maxlength="50">
             <button class="form__button button submit" type="submit" name="submit-login" value="login">SIGN IN</button>
         </form>
 

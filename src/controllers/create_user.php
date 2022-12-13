@@ -5,12 +5,12 @@ namespace App\Controllers\User\Create;
 require_once('src/model/user.php');
 require_once('src/abstract/FlashMessage.php');
 
-use App\Model\User\UserRepository;
 use App\Abstract\FlashMessage;
-use RuntimeException;
+use App\Model\User\UserRepository;
 use function App\Lib\Utils\redirect;
 
-class CreateUser extends FlashMessage {
+class CreateUser extends FlashMessage
+{
     public function execute(array $input): void
     {
         if (!isset($input['name'], $input['mail'], $input['password'])) {

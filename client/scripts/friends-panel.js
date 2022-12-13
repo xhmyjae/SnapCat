@@ -52,16 +52,16 @@ searchButton.addEventListener("click", function (e) {
     }
 );
 acceptButton.addEventListener("click", function (e) {
-    let accept = document.querySelector(".request-container .friend");
-    let friendsContainer = document.querySelector(".friends-container");
-    friendsContainer.appendChild(accept);
-    acceptButton.style.display = "none";
-    deniedButton.style.display = "none";
-}
+        let accept = document.querySelector(".request-container .friend");
+        let friendsContainer = document.querySelector(".friends-container");
+        friendsContainer.appendChild(accept);
+        acceptButton.style.display = "none";
+        deniedButton.style.display = "none";
+    }
 );
 
 deniedButton.addEventListener("click", function (e) {
-    let denied = document.querySelector(".request-container .friend");
-    denied.style.display = "none";
-}
+        let denied = document.querySelector(".request-container .friend");
+        denied.style.display = "none";
+    }
 );

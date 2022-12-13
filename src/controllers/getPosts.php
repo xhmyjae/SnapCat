@@ -8,7 +8,8 @@ require_once('src/model/user.php');
 
 use App\Controllers\Homepage\PostRepository;
 
-class get_Posts {
+class get_Posts
+{
     public function execute(): array
     {
         return (new PostRepository())->getPosts();

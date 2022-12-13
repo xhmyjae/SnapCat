@@ -3,10 +3,8 @@
 namespace App\Model\Comments;
 
 use App\Lib\Database\DatabaseConnection;
-use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use PDO;
-use RuntimeException;
 
 require_once('src/lib/DatabaseConnection.php');
 
@@ -31,5 +29,13 @@ class CommentRepository
         $statement = $this->databaseConnection->prepare('SELECT * FROM comments WHERE post_id = :post_id ORDER BY creation_date DESC');
         $statement->execute(compact('post_id'));
         return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function deleteComment(int $comment_id, User $connected_user): void
+    {
+        $user_id = $connected_user->id;
+
+        $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE id = :comment_id AND user_id = :user_id');
+        $statement->execute(compact('comment_id', 'user_id'));
     }
 }

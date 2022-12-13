@@ -3,6 +3,8 @@ global $connected_user;
 ?>
 
 
+<script defer src="client/scripts/write-post.js"></script>
+
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
@@ -16,6 +18,8 @@ global $connected_user;
                     <option value="4">Sadge 😭</option>
                 </select>
                 <textarea contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></textarea>
+                <!--                <input type="text" contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required>-->
+                <!--                <span contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></span>-->
                 <div class="write-post-footer">
                     <form method='post' action='' enctype='multipart/form-data'>
                         <input type='file' name='files'/>

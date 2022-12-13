@@ -1,11 +1,6 @@
- @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-* {
-    font-family: 'instagram sans-reflects', sans-serif;
-}
-
 .Switch {
     display: flex;
-    align-items : flex-start;
+    align-items: flex-start;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.05);
 }
@@ -29,13 +24,14 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
-    font-size: 15px;
+    font-size: var(--size-medium);
 }
-.Friend-list a{
+
+.Friend-list a {
     text-decoration: none;
 }
 
-.friend{
+.friend {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
@@ -50,92 +46,111 @@
     object-fit: cover;
     border-radius: 50%;
 }
-.friend-name{
+
+.friend-name {
     margin-left: 2vw;
-    font-size: 15px;
+    font-size: var(--size-medium);
 }
+
 a .friend-name p {
     margin-top: 2vh;
     color: #ffffff;
     font-family: "Righteous", cursive;
 }
+
 .friend-name p:hover {
     color: #FEDA75;
 }
+
 .friend-name p:first-letter {
     text-transform: uppercase;
 }
+
 .Accept_button {
     display: flex;
     gap: 140%;
     margin: -8vh 0 0 17.5vw;
     cursor: pointer;
 }
-.request-container{
+
+.request-container {
     display: none;
     width: 100%;
 }
-.request-container a{
+
+.request-container a {
     text-decoration: none;
 }
-.fas{
+
+.fas {
     color: #ffffff;
 }
-.fa-check:hover{
+
+.fa-check:hover {
     color: forestgreen;
 }
-.fa-xmark:hover{
+
+.fa-xmark:hover {
     color: red;
 }
-.waiting-container{
+
+.waiting-container {
     display: none;
 }
-.search-container{
+
+.search-container {
     display: none;
 }
- .search-box{
-     width: 100%;
-     position: relative;
-     display: flex;
-     margin-bottom: 5vw;
-     justify-content: center;
- }
- .search-input{
-     width: 80%;
-     padding: 10px;
-     border-radius: 20px 0 0 20px;
-     border: none;
-     outline: none;
-     font-size: 15px;
-     color: #FEDA75;
-     background: #393A41;
-     height: 40px;
- }
- .search-button{
-     text-align: center;
-     width: 40px;
-     height: 40px;
-     outline: none;
-     cursor: pointer;
-     border-radius: 0 20px 20px 0;
-     border: none;
-     background: #393A41;
-     font-size: 15px;
-     color: #6A6B70;
- }
- .no-result{
-     font-size: 20px;
-     color: rgba(255, 255, 255, 0.05);
-     cursor: default;
-     text-align: center;
-     width: 100%;
- }
- .friends-container {
-     width: 100%;
- }
- .waiting-container {
-     width: 100%;
- }
- .search-container {
-     width: 100%;
- }
+
+.search-box {
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-bottom: 5vw;
+    justify-content: center;
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+    font-size: var(--size-medium);
+    color: #FEDA75;
+    background: #393A41;
+    height: 40px;
+}
+
+.search-button {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    background: #393A41;
+    font-size: var(--size-medium);
+    color: #6A6B70;
+}
+
+.no-result {
+    font-size: 20px;
+    color: rgb(255 255 255 / 14%);
+    cursor: default;
+    text-align: center;
+    width: 100%;
+}
+
+.friends-container {
+    width: 100%;
+}
+
+.waiting-container {
+    width: 100%;
+}
+
+.search-container {
+    width: 100%;
+}

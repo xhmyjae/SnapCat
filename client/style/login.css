@@ -14,7 +14,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     background-color: #3c3f41;
     color: #ffffff;
@@ -33,21 +32,25 @@ body {
     border-radius: 12px;
     overflow: hidden;
 }
+
 @media (max-width: 1200px) {
     .main {
         transform: scale(0.7);
     }
 }
+
 @media (max-width: 1000px) {
     .main {
         transform: scale(0.6);
     }
 }
+
 @media (max-width: 800px) {
     .main {
         transform: scale(0.5);
     }
 }
+
 @media (max-width: 600px) {
     .main {
         transform: scale(0.4);
@@ -75,6 +78,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 .form__icon {
     object-fit: contain;
     width: 30px;
@@ -82,11 +86,13 @@ body {
     opacity: 0.5;
     transition: 0.15s;
 }
+
 .form__icon:hover {
     opacity: 1;
     transition: 0.15s;
     cursor: pointer;
 }
+
 .form__input {
     width: 350px;
     height: 40px;
@@ -96,20 +102,22 @@ body {
     letter-spacing: 0.15px;
     border: none;
     outline: none;
-    font-family: "Montserrat", sans-serif;
     background-color: #3c3f41;
     color: #ffffff;
     transition: 0.25s ease;
     border-radius: 8px;
     box-shadow: inset 2px 2px 4px rgba(28, 28, 33, 0.5), inset -2px -2px 4px #3c3f41;
 }
+
 .form__input:focus {
     box-shadow: inset 4px 4px 4px rgba(28, 28, 33, 0.5), inset -4px -4px 4px #3c3f41;
 }
+
 .form__span {
     margin-top: 30px;
     margin-bottom: 12px;
 }
+
 .form__link {
     color: #ffffff;
     font-size: 15px;
@@ -117,15 +125,18 @@ body {
     border-bottom: 1px solid #a0a5a8;
     line-height: 2;
 }
+
 .title {
     font-size: 34px;
     font-weight: 700;
     line-height: 3;
     color: #ffffff;
 }
+
 .site-title {
     line-height: 1.5;
 }
+
 .description {
     font-size: 14px;
     letter-spacing: 0.25px;
@@ -175,6 +186,7 @@ body {
     overflow: hidden;
     box-shadow: 4px 4px 10px rgba(28, 28, 33, 0.5), -4px -4px 10px #3c3f41;
 }
+
 .switch__circle {
     position: absolute;
     width: 500px;
@@ -186,12 +198,14 @@ body {
     left: -60%;
     transition: 1.25s;
 }
+
 .switch__circle--t {
     top: -30%;
     left: 60%;
     width: 300px;
     height: 300px;
 }
+
 .switch__container {
     display: flex;
     justify-content: center;
@@ -202,14 +216,17 @@ body {
     padding: 50px 55px;
     transition: 1.25s;
 }
+
 .switch__button {
     cursor: pointer;
 }
+
 .switch__button:hover {
     box-shadow: 6px 6px 10px rgba(28, 28, 33, 0.5), -6px -6px 10px #3c3f41;
     transform: scale(0.985);
     transition: 0.25s;
 }
+
 .switch__button:active, .switch__button:focus {
     box-shadow: 2px 2px 6px rgba(28, 28, 33, 0.5), -2px -2px 6px #f9f9f9;
     transform: scale(0.97);
@@ -233,12 +250,14 @@ body {
     z-index: 200;
     transition: 1.25s;
 }
+
 .is-hidden {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     transition: 1.25s;
 }
+
 .is-gx {
     animation: is-gx 1.25s;
 }

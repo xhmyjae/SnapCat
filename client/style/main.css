@@ -1,16 +1,35 @@
+:root {
+    --size-small: 15px;
+    --size-medium: 17px;
+    --size-large: 22px;
+    --yellow: #FEDA75;
+    --blue: #4B70E2;
+    --pink: #FFAEC9;
+}
+
+@font-face {
+    font-family: SF Compact;
+    src: url("SFCompactText-Regular.otf");
+}
+
 html, body {
     background-color: rgb(22, 22, 22);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     color: #FFF;
-    font-family: Arial, serif;
     display: flex;
     overflow-x: hidden;
+    font-family: "SF Compact", sans-serif;
+    font-size: var(--size-medium);
+}
+
+img.emoji {
+    width: 18px;
 }
 
 .page-title {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: var(--size-large);
     margin: 20px 20px 30px 20px;
 }

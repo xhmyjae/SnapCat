@@ -20,26 +20,28 @@ require_once('src/controllers/delete_friend.php');
 require_once('src/controllers/is_friend.php');
 require_once('src/controllers/searchFriends.php');
 require_once 'src/controllers/create_comment.php';
+require_once 'src/controllers/delete_comment.php';
 require_once('src/model/post.php');
 require_once('src/model/comments.php');
 
 
 use App\Controllers\Comment\Create\Create_Comment;
+use App\Controllers\Comment\Delete\Delete_Comment;
+use App\Controllers\Friends\AddFriend\AddFriend;
+use App\Controllers\Friends\DeleteFriend\DeleteFriend;
 use App\Controllers\Homepage\Homepage;
 use App\Controllers\Login\Login;
 use App\Controllers\post\Create\Create_Post;
 use App\Controllers\post\Create\Post_Picture;
 use App\Controllers\post\Delete\delete_Post;
 use App\Controllers\post\GetFriendsPosts\get_FriendsPosts;
+use App\Controllers\Settings\Settings;
 use App\Controllers\User\Create\CreateUser;
 use App\Controllers\User\GetConnected\GetConnectedUser;
 use App\Controllers\User\Login\LoginUser;
-use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Logout\LogoutUser;
+use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Update\UpdateUser;
-use App\Controllers\Settings\Settings;
-use App\Controllers\Friends\AddFriend\AddFriend;
-use App\Controllers\Friends\DeleteFriend\DeleteFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -78,6 +80,10 @@ try {
         case 'create_comment':
             $createComment = new Create_Comment();
             $createComment->execute($_POST, $connected_user);
+            break;
+        case 'delete_comment':
+            $deleteComment = new Delete_Comment();
+            $deleteComment->execute($_POST, $connected_user);
             break;
         case 'delete_post':
             $post_id = (int)$_POST['post_id'];
