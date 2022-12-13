@@ -295,3 +295,18 @@ p.post-username {
 .hidden {
     display: none;
 }
+
+.submit-comment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4b70e2;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#comment-content {
+   word-break: break-word;
+}
