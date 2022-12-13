@@ -1,0 +1,37 @@
+dialog.modal-friends-dialog {
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(0px 0px 5px var(--pink));
+}
+.modal-friends {
+    width: 35vw;
+    height: 55vh;
+    background-color: var(--gray);
+    color: var(--white);
+}
+.modal-friends-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--size-large);
+    padding: 0 20px;
+    background-color: var(--darkGray);
+    color: var(--pink);
+}
+img.modal-friend-avatar {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.modal-friend {
+    display: flex;
+    gap: 40px;
+    padding: 10px;
+}
+p.modal-friend-name {
+    font-size: var(--size-medium);
+    display: flex;
+    align-items: center;
+}

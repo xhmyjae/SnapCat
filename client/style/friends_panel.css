@@ -68,7 +68,6 @@ a .friend-name p {
 
 .Accept_button {
     display: flex;
-    gap: 140%;
     margin: -8vh 0 0 17.5vw;
     cursor: pointer;
 }

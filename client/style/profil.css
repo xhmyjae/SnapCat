@@ -43,6 +43,7 @@
 p.friends-popup-link {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .profile-information-left {
