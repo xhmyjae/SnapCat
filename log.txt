@@ -1,0 +1,15 @@
+[2022-12-13 21:05:42] testlog se balade dans la homepage
+[2022-12-13 21:06:35] testlog se balade dans la homepage
+[2022-12-13 21:06:58] testlog se balade dans la homepage
+[2022-12-13 21:07:46] testlog a  supprimer un post
+[2022-12-13 21:07:46] testlog se balade dans la homepage
+[2022-12-13 21:08:04] testlog a  supprimer un post
+[2022-12-13 21:08:04] testlog se balade dans la homepage
+[2022-12-13 21:08:09] testlog se balade dans la homepage
+[2022-12-13 21:08:14] testlog se balade dans la homepage
+[2022-12-13 21:08:29] testlog se balade dans la homepage
+[2022-12-13 21:08:31] testlog a  regarder un profil
+[2022-12-13 21:08:32] testlog se balade dans la homepage
+[2022-12-13 21:10:35] testlog se balade dans la homepage
+[2022-12-13 21:10:38] testlog a  crée un post
+[2022-12-13 21:10:38] testlog se balade dans la homepage
