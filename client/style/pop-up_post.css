@@ -35,7 +35,7 @@ p.modal-post-content-text {
     display: flex;
     align-content: center;
     gap: 10px;
-    color: #6A6B70;
+    color: var(--gray);
     font-size: var(--size-medium);
 }
 
@@ -46,7 +46,7 @@ p.modal-reaction-number {
 }
 
 a.modal-reaction-icon {
-    color: #6A6B70;
+    color: var(--gray);
     display: flex;
     text-decoration: none;
     gap: 10px;
@@ -80,7 +80,7 @@ img.modal-comment-avatar {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #6A6B70;
+    color: var(--gray);
     margin-left: 14px;
 }
 
@@ -90,7 +90,7 @@ img.modal-comment-avatar {
 }
 
 .modal-comment-date {
-    color: #6A6B70;
+    color: var(--gray);
 }
 
 p.modal-comment-name {
@@ -99,7 +99,7 @@ p.modal-comment-name {
 
 p.modal-post-date {
     margin: 0 20px;
-    color: #6A6B70;
+    color: var(--gray);
 }
 
 .modal-information {

@@ -6,21 +6,15 @@
     width: 80vw;
     height: 100vh;
     position: absolute;
-    border-left: solid 1px #6A6B70;
-    border-right: solid 1px #6A6B70;
+    border-left: solid 1px var(--gray);
+    border-right: solid 1px var(--gray);
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.top-profil {
-    /*height: 40vh;*/
-    /*border-bottom: solid 1px #6A6B70;*/
 }
 
 .banner {
     height: 20vh;
     max-height: 20vh;
-    /*border-bottom: solid 1px #6A6B70;*/
 }
 
 .banner img {
@@ -55,7 +49,7 @@ p.friends-popup-link {
     margin-right: 100px;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #6A6B70;
+    border-bottom: 1px solid var(--gray);
 }
 
 .name-box {
@@ -75,9 +69,9 @@ a.settings-link {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #6A6B70;
+    color: var(--gray);
     padding: 5px 9px !important;
-    border: 1px solid #6A6B70;
+    border: 1px solid var(--gray);
     font-size: var(--size-medium);
     border-radius: 4px;
     font-weight: 700;

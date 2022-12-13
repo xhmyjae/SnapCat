@@ -3,7 +3,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    border-left: solid 1px #6A6B70;
+    border-left: solid 1px var(--gray);
     right: 0;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 .main-comment {
     display: flex;
     align-items: flex-start;
-    border-bottom: solid 1px #6A6B70;
+    border-bottom: solid 1px var(--gray);
     padding: 15px;
     font-size: var(--size-medium);
 }
@@ -46,7 +46,7 @@ img.avatar {
 
 .stats-box > span {
     margin-right: 5px;
-    color: #6A6B70;
+    color: var(--gray);
     transition: color 0.2s ease;
 }
 

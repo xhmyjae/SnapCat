@@ -5,7 +5,7 @@ body {
 .settings-page {
     left: 26vw;
     width: 80vw;
-    border-left: solid 1px #6A6B70;
+    border-left: solid 1px var(--gray);
     right: 0;
     position: relative;
     display: flex;

@@ -3,7 +3,7 @@
 .menu {
     width: 26vw;
     position: fixed;
-    border-right: solid 1px #6A6B70;
+    border-right: solid 1px var(--gray);
     font-size: var(--size-medium);
     display: flex;
     flex-direction: column;
