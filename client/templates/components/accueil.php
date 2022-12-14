@@ -3,7 +3,7 @@ global $connected_user;
 ?>
 
 
-<script defer src="client/scripts/write-post.js"></script>
+<script defer src="/client/scripts/write-post.js"></script>
 
 <div class="post-panel">
     <p class="page-title">Accueil</p>
@@ -22,9 +22,9 @@ global $connected_user;
                 <!--                <span contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></span>-->
                 <div class="write-post-footer">
                     <form method='post' action='' enctype='multipart/form-data'>
-                        <input type='file' name='files'/>
-<!--                    <input type='file' name='files[]' multiple />-->
-                    <input type='submit' value='Submit' name='submit_picture' />
+<!--                        <input type='file' name='files'/>-->
+                        <input type='file' name='files[]' multiple />
+                        <input type="image" src="../img/img.png" class="add-picture" value='ADD' name="picture"  alt="add_picture"/>
                     </form>
                     <button type="submit" class="post-button" value="create_post">Publier</button>
                 </div>

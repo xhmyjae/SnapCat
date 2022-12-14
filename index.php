@@ -42,6 +42,7 @@ use App\Controllers\User\Login\LoginUser;
 use App\Controllers\User\Logout\LogoutUser;
 use App\Controllers\User\Profil\ProfilUser;
 use App\Controllers\User\Update\UpdateUser;
+use App\Controllers\Friends\SearchFriend\SearchFriend;
 use function App\Lib\Utils\redirect;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));

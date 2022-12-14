@@ -24,10 +24,9 @@ class PostRepository
         $statement->execute(compact('message', 'user_id', 'emotion'));
     }
 
-    public function postPicture(string $filename, int $target_file): void
+    public function postPicture(): void
     {
-        $statement = $this->databaseConnection->prepare('INSERT INTO posts (picture, user_id) VALUES (:picture, :user_id)');
-        if(isset($_POST['submit_picture'])){
+        if(isset($_POST['picture'])) {
 
             // Count total files
             $countfiles = count($_FILES['files']['name']);
@@ -44,7 +43,7 @@ class PostRepository
                 $filename = $_FILES['files']['name'][$i];
 
                 // Location
-                $target_file = 'upload/'.$filename;
+                $target_file = 'client/upload/'.$filename;
 
                 // file extension
                 $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -62,6 +61,7 @@ class PostRepository
                         $statement->execute(array($filename,$target_file));
                     }
                 }
+
             }
             echo "File upload successfully";
         }
