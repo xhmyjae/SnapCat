@@ -1,3 +1,8 @@
+@font-face {
+    font-family: SF Compact;
+    src: url("SFCompactText-Regular.otf");
+}
+
 *,
 *::after,
 *::before {
@@ -17,6 +22,7 @@ body {
     font-size: 12px;
     background-color: #3c3f41;
     color: #ffffff;
+    font-family: "SF Compact", sans-serif;
 }
 
 /**/
@@ -193,7 +199,7 @@ body {
     height: 500px;
     border-radius: 50%;
     background-color: rgba(28, 28, 33, 0.5);
-    box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #4b70e2;
+    box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #FFAEC9;
     bottom: -60%;
     left: -60%;
     transition: 1.25s;
@@ -269,4 +275,8 @@ body {
     30%, 50% {
         width: 500px;
     }
+}
+
+img.switch__img {
+    width: 100%;
 }
