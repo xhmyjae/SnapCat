@@ -175,6 +175,7 @@ select#emotions-select {
 
 p.post-message {
     margin: 20px 0;
+    word-break: break-word;
 }
 
 p.post-username {
@@ -236,6 +237,7 @@ p.post-username {
     border: none;
     color: white;
     cursor: pointer;
+    font-size: var(--size-large);
 }
 
 .hidden {
@@ -259,4 +261,8 @@ p.post-username {
 
 p.post-date {
     color: var(--gray);
+}
+
+.write-comment-form {
+    margin: 10px 0;
 }

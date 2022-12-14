@@ -20,6 +20,16 @@ class Create_Post extends FlashMessage
             redirect('/homepage');
         }
         (new PostRepository())->createPost($input['message'], $connected_user->id, $emotion);
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  crée un post\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         redirect('/homepage');
     }
 }

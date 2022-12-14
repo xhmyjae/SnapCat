@@ -45,8 +45,10 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Friends\SearchFriend\SearchFriend;
 use function App\Lib\Utils\redirect;
 
+
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $first_segment = $uri_segments[1] ?? '';
+
 
 session_start();
 
@@ -72,31 +74,92 @@ try {
         case 'profile':
             $ProfileUser = new ProfilUser();
             $ProfileUser->execute($_GET, $connected_user);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  regarder un profil\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'create_post':
             $createPost = new Create_Post();
             $emotion = $_POST['emotion'] ?? 1;
             $createPost->execute($_POST, $connected_user, $emotion);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  crée un post\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'create_comment':
             $createComment = new Create_Comment();
             $createComment->execute($_POST, $connected_user);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  crée un commentaire\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'delete_comment':
             $deleteComment = new Delete_Comment();
             $deleteComment->execute($_POST, $connected_user);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  supprimé un commentaire\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'delete_post':
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  supprimer un post\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             $post_id = (int)$_POST['post_id'];
             $deletePost = new delete_Post();
             $deletePost->execute($post_id, $connected_user);
             redirect('/');
+
             break;
         case 'homepage':
             global $friends_posts;
             $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
             $homepage->execute($connected_user, $_GET);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name se balade dans la homepage\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case '':
             if ($connected_user !== null) {
@@ -111,33 +174,102 @@ try {
             }
             $signup = new CreateUser();
             $signup->execute($_POST);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name vien juste de ce créer un compte\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'login':
             if ($connected_user !== null) {
                 redirect('/homepage');
             }
             $login = new LoginUser();
-            $login->execute($_POST);
+            $login->execute($_POST);$logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name se connecte\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'logout':
             $logout = new LogoutUser();
             $logout->execute($_SESSION);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name se deconnecte\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'settings-page':
             $settings_page = new Settings();
             $settings_page->execute();
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name change ses parametres \n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'settings':
             $update = new UpdateUser();
             $update->execute($_POST, $_SESSION);
             break;
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a changé ces parametres\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
         case 'addfriend':
             $add_friend = new AddFriend();
             $add_friend->execute($connected_user, $_GET);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a ajouté un ami\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         case 'deletefriend':
             $delete_friend = new DeleteFriend();
             $delete_friend->execute($connected_user, $_GET);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimer un ami\n";
+            fwrite($logFile, $logEntry);
+
+            fclose($logFile);
             break;
         default:
             redirect('/homepage');
