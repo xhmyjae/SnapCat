@@ -265,4 +265,6 @@ p.post-date {
 
 .write-comment-form {
     margin: 10px 0;
+    display: flex;
+    gap: 30px;
 }
