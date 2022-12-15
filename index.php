@@ -25,7 +25,8 @@ require_once('src/model/post.php');
 require_once('src/model/comments.php');
 require_once('src/model/reactions.php');
 require_once('src/controllers/add_reaction.php');
-
+require_once('src/controllers/add_vote.php');
+require_once('src/model/votes.php');
 
 use App\Controllers\Comment\Create\Create_Comment;
 use App\Controllers\Comment\Delete\Delete_Comment;
@@ -47,7 +48,7 @@ use App\Controllers\User\Update\UpdateUser;
 use App\Controllers\Friends\SearchFriend\SearchFriend;
 use function App\Lib\Utils\redirect;
 use App\Controllers\Reactions\AddReaction\AddReaction;
-
+use App\Controllers\Votes\AddVote\AddVote;
 
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $first_segment = $uri_segments[1] ?? '';
@@ -96,10 +97,8 @@ try {
                 echo "Error: Unable to open log file";
                 exit;
             }
-
             $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  créé un post\n";
             fwrite($logFile, $logEntry);
-
             fclose($logFile);
             break;
         case 'add_reactions':
@@ -110,10 +109,20 @@ try {
                 echo "Error: Unable to open log file";
                 exit;
             }
-
             $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a ajouté une réaction\n";
             fwrite($logFile, $logEntry);
-
+            fclose($logFile);
+            break;
+        case 'comment_votes':
+            $addVote = new AddVote();
+            $addVote->execute($connected_user, $_POST);
+            $logFile = fopen("log.txt", "a");
+            if ($logFile === false) {
+                echo "Error: Unable to open log file";
+                exit;
+            }
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a ajouté un vote\n";
+            fwrite($logFile, $logEntry);
             fclose($logFile);
             break;
         case 'create_comment':

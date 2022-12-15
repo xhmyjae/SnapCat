@@ -9,13 +9,16 @@ $length = 5;
 use App\Controllers\User\GetUser\GetUser;
 use App\Model\Comments\CommentRepository;
 use App\Model\Reactions\ReactionsRepository;
+use App\Model\Votes\VotesRepository;
 use App\Controllers\Reactions\CountReactions\CountReactions;
+use App\Controllers\Votes\CountVotes\CountVotes;
 
 require_once 'src/controllers/getFriendsPost.php';
 require_once 'src/controllers/GetUser.php';
 require_once 'src/model/comments.php';
 require_once 'src/model/reactions.php';
 require_once 'src/controllers/count_reactions.php';
+require_once 'src/controllers/count_votes.php';
 
 ?>
 <?php
@@ -125,10 +128,17 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     <?php } ?>
                     <form class="comment-votes-form" action="/comment_votes" method="POST">
                         <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
-                        <button type="submit" class="comment-up-button form-btn" value="1"><i
+                        <button type="submit" class="comment-up-button form-btn" name="vote" value="1"><i
                                     class="fa-solid fa-chevron-up"></i></button>
-                        <span class="comment-votes"><?= $comment['vote'] ?></span>
-                        <button type="submit" class="comment-down-button form-btn" value="2"><i
+                        <span class="comment-votes">
+                            <?php
+                            $votesCount = new VotesRepository();
+                            $upVotesCount = $votesCount->countVote(1, $post['id']);
+                            $downVotesCount = $votesCount->countVote(2, $post['id']);
+                            echo $upVotesCount;
+                            ?>
+                        </span>
+                        <button type="submit" class="comment-down-button form-btn" name="vote" value="2"><i
                                     class="fa-solid fa-chevron-down"></i></button>
                     </form>
                 </div>
