@@ -1,16 +1,21 @@
 <?php
 global $friends_posts;
 global $connected_user;
+global $reactionsCount;
 
 $offset = 0;
 $length = 5;
 
 use App\Controllers\User\GetUser\GetUser;
 use App\Model\Comments\CommentRepository;
+use App\Model\Reactions\ReactionsRepository;
+use App\Controllers\Reactions\CountReactions\CountReactions;
 
 require_once 'src/controllers/getFriendsPost.php';
 require_once 'src/controllers/GetUser.php';
 require_once 'src/model/comments.php';
+require_once 'src/model/reactions.php';
+require_once 'src/controllers/count_reactions.php';
 
 ?>
 <?php
@@ -43,17 +48,41 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                 <?php } ?>
                 <div class="post-footer">
                     <div class="post-reactions">
-                        <form action="/get_reactions" method="POST">
+                        <form action="/add_reactions" method="POST">
                             <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
-                            <button type="submit" class="like-button form-btn" value="1">👍<span class="count"></span>
+                            <button type="submit" class="like-button form-btn" name="emoji" value="1">👍<span class="count">
+                                    <?php
+                                    $reactionsCount = new ReactionsRepository();
+                                    echo $reactionsCount->countReaction(1, $post['id']);
+                                    ?>
+                                </span></button>
+                            <button type="submit" class="dislike-button form-btn" name="emoji" value="2">👎<span class="count">
+                                    <?php
+                                    $reactionsCount = new ReactionsRepository();
+                                    echo $reactionsCount->countReaction(2, $post['id']);
+                                    ?>
+                                </span>
                             </button>
-                            <button type="submit" class="dislike-button form-btn" value="2">👎<span class="count"></span>
+                            <button type="submit" class="love-button form-btn" name="emoji" value="3">❤️<span class="count">
+                                    <?php
+                                    $reactionsCount = new ReactionsRepository();
+                                    echo $reactionsCount->countReaction(3, $post['id']);
+                                    ?>
+                                </span>
                             </button>
-                            <button type="submit" class="love-button form-btn" value="3">❤️<span class="count"></span>
+                            <button type="submit" class="sad-button form-btn" name="emoji" value="4">😭<span class="count">
+                                    <?php
+                                    $reactionsCount = new ReactionsRepository();
+                                    echo $reactionsCount->countReaction(4, $post['id']);
+                                    ?>
+                                </span>
                             </button>
-                            <button type="submit" class="sad-button form-btn" value="4">😭<span class="count"></span>
-                            </button>
-                            <button type="submit" class="sad-button form-btn" value="5">😡<span class="count"></span>
+                            <button type="submit" class="sad-button form-btn" name="emoji" value="5">😡<span class="count">
+                                    <?php
+                                    $reactionsCount = new ReactionsRepository();
+                                    echo $reactionsCount->countReaction(5, $post['id']);
+                                    ?>
+                                </span>
                             </button>
                         </form>
                     </div>

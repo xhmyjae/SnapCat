@@ -272,3 +272,6 @@ img.post-picture {
     max-width: 80%;
     max-height: 80%;
 }
+span.count {
+    color: var(--white);
+}

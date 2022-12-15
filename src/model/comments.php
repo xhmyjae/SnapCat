@@ -38,4 +38,50 @@ class CommentRepository
         $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE id = :comment_id AND user_id = :user_id');
         $statement->execute(compact('comment_id', 'user_id'));
     }
+
+//    public function getUpVotes(int $comment_id): int
+//    {
+//        $statement = $this->databaseConnection->prepare('SELECT up_vote FROM comments WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//        return $statement->fetch(PDO::FETCH_ASSOC)['up_vote'];
+//    }
+//
+//    public function getDownVotes(int $comment_id): int
+//    {
+//        $statement = $this->databaseConnection->prepare('SELECT down_vote FROM comments WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//        return $statement->fetch(PDO::FETCH_ASSOC)['down_vote'];
+//    }
+//
+//    public function calculateVotes(int $comment_id): int
+//    {
+//        $up_votes = $this->getUpVotes($comment_id);
+//        $down_votes = $this->getDownVotes($comment_id);
+//        return $up_votes - $down_votes;
+//    }
+//
+//    public function addUpVote(int $comment_id): void
+//    {
+//        $statement = $this->databaseConnection->prepare('UPDATE comments SET up_vote = up_vote + 1 WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//    }
+//
+//    public function addDownVote(int $comment_id): void
+//    {
+//        $statement = $this->databaseConnection->prepare('UPDATE comments SET down_vote = down_vote + 1 WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//    }
+//
+//    public function removeUpVote(int $comment_id): void
+//    {
+//        $statement = $this->databaseConnection->prepare('UPDATE comments SET up_vote = up_vote - 1 WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//    }
+//
+//    public function removeDownVote(int $comment_id): void
+//    {
+//        $statement = $this->databaseConnection->prepare('UPDATE comments SET down_vote = down_vote - 1 WHERE id = :comment_id');
+//        $statement->execute(compact('comment_id'));
+//    }
+
 }
