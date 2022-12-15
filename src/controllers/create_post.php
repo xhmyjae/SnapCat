@@ -35,8 +35,7 @@ class Create_Post extends FlashMessage
                 redirect('/homepage');
             }
         } else {
-            $this->setFlashes('error', 'L\'image est trop volumineuse.');
-            redirect('/homepage');
+            $picture = null;
         }
 
         (new PostRepository())->createPost($input['message'], $connected_user->id, $picture ?? null, $emotion);
