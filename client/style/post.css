@@ -268,3 +268,7 @@ p.post-date {
     display: flex;
     gap: 30px;
 }
+img.post-picture {
+    max-width: 80%;
+    max-height: 80%;
+}

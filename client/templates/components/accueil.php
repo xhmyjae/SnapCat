@@ -8,7 +8,7 @@ global $connected_user;
 <div class="post-panel">
     <p class="page-title">Accueil</p>
     <div class="write-post">
-        <form class="write-post-form" action="/create_post" method="POST">
+        <form class="write-post-form" action="/create_post" method="POST" enctype='multipart/form-data'>
             <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $connected_user->avatar ?>.png">
             <div class="write-post-box">
                 <select name="emotion" id="emotions-select" required>
@@ -19,11 +19,7 @@ global $connected_user;
                 </select>
                 <textarea contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></textarea>
                 <div class="write-post-footer">
-                    <form method='post' action='' enctype='multipart/form-data'>
-<!--                        <input type='file' name='files'/>-->
-                        <input type='file' name='files[]' multiple />
-                        <input type="image" src="../img/img.png" class="add-picture" value='ADD' name="picture"  alt="add_picture"/>
-                    </form>
+                    <input type='file' name='file'/>
                     <button type="submit" class="post-button" value="create_post">Publier</button>
                 </div>
             </div>

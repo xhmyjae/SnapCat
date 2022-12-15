@@ -72,3 +72,6 @@ li.category a:hover {
     text-decoration: none;
     color: #F5F5F5;
 }
+i.fa-solid.fa-arrow-right-from-bracket {
+    color: var(--pink);
+}

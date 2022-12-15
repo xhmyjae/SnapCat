@@ -7,7 +7,6 @@ use App\Model\Friends\FriendsRepository;
 use App\Model\User\User;
 use PDO;
 
-
 class PostRepository
 {
     public PDO $databaseConnection;
@@ -18,53 +17,10 @@ class PostRepository
     }
 
 
-    public function createPost(string $message, int $user_id, int $emotion): void
+    public function createPost(string $message, int $user_id, ?string $picture, int $emotion): void
     {
-        $statement = $this->databaseConnection->prepare('INSERT INTO posts (message, user_id, emotion) VALUES (:message, :user_id, :emotion)');
-        $statement->execute(compact('message', 'user_id', 'emotion'));
-    }
-
-    public function postPicture(): void
-    {
-        if(isset($_POST['picture'])) {
-
-            // Count total files
-            $countfiles = count($_FILES['files']['name']);
-
-            // Prepared statement
-            $query = "INSERT INTO images (name,image) VALUES(?,?)";
-
-            $statement = $this->databaseConnection->prepare($query);
-
-            // Loop all files
-            for($i=0;$i<$countfiles;$i++){
-
-                // File name
-                $filename = $_FILES['files']['name'][$i];
-
-                // Location
-                $target_file = 'client/upload/'.$filename;
-
-                // file extension
-                $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
-                $file_extension = strtolower($file_extension);
-
-                // Valid image extension
-                $valid_extension = array("png","jpeg","jpg");
-
-                if(in_array($file_extension, $valid_extension)){
-
-                    // Upload file
-                    if(move_uploaded_file($_FILES['files']['tmp_name'][$i],$target_file)){
-
-                        // Execute query
-                        $statement->execute(array($filename,$target_file));
-                    }
-                }
-
-            }
-            echo "File upload successfully";
-        }
+        $statement = $this->databaseConnection->prepare('INSERT INTO posts (message, user_id, picture, emotion) VALUES (:message, :user_id, :picture, :emotion)');
+        $statement->execute(compact('message', 'user_id', 'picture', 'emotion'));
     }
 
     function getPosts(): array

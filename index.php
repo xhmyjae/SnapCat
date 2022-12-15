@@ -80,22 +80,21 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  regarder un profil\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a regardé un profil\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
             break;
         case 'create_post':
             $createPost = new Create_Post();
-            $emotion = $_POST['emotion'] ?? 1;
-            $createPost->execute($_POST, $connected_user, $emotion);
+            $createPost->execute($_POST, $connected_user);
             $logFile = fopen("log.txt", "a");
             if ($logFile === false) {
                 echo "Error: Unable to open log file";
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  crée un post\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  créé un post\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -109,7 +108,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  crée un commentaire\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a créé un commentaire\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -123,7 +122,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  supprimé un commentaire\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimé un commentaire\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -135,7 +134,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a  supprimer un post\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimé un post\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -180,7 +179,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name vien juste de ce créer un compte\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name vient juste de créer un compte\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -210,7 +209,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name se deconnecte\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name se déconnecte\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -224,7 +223,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name change ses parametres \n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name change ses paramètres \n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -239,7 +238,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a changé ces parametres\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a changé ces paramètres\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);
@@ -266,7 +265,7 @@ try {
                 exit;
             }
 
-            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimer un ami\n";
+            $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimé un ami\n";
             fwrite($logFile, $logEntry);
 
             fclose($logFile);

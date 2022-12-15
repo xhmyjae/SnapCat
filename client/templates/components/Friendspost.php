@@ -38,6 +38,9 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     <?php } ?>
                 </div>
                 <p class="post-message"><?= $post['message'] ?></p>
+                <?php if ($post['picture'] != null) { ?>
+                    <img class="post-picture" src="<?= $post['picture'] ?>" alt="post-picture">
+                <?php } ?>
                 <div class="post-footer">
                     <div class="post-reactions">
                         <form action="/get_reactions" method="POST">

@@ -20,7 +20,7 @@
             <!--            <li class="category"><span class="list-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>Découvrir</li>-->
             <li class="category"><a href="/profile?user_id=<?= $connected_user->id ?? null ?>"><span
                             class="list-icon"><i class="fa-regular fa-user"></i></span>Profil</a></li>
-            <li class="category"><a href="/logout"><span class="list-icon"><i class="fa-solid fa-door-open"></i></span>Se
+            <li class="category"><a href="/logout"><span class="list-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>Se
                     déconnecter</a></li>
         </ul>
     </div>
