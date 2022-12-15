@@ -7,6 +7,7 @@ require_once('src/lib/DatabaseConnection.php');
 use App\Lib\Database\DatabaseConnection;
 use PDO;
 use function App\Lib\Utils\redirect;
+use function App\Lib\Utils\checkHash;
 
 class User
 {
@@ -34,16 +35,14 @@ class UserRepository
         if (!preg_match('/^[a-zA-Z0-9_]+$/', $name)) {
             require_once('client/templates/login.php');
         } else {
-            global $avatar;
             $avatar = "catspaghetti";
 
-            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :password)');
-            $statement->execute(compact('name', 'mail', 'password', 'avatar'));
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $statement = $this->databaseConnection->prepare('INSERT INTO users (name, mail, avatar, password) VALUES (:name, :mail, :avatar, :hash)');
+            $statement->execute(compact('name', 'mail', 'hash', 'avatar'));
 
             redirect('/');
-//            require_once('client/templates/homepage.php');
-//            require_once('client/templates/accueil.php');
-//            require_once('client/templates/base_profil.php');
         }
 
     }
@@ -83,13 +82,19 @@ class UserRepository
 
     public function loginUser(string $ids, string $password): ?User
     {
-        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE (name = :ids OR mail = :ids) AND password = :password");
-        $result->execute(compact('ids', 'password'));
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE (name = :ids OR mail = :ids)");
+        $result->execute(compact('ids'));
         $count = $result->rowCount();
         if ($count == 0) {
             return null;
         } else {
-            return $result->fetchObject(User::class);
+            $user = $result->fetchObject(User::class);
+            $correctPassword = checkHash($password, $user->password);
+            if ($correctPassword) {
+                return $user;
+            } else {
+                return null;
+            }
         }
     }
 
@@ -106,44 +111,45 @@ class UserRepository
         $statement->execute(compact('id', 'name', 'mail', 'avatar', 'password', 'description'));
     }
 
-    public function updateName(int $id, string $name, string $confirm_password): void
+    public function updateName(int $id, string $name): void
     {
         $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE name = :name");
         $result->execute(compact('name'));
         $count = $result->rowCount();
         if ($count == 0) {
-            $statement = $this->databaseConnection->prepare('UPDATE users SET name = :name WHERE id = :id AND password = :confirm_password');
-            $statement->execute(compact('id', 'name', 'confirm_password'));
+            $statement = $this->databaseConnection->prepare('UPDATE users SET name = :name WHERE id = :id');
+            $statement->execute(compact('id', 'name'));
         }
     }
 
-    public function updateMail(int $id, string $mail, string $confirm_password): void
+    public function updateMail(int $id, string $mail): void
     {
         $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE mail = :mail");
         $result->execute(compact('mail'));
         $count = $result->rowCount();
         if ($count == 0) {
-            $statement = $this->databaseConnection->prepare('UPDATE users SET mail = :mail WHERE id = :id AND password = :confirm_password');
-            $statement->execute(compact('id', 'mail', 'confirm_password'));
+            $statement = $this->databaseConnection->prepare('UPDATE users SET mail = :mail WHERE id = :id');
+            $statement->execute(compact('id', 'mail'));
         }
     }
 
-    public function updatePassword(int $id, string $password, string $confirm_password): void
+    public function updatePassword(int $id, string $password): void
     {
-        $statement = $this->databaseConnection->prepare('UPDATE users SET password = :password WHERE id = :id AND password = :confirm_password');
-        $statement->execute(compact('id', 'password', 'confirm_password'));
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $statement = $this->databaseConnection->prepare('UPDATE users SET password = :hash WHERE id = :id');
+        $statement->execute(compact('id', 'hash'));
     }
 
-    public function updateBio(int $id, string $description, string $confirm_password): void
+    public function updateBio(int $id, string $description): void
     {
-        $statement = $this->databaseConnection->prepare('UPDATE users SET description = :description WHERE id = :id AND password = :confirm_password');
-        $statement->execute(compact('id', 'description', 'confirm_password'));
+        $statement = $this->databaseConnection->prepare('UPDATE users SET description = :description WHERE id = :id');
+        $statement->execute(compact('id', 'description'));
     }
 
-    public function updateAvatar(int $id, string $avatar, string $confirm_password): void
+    public function updateAvatar(int $id, string $avatar): void
     {
-        $statement = $this->databaseConnection->prepare('UPDATE users SET avatar = :avatar WHERE id = :id AND password = :confirm_password');
-        $statement->execute(compact('id', 'avatar', 'confirm_password'));
+        $statement = $this->databaseConnection->prepare('UPDATE users SET avatar = :avatar WHERE id = :id');
+        $statement->execute(compact('id', 'avatar'));
     }
 
     public function searchFriend(string $search): array
