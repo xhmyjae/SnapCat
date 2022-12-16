@@ -27,7 +27,12 @@ if ($posts !== null) {
                     echo $reactionsCount->countTotalReactions($post['id']);
                     ?>
                 </i>
-                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-comment">
+                    <?php
+                    $commentCount = new CommentRepository();
+                    echo $commentCount->countComments($post['id']);
+                    ?>
+                </i>
             </div>
 
             <dialog class="modal-background">
