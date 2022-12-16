@@ -133,9 +133,9 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                         <span class="comment-votes">
                             <?php
                             $votesCount = new VotesRepository();
-                            $upVotesCount = $votesCount->countVote(1, $post['id']);
-                            $downVotesCount = $votesCount->countVote(2, $post['id']);
-                            echo $upVotesCount;
+                            $upVotesCount = $votesCount->countVote(1, $comment['id']);
+                            $downVotesCount = $votesCount->countVote(2, $comment['id']);
+                            echo $upVotesCount - $downVotesCount;
                             ?>
                         </span>
                         <button type="submit" class="comment-down-button form-btn" name="vote" value="2"><i
