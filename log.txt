@@ -391,6 +391,7 @@
 [2022-12-16 13:59:26] hihi se balade dans la homepage
 [2022-12-16 13:59:27] hihi a supprimé un post
 [2022-12-16 13:59:27] hihi se balade dans la homepage
+<<<<<<< HEAD
 [2022-12-16 14:01:21] khero a supprimé un post
 [2022-12-16 14:01:23] khero se balade dans la homepage
 [2022-12-16 14:01:25] khero se balade dans la homepage
@@ -415,3 +416,4 @@
 [2022-12-16 14:02:28] khero se balade dans la homepage
 [2022-12-16 14:02:31] khero se balade dans la homepage
 [2022-12-16 14:02:36] khero se balade dans la homepage
+
