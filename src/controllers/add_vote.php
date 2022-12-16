@@ -30,6 +30,14 @@ class AddVote extends FlashMessage
         $votesRepository->deleteVote($post['comment_id'], $connected_user->id);
         // add the vote
         $votesRepository->addVote($post['vote'], $post['comment_id'], $connected_user->id);
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+        $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a ajouté un vote\n";
+        fwrite($logFile, $logEntry);
+        fclose($logFile);
         redirect('/homepage');
     }
 }

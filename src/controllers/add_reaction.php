@@ -30,6 +30,14 @@ class AddReaction extends FlashMessage
         $reactionsRepository->deleteReaction($post['post_id'], $connected_user->id);
         // add the reaction
         $reactionsRepository->addReaction($post['emoji'], $post['post_id'], $connected_user->id);
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+        $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a ajouté une réaction\n";
+        fwrite($logFile, $logEntry);
+        fclose($logFile);
         redirect('/homepage');
     }
 }

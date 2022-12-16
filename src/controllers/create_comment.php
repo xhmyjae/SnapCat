@@ -21,6 +21,16 @@ class Create_Comment
 
         (new CommentRepository())->createComment($message, $connected_user->id, (int)$input['post_id']);
 
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a créé un commentaire\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         redirect('/');
     }
 }

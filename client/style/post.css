@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
 .post-panel {
     left: 26vw;
     width: 47.3vw;
@@ -59,8 +65,6 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    border: none;
-    /* background: #4F5BD5; */
     font-size: var(--size-medium);
     color: var(--pink);
     background: transparent;
@@ -71,7 +75,22 @@
     background: var(--pink);
     color: var(--white);
 }
-
+#choose-picture{
+    text-align: center;
+    width: 300px;
+    height: 25px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: var(--size-medium);
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--gray);
+}
+#choose-picture:hover{
+    /*background: var(--pink);*/
+    color: var(--pink);
+}
 .container {
     display: flex;
     align-items: flex-start;
@@ -106,10 +125,11 @@ p {
 
 .delete-button {
     color: #c75656;
+    transition: tilt-shaking 0.5s ease-in-out;
 }
-
 .delete-button:hover {
-    color: var(--pink);
+    color: #ff0000;
+    animation: tilt-shaking 0.5s ease-in-out;
 }
 
 form.write-post-form {
@@ -139,11 +159,12 @@ i.fa-solid.fa-image {
 select#emotions-select {
     width: 20%;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: mediumpurple;
     color: #feda75;
     padding: 2px;
     border-color: var(--gray);
 }
+
 
 .form-btn {
     cursor: pointer;
@@ -167,7 +188,24 @@ select#emotions-select {
 .post-container {
     width: 80%;
 }
+.post-reactions .react-button button{
+    margin: 5vh 3vw 0 0;
+    transition: 0.5s;
+}
+span.count{
+    margin: 0 0 0 0.5vw;
+    transition: none;
+}
+span.count:hover{
+    color: var(--pink);
+}
+.post-reactions .react-button button:hover {
+    transform: rotate(-10deg);
+}
 
+.react-button button span .count{
+    margin-top: 5px;
+}
 .post-footer {
     display: flex;
     justify-content: space-between;
@@ -176,6 +214,12 @@ select#emotions-select {
 p.post-message {
     margin: 20px 0;
     word-break: break-word;
+}
+
+img.post-picture {
+    margin-left: 5vw;
+    max-width: 60%;
+    max-height: 60%;
 }
 
 p.post-username {
@@ -195,7 +239,9 @@ p.post-username {
     flex-direction: row;
     border-bottom: solid 1px var(--gray);
 }
-
+.comment-button{
+    margin-top: 5vh;
+}
 .comment-container {
     display: flex;
     flex-direction: column;
@@ -268,10 +314,7 @@ p.post-date {
     display: flex;
     gap: 30px;
 }
-img.post-picture {
-    max-width: 80%;
-    max-height: 80%;
-}
+
 span.count {
     color: var(--white);
 }

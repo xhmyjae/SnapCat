@@ -20,6 +20,17 @@ class DeleteFriend extends FlashMessage
         }
         $user = (new UserRepository())->getUserById($input2['user_id']);
         (new FriendsRepository())->deleteFriend($input->id, $user->id);
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+        $name = $user->name;
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $name a supprimé un ami\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         redirect('/homepage');
     }
 }
