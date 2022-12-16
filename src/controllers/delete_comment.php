@@ -21,6 +21,16 @@ class Delete_Comment
 
         (new CommentRepository())->deleteComment((int)$comment_id, $connected_user);
 
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a supprimé un commentaire\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         redirect('/');
     }
 }

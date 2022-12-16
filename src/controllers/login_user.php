@@ -16,6 +16,17 @@ class LoginUser extends FlashMessage
             $this->setFlashes('error', 'Certains paramètres n\'ont pas été renseignés.');
             redirect('/');
         }
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+        $name = $input['ids'];
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $name se connecte\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
 
         $user = (new UserRepository())->loginUser($input['ids'], $input['password']);
         if ($user !== null) {

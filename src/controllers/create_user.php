@@ -17,7 +17,19 @@ class CreateUser extends FlashMessage
             $this->setFlashes('error', 'Certains paramètres n\'ont pas été renseignés.');
             redirect('/');
         }
+        $name = $input['name'];
         $result = (new UserRepository())->checkUserAvailability($input['name'], $input['mail']);
+
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+
+        $logEntry = "[".date("Y-m-d H:i:s")."] $name vient juste de créer un compte\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         if ($result) {
             (new UserRepository())->createUser($input['name'], $input['mail'], $input['password']);
         } else {

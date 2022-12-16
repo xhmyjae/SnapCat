@@ -20,6 +20,18 @@ class AddFriend extends FlashMessage
         }
         $user = (new UserRepository())->getUserById($input2['user_id']);
         (new FriendsRepository())->addFriend($input->id, $user->id);
+        $logFile = fopen("log.txt", "a");
+        if ($logFile === false) {
+            echo "Error: Unable to open log file";
+            exit;
+        }
+
+        $name = $input->name;
+        $name2 = $input2['user_id']->name;
+        $logEntry = "[".date("Y-m-d H:i:s")."] $name a ajouté en ami $name2\n";
+        fwrite($logFile, $logEntry);
+
+        fclose($logFile);
         redirect('/homepage');
     }
 }
