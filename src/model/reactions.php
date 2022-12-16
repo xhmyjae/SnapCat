@@ -47,4 +47,11 @@ class ReactionsRepository
         $statement->execute(compact('emoji', 'post_id'));
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function countComments(int $post_id): int
+    {
+        $statement = $this->databaseConnection->prepare('SELECT COUNT(*) FROM comments WHERE post_id = :post_id');
+        $statement->execute(compact('post_id'));
+        return $statement->fetch(PDO::FETCH_ASSOC)['COUNT(*)'];
+    }
 }
