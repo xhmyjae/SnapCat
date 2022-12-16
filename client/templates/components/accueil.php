@@ -19,7 +19,7 @@ global $connected_user;
                 </select>
                 <textarea contenteditable="true" class="input-post" name="message" placeholder="Ecris quelque chose..." minlength="2" maxlength="400" required></textarea>
                 <div class="write-post-footer">
-                    <input type='file' name='file'/>
+                    <input id="choose-picture" type='file' name='file'/>
                     <button type="submit" class="post-button" value="create_post">Publier</button>
                 </div>
             </div>
