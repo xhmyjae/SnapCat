@@ -51,7 +51,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                 <?php } ?>
                 <div class="post-footer">
                     <div class="post-reactions">
-                        <form action="/add_reactions" method="POST">
+                        <form class="react-button" action="/add_reactions" method="POST">
                             <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
                             <button type="submit" class="like-button form-btn" name="emoji" value="1">👍<span class="count">
                                     <?php
