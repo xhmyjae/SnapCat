@@ -98,11 +98,16 @@ class UserRepository
         }
     }
 
-    public function getUserById(int $id): User|false
+    public function getUserById(int $id): ?User
     {
-        $statement = $this->databaseConnection->prepare('SELECT * FROM users WHERE id = :id');
-        $statement->execute(compact('id'));
-        return $statement->fetchObject(User::class);
+        $result = $this->databaseConnection->prepare("SELECT * FROM users WHERE id = :id");
+        $result->execute(compact('id'));
+        $count = $result->rowCount();
+        if ($count == 0) {
+            return null;
+        } else {
+            return $result->fetchObject(User::class);
+        }
     }
 
     public function updateUser(int $id, string $name, string $mail, string $avatar, string $password, string $description, string $confirm_password): void
