@@ -6,7 +6,7 @@ global $connected_user;
 <script defer src="/client/scripts/write-post.js"></script>
 
 <div class="post-panel">
-    <p class="page-title">Accueil</p>
+    <h3 class="page-title">Accueil</h3>
     <div class="write-post">
         <form class="write-post-form" action="/create_post" method="POST" enctype='multipart/form-data'>
             <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $connected_user->avatar ?>.png">

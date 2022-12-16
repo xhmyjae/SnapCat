@@ -6,6 +6,29 @@
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+.page-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    background-image: linear-gradient(45deg, #f3ec78, tomato, #ffaec9);
+    animation: rainbow-text-simple-animation 10s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
 .post-panel {
     left: 26vw;
     width: 47.3vw;
