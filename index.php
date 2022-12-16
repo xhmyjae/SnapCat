@@ -86,7 +86,6 @@ try {
 
             $logEntry = "[".date("Y-m-d H:i:s")."] $connected_user->name a regardé un profil\n";
             fwrite($logFile, $logEntry);
-
             fclose($logFile);
             break;
         case 'create_post':

@@ -55,8 +55,23 @@ class PostRepository
 
     public function deletePost(int $post_id, User $connected_user): void
     {
+        // get posts comments
+        $statement = $this->databaseConnection->prepare('SELECT * FROM comments WHERE post_id = " ' . $post_id . ' "');
+        $statement->execute();
+        $comments = $statement->fetchAll();
+
+        // delete comments votes
+        foreach ($comments as $comment) {
+            $statement = $this->databaseConnection->prepare('DELETE FROM votes WHERE comment_id = " ' . $comment['id'] . ' "');
+            $statement->execute();
+        }
         // if post has comments, delete comments too
         $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE post_id = :post_id');
+        $statement->execute([
+            'post_id' => $post_id,
+        ]);
+        // delete associated reactions
+        $statement = $this->databaseConnection->prepare('DELETE FROM reactions WHERE post_id = :post_id');
         $statement->execute([
             'post_id' => $post_id,
         ]);
