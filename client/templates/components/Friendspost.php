@@ -90,6 +90,12 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                         </form>
                     </div>
                     <button class="comment-button <?= $post['id']; ?>"><i class="fa-regular fa-comment"></i></button>
+                    <span id="commentCount" class="count">
+                        <?php
+                        $commentCount = new ReactionsRepository();
+                        echo $commentCount->countComments($post['id']);
+                        ?>
+                    </span>
                 </div>
             </div>
         </div>
