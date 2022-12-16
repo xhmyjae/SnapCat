@@ -60,6 +60,11 @@ class PostRepository
         $statement->execute([
             'post_id' => $post_id,
         ]);
+        // delete associated reactions
+        $statement = $this->databaseConnection->prepare('DELETE FROM reactions WHERE post_id = :post_id');
+        $statement->execute([
+            'post_id' => $post_id,
+        ]);
         $statement = $this->databaseConnection->prepare('DELETE FROM posts WHERE user_id = :user_id AND id = :post_id');
         $statement->execute([
             'user_id' => $connected_user->id,
