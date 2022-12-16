@@ -35,6 +35,10 @@ class CommentRepository
     {
         $user_id = $connected_user->id;
 
+        // delete all votes of the comment
+        $statement = $this->databaseConnection->prepare('DELETE FROM votes WHERE comment_id = :comment_id');
+        $statement->execute(compact('comment_id'));
+
         $statement = $this->databaseConnection->prepare('DELETE FROM comments WHERE id = :comment_id AND user_id = :user_id');
         $statement->execute(compact('comment_id', 'user_id'));
     }
