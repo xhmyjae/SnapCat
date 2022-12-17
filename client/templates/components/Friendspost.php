@@ -26,6 +26,17 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
     $post_comments = (new CommentRepository())->getComments($post['id']);
+    // sort comments by votes
+//    usort($post_comments, function ($a, $b) {
+//        global $votesCount;
+//        $upVotesCountA = $votesCount->countVote(1, $a['id']);
+//        $downVotesCountA = $votesCount->countVote(2, $a['id']);
+//        $resultA = $upVotesCountA - $downVotesCountA;
+//        $upVotesCountB = $votesCount->countVote(1, $b['id']);
+//        $downVotesCountB = $votesCount->countVote(2, $b['id']);
+//        $resultB = $upVotesCountB - $downVotesCountB;
+//        return $resultB <=> $resultA;
+//    });
     ?>
     <div class="feed">
         <div class="post">
