@@ -28,6 +28,21 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user = $user_method->execute($post['user_id']);
     $post_comments = (new CommentRepository())->getComments($post['id']);
     // sort comments by votes
+    // for each comment, get the number of votes
+    // sort the comments by the number of votes
+    // display the comments
+    $comments = [];
+    foreach ($post_comments as $comment) {
+        $upVotesCount = $votesCount->countVote(1, $comment['id']);
+        $downVotesCount = $votesCount->countVote(2, $comment['id']);
+        $comment['votes'] = $upVotesCount - $downVotesCount;
+        $comments[] = $comment;
+    }
+    usort($comments, function ($a, $b) {
+        return $b['votes'] <=> $a['votes'];
+    });
+    $post['comments'] = $comments;
+
 //    usort($post_comments, function ($a, $b) {
 //        global $votesCount;
 //        $upVotesCountA = $votesCount->countVote(1, $a['id']);
@@ -117,7 +132,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     </button>
                 </div>
             </form>
-            <?php foreach ($post_comments as $comment) {
+            <?php foreach ($post['comments'] as $comment) {
                 $comment_user = $user_method->execute($comment['user_id']);?>
                 <div class="comment">
                     <img alt="profile-picture" class="avatar"
