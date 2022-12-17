@@ -67,6 +67,8 @@ a.modal-reaction-icon:hover {
 .modal-comment {
     display: flex;
     padding: 0 15px;
+    width: 90%;
+    justify-content: space-between;
 }
 
 img.modal-comment-avatar {
@@ -83,6 +85,7 @@ img.modal-comment-avatar {
     justify-content: center;
     color: var(--gray);
     margin-left: 14px;
+    align-items: center;
 }
 
 .modal-comment-information {
@@ -100,7 +103,7 @@ p.modal-comment-name {
 
 p.modal-post-date {
     margin: 0 20px;
-    color: var(--gray);
+    color: var(--yellow);
 }
 
 .modal-information {
@@ -135,8 +138,60 @@ i.fa-solid.fa-xmark {
     padding: 10px;
 }
 
+.form-btn-votes {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: var(--size-medium);
+    color: var(--gray);
+    padding: 10px;
+}
+
 i.reaction-icon {
     display: flex;
     align-items: center;
 }
 
+form.modal-form-reactions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+button.modal-reaction-icon {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: var(--size-medium);
+    color: var(--gray);
+    gap: 7px;
+    cursor: pointer;
+}
+button.modal-reaction-icon:hover {
+    color: var(--yellow);
+}
+.modal-write-comment-container {
+    display: flex;
+    justify-content: space-between;
+}
+textarea#comment-content {
+    width: 80%;
+    height: fit-content;
+    min-height: 4vh;
+    overflow-y: hidden;
+    border: none;
+    background-color: transparent;
+    padding: 0 15px;
+    color: var(--white);
+}
+button.modal-post-button {
+    width: 19%;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: var(--size-medium);
+    color: var(--pink);
+    background: transparent;
+    border: 1px solid var(--gray);
+}

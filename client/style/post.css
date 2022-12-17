@@ -18,11 +18,10 @@
     }
 }
 .page-title{
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size:var(--size-large);
     font-weight: 700;
     text-align: center;
-    background-image: linear-gradient(45deg, #f3ec78, tomato, #ffaec9);
+    background-image: linear-gradient(45deg, var(--pink), var(--yellow), var(--blue));
     animation: rainbow-text-simple-animation 10s infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

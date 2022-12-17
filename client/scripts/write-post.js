@@ -1,5 +1,3 @@
-
-
 let textarea = document.querySelectorAll('.input-post');
 
 textarea.forEach((el) => {
