@@ -127,6 +127,7 @@ try {
             break;
         case 'homepage':
             global $friends_posts;
+            global $length;
             $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
             $homepage->execute($connected_user, $_GET);
