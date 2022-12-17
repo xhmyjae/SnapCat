@@ -347,14 +347,18 @@ span.count {
     color: var(--white);
 }
 
-.load-more-button {
+.load-more {
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
-    color: white;
+    color: var(--pink);
     cursor: pointer;
     font-size: var(--size-large);
     margin: 10px 0;
+}
+
+.load-more:hover {
+    color: var(--white);
 }

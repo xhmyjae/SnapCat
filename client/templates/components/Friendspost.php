@@ -2,6 +2,7 @@
 global $friends_posts;
 global $connected_user;
 global $reactionsCount;
+global $length;
 
 $offset = 0;
 $length = 5;
@@ -10,8 +11,6 @@ use App\Controllers\User\GetUser\GetUser;
 use App\Model\Comments\CommentRepository;
 use App\Model\Reactions\ReactionsRepository;
 use App\Model\Votes\VotesRepository;
-use App\Controllers\Reactions\CountReactions\CountReactions;
-use App\Controllers\Votes\CountVotes\CountVotes;
 
 require_once 'src/controllers/getFriendsPost.php';
 require_once 'src/controllers/GetUser.php';

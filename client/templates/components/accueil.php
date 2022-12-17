@@ -31,4 +31,5 @@ global $length;
     <div class="posts">
         <?php require_once('client/templates/components/Friendspost.php'); ?>
     </div>
+    <button id="load-more" class="load-more">Charger plus</button>
 </div>

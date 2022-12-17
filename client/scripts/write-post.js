@@ -13,3 +13,9 @@ function autosize(el) {
     }, 0);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#load-more').onclick = () => {
+        length += 5;
+        location.reload();
+    };
+});

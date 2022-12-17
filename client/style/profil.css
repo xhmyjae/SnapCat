@@ -115,8 +115,8 @@ a.delete-post-profile {
 
 .user-posts {
     margin: 0 25px;
-    columns: 3;
     display: inline-block;
+    columns: 3;
 }
 
 .users-profile-posts {
