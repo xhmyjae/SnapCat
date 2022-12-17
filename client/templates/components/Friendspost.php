@@ -5,6 +5,9 @@ global $reactionsCount;
 global $length;
 global $offset;
 
+$length = 10;
+$offset = 0;
+
 
 use App\Controllers\User\GetUser\GetUser;
 use App\Model\Comments\CommentRepository;
