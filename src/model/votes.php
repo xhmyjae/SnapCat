@@ -54,4 +54,5 @@ class VotesRepository
         $statement->execute(compact('vote', 'comment_id', 'user_id'));
         return $statement->fetch(PDO::FETCH_ASSOC)['COUNT(*)'] > 0;
     }
+
 }

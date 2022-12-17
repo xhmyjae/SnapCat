@@ -69,6 +69,12 @@ global $all_users;
                         <div class="friend-name">
                             <p><?= $friend_request_sent->name ?></p>
                         </div>
+                        <div class="Accept_button">
+                            <a href="/deletefriend?user_id=<?= $friend_request_sent->id ?>" class="cancel-request">
+                                Annuler
+                            </a>
+                        </div>
+
                     </a>
                 <?php endforeach;
             } else { ?>
