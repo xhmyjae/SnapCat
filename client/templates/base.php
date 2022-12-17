@@ -19,6 +19,7 @@
     <script src="https://twemoji.maxcdn.com/v/14.0.2/twemoji.min.js"
             integrity="sha384-32KMvAMS4DUBcQtHG6fzADguo/tpN1Nh6BAJa2QqZc6/i0K+YPQE+bWiqBRAWuFs"
             crossorigin="anonymous"></script
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?php
 
     use App\Abstract\FlashMessage;

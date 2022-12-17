@@ -46,6 +46,7 @@ class PostRepository
         }
     }
 
+
     function getUserPost(User $connected_user): array
     {
         $statement = $this->databaseConnection->prepare('SELECT * FROM posts WHERE user_id = " ' . $connected_user->id . ' "');

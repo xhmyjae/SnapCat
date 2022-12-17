@@ -53,6 +53,10 @@ use App\Controllers\Votes\AddVote\AddVote;
 $uri_segments = explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $first_segment = $uri_segments[1] ?? '';
 
+global $length;
+global $offset;
+
+
 
 session_start();
 
@@ -127,7 +131,7 @@ try {
             break;
         case 'homepage':
             global $friends_posts;
-            global $length;
+
             $friends_posts = (new get_FriendsPosts())->execute($connected_user);
             $homepage = new Homepage($connected_user);
             $homepage->execute($connected_user, $_GET);
