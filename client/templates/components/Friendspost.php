@@ -170,6 +170,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
         </div>
     </div>
 <?php } ?>
+<button class="load-more">Charger plus</button>
 
 
 
