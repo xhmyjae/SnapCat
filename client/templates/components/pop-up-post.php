@@ -1,6 +1,7 @@
 <?php
 global $posts;
 global $post;
+global $connected_user;
 
 use App\Controllers\User\GetUser\GetUser;
 use App\Model\Comments\CommentRepository;
@@ -12,6 +13,11 @@ require_once 'src/model/comments.php';
 require_once 'src/model/reactions.php';
 require_once 'src/controllers/count_reactions.php';
 require_once 'src/controllers/count_votes.php';
+
+$reactionsCount = new ReactionsRepository();
+$commentCount = new CommentRepository();
+$votesCount = new VotesRepository();
+
 ?><script defer src="/client/scripts/write-post.js"></script><?php
 if ($posts !== null) {
     foreach ($posts as $post) {
@@ -23,13 +29,11 @@ if ($posts !== null) {
             <div class="post-profile-hover">
                 <i class="fa-solid fa-heart">
                     <?php
-                    $reactionsCount = new ReactionsRepository();
                     echo $reactionsCount->countTotalReactions($post['id']);
                     ?>
                 </i>
                 <i class="fa-solid fa-comment">
                     <?php
-                    $commentCount = new CommentRepository();
                     echo $commentCount->countComments($post['id']);
                     ?>
                 </i>
@@ -55,45 +59,40 @@ if ($posts !== null) {
                                 <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
                                 <div class="modal-reaction">
                                     <button type="submit" name="emoji" value="1" class="modal-reaction-icon">👍
-                                        <p class="modal-reaction-number">
+                                        <p class="modal-reaction-number <?php if ($reactionsCount->hasReactedWithEmoji(1, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                             <?php
-                                            $reactionsCount = new ReactionsRepository();
                                             echo $reactionsCount->countReaction(1, $post['id']);
                                             ?>
                                         </p></button>
                                 </div>
                                 <div class="modal-reaction">
                                     <button type="submit" name="emoji" value="2" class="modal-reaction-icon">👎
-                                        <p class="modal-reaction-number">
+                                        <p class="modal-reaction-number <?php if ($reactionsCount->hasReactedWithEmoji(2, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                             <?php
-                                            $reactionsCount = new ReactionsRepository();
                                             echo $reactionsCount->countReaction(2, $post['id']);
                                             ?>
                                         </p></button>
                                 </div>
                                 <div class="modal-reaction">
                                     <button type="submit" name="emoji" value="3" class="modal-reaction-icon">❤️
-                                        <p class="modal-reaction-number">
+                                        <p class="modal-reaction-number <?php if ($reactionsCount->hasReactedWithEmoji(3, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                             <?php
-                                            $reactionsCount = new ReactionsRepository();
                                             echo $reactionsCount->countReaction(3, $post['id']);
                                             ?>
                                         </p></button>
                                 </div>
                                 <div class="modal-reaction">
                                     <button type="submit" name="emoji" value="4" class="modal-reaction-icon">😭
-                                        <p class="modal-reaction-number">
+                                        <p class="modal-reaction-number <?php if ($reactionsCount->hasReactedWithEmoji(4, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                             <?php
-                                            $reactionsCount = new ReactionsRepository();
                                             echo $reactionsCount->countReaction(4, $post['id']);
                                             ?>
                                         </p></button>
                                 </div>
                                 <div class="modal-reaction">
                                     <button type="submit" name="emoji" value="5" class="modal-reaction-icon">😡
-                                        <p class="modal-reaction-number">
+                                        <p class="modal-reaction-number <?php if ($reactionsCount->hasReactedWithEmoji(5, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                             <?php
-                                            $reactionsCount = new ReactionsRepository();
                                             echo $reactionsCount->countReaction(5, $post['id']);
                                             ?>
                                         </p></button>
@@ -126,17 +125,16 @@ if ($posts !== null) {
                                     <form class="modal-comment-votes" action="/comment_votes" method="POST">
                                         <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
                                         <button type="submit" class="comment-up-button form-btn-votes" name="vote" value="1"><i
-                                                    class="fa-solid fa-chevron-up"></i></button>
+                                                    class="fa-solid fa-chevron-up <?php if ($votesCount->hasVoteWithVote(1, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i></button>
                                         <span class="comment-votes">
                                             <?php
-                                            $votesCount = new VotesRepository();
                                             $upVotesCount = $votesCount->countVote(1, $comment['id']);
                                             $downVotesCount = $votesCount->countVote(2, $comment['id']);
                                             echo $upVotesCount - $downVotesCount;
                                             ?>
                                         </span>
                                         <button type="submit" class="comment-down-button form-btn-votes" name="vote" value="2"><i
-                                                    class="fa-solid fa-chevron-down"></i></button>
+                                                    class="fa-solid fa-chevron-down  <?php if ($votesCount->hasVoteWithVote(2, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i></button>
                                     </form>
                                 </div>
                             <?php } ?>

@@ -20,8 +20,10 @@ require_once 'src/model/reactions.php';
 require_once 'src/controllers/count_reactions.php';
 require_once 'src/controllers/count_votes.php';
 
-?>
-<?php
+$reactionsCount = new ReactionsRepository();
+$commentCount = new CommentRepository();
+$votesCount = new VotesRepository();
+
 foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
@@ -53,36 +55,31 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     <div class="post-reactions">
                         <form class="react-button" action="/add_reactions" method="POST">
                             <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
-                            <button type="submit" class="like-button form-btn" name="emoji" value="1">👍<span class="count">
+                            <button type="submit" class="like-button form-btn" name="emoji" value="1">👍<span class="count <?php if ($reactionsCount->hasReactedWithEmoji(1, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                     <?php
-                                    $reactionsCount = new ReactionsRepository();
                                     echo $reactionsCount->countReaction(1, $post['id']);
                                     ?>
                                 </span></button>
-                            <button type="submit" class="dislike-button form-btn" name="emoji" value="2">👎<span class="count">
+                            <button type="submit" class="dislike-button form-btn" name="emoji" value="2">👎<span class="count <?php if ($reactionsCount->hasReactedWithEmoji(2, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                     <?php
-                                    $reactionsCount = new ReactionsRepository();
                                     echo $reactionsCount->countReaction(2, $post['id']);
                                     ?>
                                 </span>
                             </button>
-                            <button type="submit" class="love-button form-btn" name="emoji" value="3">❤️<span class="count">
+                            <button type="submit" class="love-button form-btn" name="emoji" value="3">❤️<span class="count <?php if ($reactionsCount->hasReactedWithEmoji(3, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                     <?php
-                                    $reactionsCount = new ReactionsRepository();
                                     echo $reactionsCount->countReaction(3, $post['id']);
                                     ?>
                                 </span>
                             </button>
-                            <button type="submit" class="sad-button form-btn" name="emoji" value="4">😭<span class="count">
+                            <button type="submit" class="sad-button form-btn" name="emoji" value="4">😭<span class="count <?php if ($reactionsCount->hasReactedWithEmoji(4, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                     <?php
-                                    $reactionsCount = new ReactionsRepository();
                                     echo $reactionsCount->countReaction(4, $post['id']);
                                     ?>
                                 </span>
                             </button>
-                            <button type="submit" class="sad-button form-btn" name="emoji" value="5">😡<span class="count">
+                            <button type="submit" class="sad-button form-btn" name="emoji" value="5">😡<span class="count <?php if ($reactionsCount->hasReactedWithEmoji(5, $post['id'], $connected_user->id)) echo 'reacted' ?>">
                                     <?php
-                                    $reactionsCount = new ReactionsRepository();
                                     echo $reactionsCount->countReaction(5, $post['id']);
                                     ?>
                                 </span>
@@ -92,7 +89,6 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     <button class="comment-button <?= $post['id']; ?>"><i class="fa-regular fa-comment"></i></button>
                     <span id="commentCount" class="count">
                         <?php
-                        $commentCount = new CommentRepository();
                         echo $commentCount->countComments($post['id']);
                         ?>
                     </span>
@@ -112,7 +108,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                 </div>
             </form>
             <?php foreach ($post_comments as $comment) {
-                $comment_user = $user_method->execute($comment['user_id']); ?>
+                $comment_user = $user_method->execute($comment['user_id']);?>
                 <div class="comment">
                     <img alt="profile-picture" class="avatar"
                          src="client/templates/img/<?= $comment_user->avatar ?>.png">
@@ -135,17 +131,16 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     <form class="comment-votes-form" action="/comment_votes" method="POST">
                         <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
                         <button type="submit" class="comment-up-button form-btn" name="vote" value="1"><i
-                                    class="fa-solid fa-chevron-up"></i></button>
+                                    class="fa-solid fa-chevron-up <?php if ($votesCount->hasVoteWithVote(1, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i></button>
                         <span class="comment-votes">
                             <?php
-                            $votesCount = new VotesRepository();
                             $upVotesCount = $votesCount->countVote(1, $comment['id']);
                             $downVotesCount = $votesCount->countVote(2, $comment['id']);
                             echo $upVotesCount - $downVotesCount;
                             ?>
                         </span>
                         <button type="submit" class="comment-down-button form-btn" name="vote" value="2"><i
-                                    class="fa-solid fa-chevron-down"></i></button>
+                                    class="fa-solid fa-chevron-down <?php if ($votesCount->hasVoteWithVote(2, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i></button>
                     </form>
                 </div>
             <?php } ?>

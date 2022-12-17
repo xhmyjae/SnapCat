@@ -47,4 +47,11 @@ class VotesRepository
         $statement->execute(compact('vote', 'comment_id'));
         return $statement->fetchAll();
     }
+
+    public function hasVoteWithVote(int $vote, int $comment_id, int $user_id): bool
+    {
+        $statement = $this->databaseConnection->prepare('SELECT COUNT(*) FROM votes WHERE vote = :vote AND comment_id = :comment_id AND user_id = :user_id');
+        $statement->execute(compact('vote', 'comment_id', 'user_id'));
+        return $statement->fetch(PDO::FETCH_ASSOC)['COUNT(*)'] > 0;
+    }
 }
