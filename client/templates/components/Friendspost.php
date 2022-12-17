@@ -29,17 +29,17 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
     $post_comments = (new CommentRepository())->getComments($post['id']);
-    // sort comments by votes
-//    usort($post_comments, function ($a, $b) {
-//        global $votesCount;
-//        $upVotesCountA = $votesCount->countVote(1, $a['id']);
-//        $downVotesCountA = $votesCount->countVote(2, $a['id']);
-//        $resultA = $upVotesCountA - $downVotesCountA;
-//        $upVotesCountB = $votesCount->countVote(1, $b['id']);
-//        $downVotesCountB = $votesCount->countVote(2, $b['id']);
-//        $resultB = $upVotesCountB - $downVotesCountB;
-//        return $resultB <=> $resultA;
-//    });
+    $comments = [];
+    foreach ($post_comments as $comment) {
+        $upVotesCount = $votesCount->countVote(1, $comment['id']);
+        $downVotesCount = $votesCount->countVote(2, $comment['id']);
+        $comment['votes'] = $upVotesCount - $downVotesCount;
+        $comments[] = $comment;
+    }
+    usort($comments, function ($a, $b) {
+        return $b['votes'] <=> $a['votes'];
+    });
+    $post['comments'] = $comments;
     ?>
     <div class="feed">
         <div class="post">
@@ -127,7 +127,7 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                         </button>
                     </div>
                 </form>
-                <?php foreach ($post_comments as $comment) {
+                <?php foreach ($post['comments'] as $comment) {
                     $comment_user = $user_method->execute($comment['user_id']); ?>
                     <div class="comment">
                         <img alt="profile-picture" class="avatar"
