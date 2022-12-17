@@ -29,10 +29,6 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
     $user_method = new GetUser();
     $user = $user_method->execute($post['user_id']);
     $post_comments = (new CommentRepository())->getComments($post['id']);
-    // sort comments by votes
-    // for each comment, get the number of votes
-    // sort the comments by the number of votes
-    // display the comments
     $comments = [];
     foreach ($post_comments as $comment) {
         $upVotesCount = $votesCount->countVote(1, $comment['id']);
@@ -44,17 +40,6 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
         return $b['votes'] <=> $a['votes'];
     });
     $post['comments'] = $comments;
-
-//    usort($post_comments, function ($a, $b) {
-//        global $votesCount;
-//        $upVotesCountA = $votesCount->countVote(1, $a['id']);
-//        $downVotesCountA = $votesCount->countVote(2, $a['id']);
-//        $resultA = $upVotesCountA - $downVotesCountA;
-//        $upVotesCountB = $votesCount->countVote(1, $b['id']);
-//        $downVotesCountB = $votesCount->countVote(2, $b['id']);
-//        $resultB = $upVotesCountB - $downVotesCountB;
-//        return $resultB <=> $resultA;
-//    });
     ?>
     <div class="feed">
         <div class="post">
@@ -129,62 +114,62 @@ foreach (array_slice($friends_posts, $offset, $length) as $post) {
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="comments <?= $post['id']; ?> hidden">
-            <form class="write-comment-form" action="/create_comment" method="POST">
-                <img alt="profile-picture" class="avatar" src="client/templates/img/<?= $connected_user->avatar ?>.png">
-                <div class="write-comment-container">
-                    <input type="hidden" id="post-id" name="post_id" value="<?= $post['id'] ?>">
-                    <textarea class="input-post" id="comment-content" name="comment_content"
-                              placeholder="Write a comment..." minlength="1" maxlength="120" required></textarea>
-                    <button type="submit" class="post-button" name="submit-comment" value="create_comment">
-                        Poster
-                    </button>
-                </div>
-            </form>
-            <?php foreach ($post['comments'] as $comment) {
-                $comment_user = $user_method->execute($comment['user_id']);?>
-                <div class="comment">
+            <div class="comments <?= $post['id']; ?> hidden">
+                <form class="write-comment-form" action="/create_comment" method="POST">
                     <img alt="profile-picture" class="avatar"
-                         src="client/templates/img/<?= $comment_user->avatar ?>.png">
-                    <div class="comment-container">
-                        <div class="comment-header">
-                            <p class="comment-username"><?= $comment_user->name ?></p>
-                            <p class="comment-date"><?= $comment['creation_date'] ?></p>
-                        </div>
-                        <p class="comment-content"><?= $comment['message'] ?></p>
+                         src="client/templates/img/<?= $connected_user->avatar ?>.png">
+                    <div class="write-comment-container">
+                        <input type="hidden" id="post-id" name="post_id" value="<?= $post['id'] ?>">
+                        <textarea class="input-post" id="comment-content" name="comment_content"
+                                  placeholder="Write a comment..." minlength="1" maxlength="120" required></textarea>
+                        <button type="submit" class="post-button" name="submit-comment" value="create_comment">
+                            Poster
+                        </button>
                     </div>
-                    <?php if ($comment['user_id'] == $connected_user->id) { ?>
-                        <div class="delete-comment">
-                            <form action="/delete_comment" method="POST">
-                                <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
-                                <button type="submit" class="delete-button form-btn" value="delete_comment"><i
-                                            class="fa-solid fa-trash-can"></i></button>
-                            </form>
+                </form>
+                <?php foreach ($post['comments'] as $comment) {
+                    $comment_user = $user_method->execute($comment['user_id']); ?>
+                    <div class="comment">
+                        <img alt="profile-picture" class="avatar"
+                             src="client/templates/img/<?= $comment_user->avatar ?>.png">
+                        <div class="comment-container">
+                            <div class="comment-header">
+                                <p class="comment-username"><?= $comment_user->name ?></p>
+                                <p class="comment-date"><?= $comment['creation_date'] ?></p>
+                            </div>
+                            <p class="comment-content"><?= $comment['message'] ?></p>
                         </div>
-                    <?php } ?>
-                    <form class="comment-votes-form" action="/comment_votes" method="POST">
-                        <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
-                        <button type="submit" class="comment-up-button form-btn" name="vote" value="1"><i
-                                    class="fa-solid fa-chevron-up <?php if ($votesCount->hasVoteWithVote(1, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i>
-                        </button>
-                        <span class="comment-votes">
-                        <?php
-                        $upVotesCount = $votesCount->countVote(1, $comment['id']);
-                        $downVotesCount = $votesCount->countVote(2, $comment['id']);
-                        echo $upVotesCount - $downVotesCount;
-                        ?>
-                    </span>
-                        <button type="submit" class="comment-down-button form-btn" name="vote" value="2"><i
-                                    class="fa-solid fa-chevron-down <?php if ($votesCount->hasVoteWithVote(2, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i>
-                        </button>
-                    </form>
-                </div>
+                        <?php if ($comment['user_id'] == $connected_user->id) { ?>
+                            <div class="delete-comment">
+                                <form action="/delete_comment" method="POST">
+                                    <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
+                                    <button type="submit" class="delete-button form-btn" value="delete_comment"><i
+                                                class="fa-solid fa-trash-can"></i></button>
+                                </form>
+                            </div>
+                        <?php } ?>
+                        <form class="comment-votes-form" action="/comment_votes" method="POST">
+                            <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
+                            <button type="submit" class="comment-up-button form-btn" name="vote" value="1"><i
+                                        class="fa-solid fa-chevron-up <?php if ($votesCount->hasVoteWithVote(1, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i>
+                            </button>
+                            <span class="comment-votes">
+                            <?php
+                            $upVotesCount = $votesCount->countVote(1, $comment['id']);
+                            $downVotesCount = $votesCount->countVote(2, $comment['id']);
+                            echo $upVotesCount - $downVotesCount;
+                            ?>
+                        </span>
+                            <button type="submit" class="comment-down-button form-btn" name="vote" value="2"><i
+                                        class="fa-solid fa-chevron-down <?php if ($votesCount->hasVoteWithVote(2, $comment['id'], $connected_user->id)) echo 'reacted' ?>"></i>
+                            </button>
+                        </form>
+                    </div>
                 <?php } ?>
+            </div>
         </div>
     </div>
 <?php } ?>
-
 
 
 
