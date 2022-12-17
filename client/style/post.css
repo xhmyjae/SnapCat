@@ -347,3 +347,15 @@ p.post-date {
 span.count {
     color: var(--white);
 }
+
+.load-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: var(--size-large);
+    margin: 10px 0;
+}
