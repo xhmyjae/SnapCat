@@ -54,4 +54,11 @@ class ReactionsRepository
         $statement->execute(compact('post_id'));
         return $statement->fetch(PDO::FETCH_ASSOC)['COUNT(*)'];
     }
+
+    public function hasReactedWithEmoji(int $emoji, int $post_id, int $user_id): bool
+    {
+        $statement = $this->databaseConnection->prepare('SELECT COUNT(*) FROM reactions WHERE emoji = :emoji AND post_id = :post_id AND user_id = :user_id');
+        $statement->execute(compact('emoji', 'post_id', 'user_id'));
+        return $statement->fetch(PDO::FETCH_ASSOC)['COUNT(*)'] > 0;
+    }
 }

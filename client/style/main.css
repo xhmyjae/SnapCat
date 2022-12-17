@@ -40,3 +40,7 @@ img.emoji {
     font-size: var(--size-large);
     margin: 20px 20px 30px 20px;
 }
+
+.reacted {
+    color: var(--pink)!important;
+}
