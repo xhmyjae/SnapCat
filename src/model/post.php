@@ -39,12 +39,13 @@ class PostRepository
         if ($friends === []) {
             return $this->getUserPost($connected_user);
         } else {
-            $statement = $this->databaseConnection->prepare('SELECT p.* FROM posts p INNER JOIN friends f ON (p.user_id = f.user_id1 OR p.user_id = f.user_id2) AND f.accepted = 1  WHERE f.user_id1 = " ' . $connected_user->id . ' " OR f.user_id2 = " ' . $connected_user->id . ' " ORDER BY p.creation_date DESC');
+            $statement = $this->databaseConnection->prepare('SELECT p.* FROM posts p INNER JOIN friends f ON (p.user_id = f.user_id1 OR p.user_id = f.user_id2) AND f.accepted = 1  WHERE f.user_id1 = " ' . $connected_user->id . ' " OR f.user_id2 = " ' . $connected_user->id . ' " ORDER BY p.creation_date DESC LIMIT 5');
             $statement->execute();
             $postsFriends = $statement->fetchAll();
             return array_unique($postsFriends, SORT_REGULAR);
         }
     }
+
 
     function getUserPost(User $connected_user): array
     {

@@ -12,10 +12,3 @@ function autosize(el) {
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
     }, 0);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#load-more').onclick = () => {
-        length += 5;
-        location.reload();
-    };
-});

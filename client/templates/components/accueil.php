@@ -2,7 +2,7 @@
 global $connected_user;
 global $length;
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 
 <script defer src="/client/scripts/write-post.js"></script>
@@ -31,5 +31,5 @@ global $length;
     <div class="posts">
         <?php require_once('client/templates/components/Friendspost.php'); ?>
     </div>
-    <button id="load-more" class="load-more">Charger plus</button>
+
 </div>
