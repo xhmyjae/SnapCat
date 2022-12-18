@@ -1,3 +1,8 @@
+
+
+![](https://github.com/xhmyjae/SnapCat/blob/main/client/templates/img/logo.png)
+
+
 # SnapCat
 
 A social-network website made in PHP for school.
