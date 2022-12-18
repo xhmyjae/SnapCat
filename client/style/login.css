@@ -105,7 +105,7 @@ body {
     margin: 4px 0;
     padding-left: 25px;
     font-size: 13px;
-    letter-spacing: 0.15px;
+    letter-spacing: 0px;
     border: none;
     outline: none;
     background-color: #3c3f41;
@@ -145,7 +145,7 @@ body {
 
 .description {
     font-size: 14px;
-    letter-spacing: 0.25px;
+    letter-spacing: 0px;
     text-align: center;
     line-height: 1.6;
 }
@@ -157,7 +157,7 @@ body {
     margin-top: 50px;
     font-weight: 700;
     font-size: 14px;
-    letter-spacing: 1.15px;
+    letter-spacing: 1px;
     background-color: #4b70e2;
     color: #ffffff;
     box-shadow: 8px 8px 16px rgba(28, 28, 33, 0.5), -8px -8px 16px #3c3f41;

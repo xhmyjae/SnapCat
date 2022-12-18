@@ -84,9 +84,9 @@ input#confirm-password {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0 rgba(0, 0, 0, .1);
     outline: none;
 }
 
@@ -116,12 +116,12 @@ input#confirm-password {
 }
 
 .btn-8:before {
-    height: 0%;
+    height: 0;
     width: 2px;
 }
 
 .btn-8:after {
-    width: 0%;
+    width: 0;
     height: 2px;
 }
 
@@ -154,12 +154,12 @@ input#confirm-password {
 
 .btn-8 span:before {
     width: 2px;
-    height: 0%;
+    height: 0;
 }
 
 .btn-8 span:after {
     height: 2px;
-    width: 0%;
+    width: 0;
 }
 
 .btn-8 span:hover:before {

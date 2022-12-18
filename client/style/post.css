@@ -25,7 +25,6 @@
     animation: rainbow-text-simple-animation 10s infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
     -moz-text-fill-color: transparent;
 }
 .post-panel {
@@ -134,9 +133,9 @@
 }
 
 p {
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .delete-post {
@@ -309,7 +308,7 @@ p.post-username {
 }
 #commentCount{
     z-index: -1;
-    font-size: 13.5px;
+    font-size: 14px;
     margin: 2.5vh 0 0 -5vw;
     transition: none;
 }
