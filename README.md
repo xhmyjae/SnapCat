@@ -60,7 +60,7 @@ SnapCat is licensed under GNU General Public License v3.0
 * Don't forget to follow us on Github :D
   * [Dxvy](https://github.com/Dxvy) 
   * [Mkheir13](https://github.com/Mkheir13)
-  * [MargoTomatis](https://github.com/xhmyjae)
+  * [xhmyjae](https://github.com/xhmyjae)
   
 
 * Don't forget to star the project :D
