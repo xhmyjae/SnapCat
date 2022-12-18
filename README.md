@@ -10,7 +10,6 @@ Based on cat memes.
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [License](#license)
-  * [Acknowledgments](#acknowledgments)
   * [Authors](#authors)
 <!-- TOC -->
  
@@ -24,6 +23,7 @@ Based on cat memes.
 
 1. Clone the repository
 2. Import the database
+3. Enjoy
 
 ## Usage
 
@@ -50,15 +50,12 @@ Based on cat memes.
 SnapCat is licensed under GNU General Public License v3.0
 
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
 ## Authors
 
-* Dossou Thomas 
-* Marthely Davy         @Dxvy
-* Mederreg Kheir-eddine @Mkheir13
-* Tomatis Margot        @xhmyjae
+* Don't forget to follow us on Github :D
+  * [Dxvy](https://github.com/Dxvy) 
+  * [Mkheir13](https://github.com/Mkheir13)
+  * [MargoTomatis](https://github.com/xhmyjae)
+  
+
+* Don't forget to star the project :D
